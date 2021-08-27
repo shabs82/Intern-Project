@@ -3,23 +3,31 @@
     <a class="navbar-brand" href="#">
       <img src="assets/Navbar/logo.png" width="210" height="95" alt="" loading="lazy">
     </a>
-    <form class="d-flex">
-      <input class="form-control me-2" type="search"  >
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <form id="custom-search-form" class="form-search form-horizontal pull-right">
+            <div class="input-append span12">
+              <input type="text" class="search-query" placeholder="Search">
+              <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">WishList</a>
+          <a class="nav-link active topMenu" aria-current="page" href="#">WishList</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">MyAccount</a>
+          <a class="nav-link topMenu" href="#">MyAccount</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Checkout</a>
+          <a class="nav-link topMenu" href="#">Checkout</a>
         </li>
       </ul>
 
@@ -39,17 +47,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse"
-       id="navbarNavAltMarkup">
-        <a href="#" class="mx-1 gap">Home</a>
-        <a href="#" class="mx-1 gap">Eyes</a>
-        <a href="#" class="mx-1 gap">Nails</a>
-        <a href="#" class="mx-1 gap">Lips</a>
-        <a href="#" class="mx-1 gap">Face</a>
-        <a href="#" class="mx-1 gap">Fragrance</a>
-        <a href="#" class="mx-1 gap">Accessories</a>
-        <a href="#" class="mx-1 gap">GiftSets</a>
-
-  </div>
+   <div class="collapse navbar-collapse bottomLinks"  id="navbarNavAltMarkup">
+     <div>
+       <a href="#" class="mx-1">Home</a>
+       <a href="#" class="mx-1">Eyes</a>
+       <a href="#" class="mx-1">Nails</a>
+       <a href="#" class="mx-1">Lips</a>
+       <a href="#" class="mx-1">Face</a>
+       <a href="#" class="mx-1">Fragrance</a>
+       <a href="#" class="mx-1">Accessories</a>
+       <a href="#" class="mx-1">GiftSets</a>
+     </div>
+   </div>
 </nav>
 
