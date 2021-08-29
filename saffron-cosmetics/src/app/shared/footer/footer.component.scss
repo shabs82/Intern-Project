@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500&display=swap');
+.body{
+  line-height: 1.5;
+  font-family: 'Kaisei Opti', serif;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1170px;
+  background-colour: black ;
+  margin: auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+
+.card-footer{
+  background-colour: black ;
+  padding: 70px;
+
+}
+.footer-col{
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-col:hover h4 {
+  font-size: 18px;
+  color: darkgrey;
+  border-bottom: 2px solid red;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-weight: 500;
+  position: relative;
+
+}
+.footer-col h4 ::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: black;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #FA1F12;
+  text-decoration: none;
+  font-weight: 300;
+  color: darkgrey;
+  display: block;
+  transition: all 0.3s ease;
+}
