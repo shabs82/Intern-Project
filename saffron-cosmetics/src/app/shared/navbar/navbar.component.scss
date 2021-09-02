@@ -1,6 +1,6 @@
 .bottomLinks a{
   padding-right: 20px;
-  padding-left: 20px;
+  padding-left: 20px  ;
   font-size: 22px;
   color: #000;
   text-decoration:none;
@@ -24,54 +24,5 @@
   padding-bottom: 10px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500&display=swap');
-.topMenu{
-  color: black;
-  font-size: 20px;
-  font-family: 'Kaisei Opti', serif;
-  border-bottom: 2px solid transparent;
-}
 
-.topMenu:hover{
-  color: darkgrey;
-  border-bottom: 2px solid #FA1F12;
-}
-
-#custom-search-form {
-  margin:0;
-  margin-top: 5px;
-  padding: 0;
-}
-
-#custom-search-form .search-query {
-  padding-right: 3px;
-  padding-right: 4px \9;
-  padding-left: 3px;
-  padding-left: 4px \9;
-  /* IE7-8 doesn't have border-radius, so don't indent the padding */
-
-  margin-bottom: 0;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-#custom-search-form button {
-  border: 0;
-  background: none;
-  /** belows styles are working good */
-  padding: 2px 5px;
-  margin-top: 2px;
-  position: relative;
-  left: -28px;
-  /* IE7-8 doesn't have border-radius, so don't indent the padding */
-  margin-bottom: 0;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-.search-query:focus + button {
-  z-index: 3;
-}
 

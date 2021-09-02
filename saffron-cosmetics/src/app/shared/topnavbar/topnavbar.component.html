@@ -1,1 +1,45 @@
-<p>topnavbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-light-blue-skin">
+  <div class="container-fluid">
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img src="assets/Navbar/logo.png" width="210" height="95" alt="" loading="lazy">
+    </a>
+    <div class="container">
+      <div class="row">
+        <div class="search-box">
+         <input class = "search-text" name = "" placeholder="Type to search">
+         <a class="search-btn" href="#">
+           <i class="fas fa-search"></i>
+         </a>
+        </div>
+      </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" style="width: 100%"  id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-sm-5-0">
+        <li class="nav-item">
+          <a class="nav-link topMenu" href="#">
+             <i class="fas fa-user-circle"></i> MyAccount</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active topMenu" aria-current="page" href="#">
+            <i class="fas fa-heart"></i> WishList</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link topMenu" href="#">
+            <i class="fas fa-shopping-basket"></i> Checkout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
