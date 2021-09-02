@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500&display=swap');
+.topMenu{
+  color: black;
+  font-size: 20px;
+  font-family: 'Kaisei Opti', serif;
+  border-bottom: 2px solid transparent;
+}
+
+.topMenu:hover{
+  color: darkgrey;
+  border-bottom: 2px solid #FA1F12;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: darkgrey;
+}
+.search-box{
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  padding: 5px;
+  height: 20px;
+  border-radius: 30px;
+
+}
+.search-box:hover > .search-text{
+  width: 140px;
+  padding: 0.6px;
+
+}
+.search-box:hover > .search-btn{
+ background: white;
+
+}
+.search-btn{
+  color: #24262b;
+  float: none;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.search-text{
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  color: white;
+  float: left;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 10px;
+  width: 0px;
+}

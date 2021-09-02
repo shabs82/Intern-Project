@@ -7,7 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { TopnavbarComponent } from './shared/topnavbar/topnavbar.component';
-import { BodyComponent } from './shared/body/body.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { BodyComponent } from './shared/body/body.component';
     NavbarComponent,
     FooterComponent,
     TopnavbarComponent,
-    BodyComponent
+     WelcomePageComponent
   ],
   imports: [
     BrowserModule,
