@@ -8,6 +8,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { TopnavbarComponent } from './shared/topnavbar/topnavbar.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { BottomFooterComponent } from './shared/bottom-footer/bottom-footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     NavbarComponent,
     FooterComponent,
     TopnavbarComponent,
-     WelcomePageComponent
+     WelcomePageComponent,
+     BottomFooterComponent
   ],
   imports: [
     BrowserModule,
