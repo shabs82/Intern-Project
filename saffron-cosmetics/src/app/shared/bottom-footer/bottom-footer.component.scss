@@ -2,8 +2,23 @@
   width: 100%;
   color: #24262b;
   padding: 8px 100px;
-  text-align: center;
+  text-align: right;
   margin-top: 10px;
   box-sizing: border-box;
   border-top: 10px;
+  background-color: #222222;
 }
+.card-footer{
+  box-sizing: border-box;
+  float: left;
+  width:20%;
+  padding: 5px;
+  text-align: left;
+
+}
+.row ::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
