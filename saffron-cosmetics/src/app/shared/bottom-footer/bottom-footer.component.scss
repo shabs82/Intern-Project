@@ -1,24 +1,38 @@
 .copyright-text{
   width: 100%;
-  color: #24262b;
-  padding: 8px 100px;
-  text-align: right;
-  margin-top: 10px;
+  color: #fff;
+  padding: 5px;
   box-sizing: border-box;
-  border-top: 10px;
-  background-color: #222222;
+  text-align: center;
+  margin-top: 5px;
+}
+.footer{
+  margin-top: 10px;
 }
 .card-footer{
   box-sizing: border-box;
-  float: left;
   width:20%;
-  padding: 5px;
-  text-align: left;
-
+  height: 20%
 }
 .row ::after{
   content: "";
   display: table;
   clear: both;
 }
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 4%;
+  padding: 5px;
+  margin-left: 7.5%;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 

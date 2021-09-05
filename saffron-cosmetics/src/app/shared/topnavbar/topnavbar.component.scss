@@ -23,17 +23,13 @@ body{
   padding: 5px;
   height: 20px;
   border-radius: 30px;
-
 }
+
 .search-box:hover > .search-text{
   width: 140px;
   padding: 0.6px;
-
 }
-.search-box:hover > .search-btn{
- background: white;
 
-}
 .search-btn{
   color: #24262b;
   float: none;
@@ -49,7 +45,6 @@ body{
   background: none;
   outline: none;
   padding: 0;
-  color: white;
   float: left;
   font-size: 16px;
   transition: 0.4s;
