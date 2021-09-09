@@ -1,28 +1,18 @@
-.bottomLinks a{
-  padding-right: 20px;
-  padding-left: 20px  ;
-  font-size: 18px;
-  color: #000;
-  text-decoration:none;
-  border-bottom: 2px solid transparent;
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sansita+Swashed&family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sansita+Swashed&display=swap');
+
+.links-bar{
+  font-family: 'Slabo 27px', serif;
+  font-size: 21px;
+  margin-right: 6px;
+  margin-left: 6px;
 }
 
-.bottomLinks a:hover{
-  color: darkgrey;
-  border-bottom: 2px solid #FA1F12;
+.distance{
+  margin: 0px;
 }
 
-.bottomLinks{
-  text-align: center;
-  align-items: center;
-  align-content: center;
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding-bottom: 10px;
+.dropdown:hover .dropdown-menu{
+  display: block;
 }
-
-
 
