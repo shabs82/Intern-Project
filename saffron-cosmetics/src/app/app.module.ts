@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { TopnavbarComponent } from './shared/topnavbar/topnavbar.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { BottomFooterComponent } from './shared/bottom-footer/bottom-footer.component';
+import { ContactUsComponent } from './shared/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BottomFooterComponent } from './shared/bottom-footer/bottom-footer.comp
     FooterComponent,
     TopnavbarComponent,
      WelcomePageComponent,
-     BottomFooterComponent
+     BottomFooterComponent,
+     ContactUsComponent
   ],
   imports: [
     BrowserModule,
