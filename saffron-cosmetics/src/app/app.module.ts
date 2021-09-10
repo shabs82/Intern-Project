@@ -10,6 +10,7 @@ import { TopnavbarComponent } from './shared/topnavbar/topnavbar.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { BottomFooterComponent } from './shared/bottom-footer/bottom-footer.component';
 import { ContactUsComponent } from './shared/contact-us/contact-us.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
