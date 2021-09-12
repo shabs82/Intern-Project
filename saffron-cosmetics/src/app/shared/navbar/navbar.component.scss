@@ -6,7 +6,12 @@
   font-size: 21px;
   margin-right: 6px;
   margin-left: 6px;
-  color: #fff;
+  border-bottom: 2px solid transparent;
+}
+
+.links-bar:hover{
+  border-bottom: 2px solid #FA1F12;
+  color: #FA1F12;
 }
 
 .distance{
