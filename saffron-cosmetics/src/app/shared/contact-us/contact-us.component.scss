@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500&display=swap');
 
-*{
+.some-class{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,15 +8,13 @@
 }
 .contact{
   position: relative;
-  min-height: 100vh;
   padding: 50px 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: url("~src/assets/welcome-page/mensperfume.jpg");
-  background-size: 101%;
-
+  background-size: 100%;
 }
 
 .contact .content{
