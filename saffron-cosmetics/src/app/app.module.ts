@@ -10,7 +10,8 @@ import { TopnavbarComponent } from './shared/topnavbar/topnavbar.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { BottomFooterComponent } from './shared/bottom-footer/bottom-footer.component';
 import { ContactUsComponent } from './shared/contact-us/contact-us.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
@@ -18,15 +19,17 @@ import {ReactiveFormsModule} from "@angular/forms";
     NavbarComponent,
     FooterComponent,
     TopnavbarComponent,
-     WelcomePageComponent,
-     BottomFooterComponent,
-     ContactUsComponent
+    WelcomePageComponent,
+    BottomFooterComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxCaptchaModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
