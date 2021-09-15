@@ -12,4 +12,5 @@ export class BottomFooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

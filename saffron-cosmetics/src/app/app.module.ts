@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { TopnavbarComponent } from './shared/topnavbar/topnavbar.component';
@@ -12,6 +12,7 @@ import { BottomFooterComponent } from './shared/bottom-footer/bottom-footer.comp
 import { ContactUsComponent } from './shared/contact-us/contact-us.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { DiscountsComponent } from './shared/discounts/discounts.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,15 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     TopnavbarComponent,
     WelcomePageComponent,
     BottomFooterComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    DiscountsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
+    NgbAlertModule,
     NgxCaptchaModule,
     FormsModule
   ],
