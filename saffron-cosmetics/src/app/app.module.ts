@@ -13,6 +13,8 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { DiscountsComponent } from './shared/discounts/discounts.component';
+import { LoginComponent } from './user-account/login/login.component';
+import { RegisterComponent } from './user-account/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DiscountsComponent } from './shared/discounts/discounts.component';
     WelcomePageComponent,
     BottomFooterComponent,
     ContactUsComponent,
-    DiscountsComponent
+    DiscountsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
