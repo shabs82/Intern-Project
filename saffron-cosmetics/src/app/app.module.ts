@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { TopnavbarComponent } from './shared/topnavbar/topnavbar.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { BottomFooterComponent } from './shared/bottom-footer/bottom-footer.component';
 import { ContactUsComponent } from './shared/contact-us/contact-us.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { DiscountsComponent } from './shared/discounts/discounts.component';
-import { LoginComponent } from './user-account/login/login.component';
-import { RegisterComponent } from './user-account/register/register.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -26,11 +29,11 @@ import { RegisterComponent } from './user-account/register/register.component';
     BottomFooterComponent,
     ContactUsComponent,
     DiscountsComponent,
-    LoginComponent,
-    RegisterComponent
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
