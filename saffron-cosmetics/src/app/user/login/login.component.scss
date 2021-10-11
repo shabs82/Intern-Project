@@ -32,6 +32,7 @@
   line-height: 20px;
   alignment: center;
   justify-content: center;
+  margin-bottom: 5px;
 }
 
 .wrapper .form {
@@ -108,7 +109,7 @@
   color: black;
 }
 
-/*.signup.inActive{
+.signup.inActive{
   display: none;
 }
 .signin{
@@ -116,7 +117,7 @@
 }
 .signin .active{
   display: block;
-}*/
+}
 @media (max-width: 1030px) {
   .wrapper ::before{
     left: -25%;
