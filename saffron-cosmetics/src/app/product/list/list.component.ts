@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductService} from "../shared/product.service";
+import {Router} from "@angular/router";
+import {Product} from "../shared/model/product";
 
 @Component({
   selector: 'app-list',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+ products$ : Product[] | undefined;
 
-  constructor() { }
+  constructor( private productService : ProductService,
+               private  router: Router) { }
 
   ngOnInit(): void {
+
+
   }
+
+
 
 }
