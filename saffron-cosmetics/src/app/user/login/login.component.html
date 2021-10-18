@@ -22,10 +22,11 @@
         Create a new account <a href="#" id="sign up">Sign Up</a>
       </div>
     </div>
-    <div class="headline">
-      <h5>New Customer</h5>
-    </div>
+<!--    <div class="headline">-->
+<!--      <h5>New Customer</h5>-->
+<!--    </div>-->
     <div class="signup">
+      <form [formGroup] ="loginForm">
       <div class="form-group">
         <input type = text placeholder="FirstName" required="">
       </div>
@@ -38,10 +39,11 @@
       <div class="form-group">
         <input type = password placeholder="Password" required="">
       </div>
-      <button type="submit()" class="btn">Sign Up</button>
+      <button type="onSubmit()" class="btn">Sign Up</button>
       <div class="account-exist">
         Already have an account? <a href="#" id="login">Login</a>
       </div>
+      </form>
     </div>
   </form>
 </div>
