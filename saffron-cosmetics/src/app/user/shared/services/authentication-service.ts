@@ -38,14 +38,14 @@ export class AuthenticationService {
   }
   //Add Api Urls
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<any>(environment + 'token', {username, password})
+    return this.http.post<any>(environment.apiURL + 'token', {username, password})
       .pipe(map(response => {
         const token = response.token;
         //login successful if there's a jwt token in the response.
         const decodedToken = jwt_decode(token);
         if (token){
           //Store username and jwt token in local storage to keep user logged in between page refreshes
-          this.setUpStorage(decodedToken, response);
+          this.setUpStorage({decodedToken: decodedToken, response: response});
           this.isLoggedInSubject.next(true);
           this.isLoggedAdmin.next(true);
           window.location.reload();
@@ -57,7 +57,7 @@ export class AuthenticationService {
         }
       }));
   }
-  setUpStorage(decodedToken, response): void {
+  setUpStorage({decodedToken, response}: { decodedToken: any, response: any }): void {
     let currentUser = null;
     if ( 'Administrator' === decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']){
       currentUser = JSON.stringify({
