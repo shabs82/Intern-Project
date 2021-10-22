@@ -59,7 +59,7 @@ export class AuthenticationService {
   // }
 
   login(username: string, password: string): Observable<boolean>{
-    return this.http.post<any>(environment.apiURL + '/api/user/token', {username, password})
+    return this.http.post<any>(environment.apiURL + '/api/token', {username, password})
       .pipe(map(response =>{
         const token = response && response.token;
         console.log(response);
