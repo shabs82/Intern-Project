@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from "../../user/shared/services/authentication-service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-topnavbar',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopnavbarComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private authenticationService: AuthenticationService, private  router: Router) { }
+  currentUser = this.authenticationService.getToken();
+  // @ts-ignore
+  LoggedIn: boolean;
+  // isAdmin: boolean;
+  /** Boolean values are used to store true or false values.*/
+
 
   ngOnInit(): void {
+    this.authenticationService.isLoggedIn().subscribe(loggedIn => this.LoggedIn = loggedIn);
   }
 
 }

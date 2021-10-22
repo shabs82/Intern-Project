@@ -11,8 +11,8 @@ import jwt_decode from 'jwt-decode';
 export class AuthenticationService {
   private isLoggedInSubject: BehaviorSubject<boolean>;
   private isLoggedAdmin: BehaviorSubject<boolean>;
-  constructor(private http: HttpClient ,
-              private authenticationService: AuthenticationService) {
+
+  constructor(private http: HttpClient ) {
     this.isLoggedInSubject = new BehaviorSubject<boolean>(false);
     this.isLoggedAdmin = new BehaviorSubject<boolean>(false);
   }
@@ -37,26 +37,42 @@ export class AuthenticationService {
     return this.isLoggedAdmin;
   }
   //Add Api Urls
-  login(username: string, password: string): Observable<boolean> {
-    return this.http.post<any>(environment.apiURL + 'token', {username, password})
-      .pipe(map(response => {
-        const token = response.token;
-        //login successful if there's a jwt token in the response.
-        const decodedToken = jwt_decode(token);
-        if (token){
-          //Store username and jwt token in local storage to keep user logged in between page refreshes
-          this.setUpStorage({decodedToken: decodedToken, response: response});
-          this.isLoggedInSubject.next(true);
-          this.isLoggedAdmin.next(true);
-          window.location.reload();
+  // login(username: string, password: string): Observable<boolean> {
+  //   return this.http.post<any>(environment.apiURL + 'token', {username, password})
+  //     .pipe(map(response => {
+  //       const token = response.token;
+  //       //login successful if there's a jwt token in the response.
+  //       const decodedToken = jwt_decode(token);
+  //       if (token){
+  //         //Store username and jwt token in local storage to keep user logged in between page refreshes
+  //         this.setUpStorage({decodedToken: decodedToken, response: response});
+  //         this.isLoggedInSubject.next(true);
+  //         this.isLoggedAdmin.next(true);
+  //         window.location.reload();
+  //         return true;
+  //       } else{
+  //         this.isLoggedInSubject.next(false);
+  //         this.isLoggedAdmin.next(false);
+  //         return false;
+  //       }
+  //     }));
+  // }
+
+  login(username: string, password: string): Observable<boolean>{
+    return this.http.post<any>(environment.apiURL + '/api/user/token', {username, password})
+      .pipe(map(response =>{
+        const token = response && response.token;
+        console.log(response);
+        if(token){
+          localStorage.setItem('currentUser', JSON.stringify({username: username, token: token }));
           return true;
-        } else{
-          this.isLoggedInSubject.next(false);
-          this.isLoggedAdmin.next(false);
+        } else {
           return false;
         }
       }));
-  }
+  };
+
+
   setUpStorage({decodedToken, response}: { decodedToken: any, response: any }): void {
     let currentUser = null;
     if ( 'Administrator' === decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']){
@@ -78,23 +94,38 @@ export class AuthenticationService {
   }
 
 
-  getToken(): string | null {
-    const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
-    if (currentUser) {
-      return currentUser && currentUser.token;
-    } else {
-      return null;
-    }
+  // getToken(): string | null {
+  //   const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
+  //   if (currentUser) {
+  //     return currentUser && currentUser.token;
+  //   } else {
+  //     return null;
+  //   }
+  // }
+  //
+  // getUsername(): string | null {
+  //   const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
+  //   if (currentUser) {
+  //     return currentUser && currentUser.username;
+  //   } else {
+  //     return null;
+  //   }
+  // }
+
+
+
+  getToken(): string {
+    // @ts-ignore
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser && currentUser.token;
   }
 
-  getUsername(): string | null {
-    const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
-    if (currentUser) {
-      return currentUser && currentUser.username;
-    } else {
-      return null;
-    }
+  getUserName(): string {
+    // @ts-ignore
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser && currentUser.username;
   }
+
 
   getIsAdmin(): string | null {
     const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
@@ -105,10 +136,14 @@ export class AuthenticationService {
     }
   }
 
-  logout(): void {
-    // remove user from local storage to log user out
-    this.isLoggedInSubject.next(false);
-    this.isLoggedAdmin.next(false);
+  // logout(): void {
+  //   // remove user from local storage to log user out
+  //   this.isLoggedInSubject.next(false);
+  //   this.isLoggedAdmin.next(false);
+  //   localStorage.removeItem('currentUser');
+  // }
+
+  logout(): void{
     localStorage.removeItem('currentUser');
   }
 }

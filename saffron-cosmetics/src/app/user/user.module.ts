@@ -6,6 +6,7 @@ import { UserComponent } from './user.component';
 import { LoginComponent } from './login/login.component';
 import {NgbButtonsModule} from "@ng-bootstrap/ng-bootstrap";
 import {ReactiveFormsModule} from "@angular/forms";
+import {AppModule} from "../app.module";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     UserRoutingModule,
     NgbButtonsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppModule
   ]
 })
 export class UserModule { }

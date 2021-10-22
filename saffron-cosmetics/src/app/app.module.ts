@@ -14,6 +14,9 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { DiscountsComponent } from './shared/discounts/discounts.component';
+import { SignUpComponent } from './user/login/sign-up/sign-up.component';
+import {AuthenticationService} from "./user/shared/services/authentication-service";
+import {LoginComponent} from "./user/login/login.component";
 
 
 
@@ -29,6 +32,7 @@ import { DiscountsComponent } from './shared/discounts/discounts.component';
     BottomFooterComponent,
     ContactUsComponent,
     DiscountsComponent,
+    SignUpComponent,
 
   ],
   imports: [
@@ -41,7 +45,10 @@ import { DiscountsComponent } from './shared/discounts/discounts.component';
     NgxCaptchaModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
+  exports: [
+    SignUpComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

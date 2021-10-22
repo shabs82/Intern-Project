@@ -10,36 +10,35 @@ import {AuthenticationService} from "../shared/services/authentication-service";
   styleUrls: [`./login.component.scss`]
 })
 export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+  loginForm2!: FormGroup;
   submitted = false;
   loading = false;
   errormessage = '';
 
-  currentUser = this.authenticationService.getToken();
+  // @ts-ignore
+  fieldTextType: boolean;
+  userExists = false;
 
-
-  constructor(private authenticationService: AuthenticationService,private formBuilder: FormBuilder,
-              private http: HttpClient,
+  constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService, private http: HttpClient,
               private  router: Router) { }
 
   ngOnInit(): any {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+    this.loginForm2 = this.formBuilder.group({
+      email : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(200)])],
+      pwd : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(20)])],
     });
   }
-  get email() { return this.loginForm.get('email'); }
-  get password() { return this.loginForm.get('password'); }
-  onSubmit() {
-    this.submitted = true;
+  get f(): any { return this.loginForm2.controls; }
 
-    if (this.loginForm.invalid){
+  logIn() {
+    this.submitted = true;
+    if (this.loginForm2.invalid){
       return;
     }
     this.loading = true;
 
-    console.log('login');
-    this.authenticationService.login(this.email?.value, this.password?.value).subscribe(success => {
+    console.log(this.loginForm2.value.email, this.loginForm2.value.pwd);
+    this.authenticationService.login(this.loginForm2.value.email, this.loginForm2.value.pwd).subscribe(success => {
         this.router.navigate(['/']);
       },
       error => {
@@ -47,5 +46,7 @@ export class LoginComponent implements OnInit {
         this.loading = false;
       });
   }
-
+  toggleFieldTextType(): any {
+    this.fieldTextType = !this.fieldTextType;
+  }
 }
