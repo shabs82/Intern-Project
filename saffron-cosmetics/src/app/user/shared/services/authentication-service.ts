@@ -94,26 +94,6 @@ export class AuthenticationService {
   }
 
 
-  // getToken(): string | null {
-  //   const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
-  //   if (currentUser) {
-  //     return currentUser && currentUser.token;
-  //   } else {
-  //     return null;
-  //   }
-  // }
-  //
-  // getUsername(): string | null {
-  //   const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
-  //   if (currentUser) {
-  //     return currentUser && currentUser.username;
-  //   } else {
-  //     return null;
-  //   }
-  // }
-
-
-
   getToken(): string {
     // @ts-ignore
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));

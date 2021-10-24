@@ -12,14 +12,26 @@ export class TopnavbarComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService, private  router: Router) { }
   currentUser = this.authenticationService.getToken();
+  user = this.authenticationService.getUserName();
   // @ts-ignore
-  LoggedIn: boolean;
-  // isAdmin: boolean;
+  isLoggedIn: boolean;
+  // @ts-ignore
+  isAdmin: boolean;
   /** Boolean values are used to store true or false values.*/
 
+  logout(): any {
+    this.authenticationService.logout();
+    this.router.navigate(['/']);
+    window.location.reload();
+  }
+
+  refresh(): void{
+    window.location.reload();
+  }
 
   ngOnInit(): void {
-    this.authenticationService.isLoggedIn().subscribe(loggedIn => this.LoggedIn = loggedIn);
+    this.authenticationService.isLoggedIn().subscribe(loggedIn => this.isLoggedIn = loggedIn);
+    this.authenticationService.isLogAdmin().subscribe(loggedIn => this.isAdmin = loggedIn);
   }
 
 }
