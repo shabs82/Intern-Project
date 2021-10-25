@@ -97,9 +97,9 @@
   </div>
 
   <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
-    <li *ngIf="f.email.errors.minlength" class="error-text">  Username must be at least 5 characters</li>
-    <li *ngIf="f.email.errors.maxlength" class="error-text">  Username must be no more than 100 characters</li>
-    <li *ngIf="f.email.errors.required" class="error-text">  Username is required </li>
+    <li *ngIf="f.email.errors.minlength" class="error-text"style="color:white;">  Username must be at least 5 characters</li>
+    <li *ngIf="f.email.errors.maxlength" class="error-text"style="color:white;">  Username must be no more than 100 characters</li>
+    <li *ngIf="f.email.errors.required" class="error-text"style="color:white;">  Username is required </li>
   </ul>
 
   <div class="field">
@@ -108,9 +108,9 @@
   </div>
 
   <ul *ngIf="f.pwd.errors && (f.pwd.dirty || f.pwd.touched)">
-    <li *ngIf="f.pwd.errors.minlength" class="error-text">  Password must be at least 4 characters</li>
-    <li *ngIf="f.pwd.errors.maxlength" class="error-text">  Password must be no more than 20 characters</li>
-    <li *ngIf="f.pwd.errors.required" class="error-text">  Password is required
+    <li *ngIf="f.pwd.errors.minlength" class="error-text"style="color:white;">  Password must be at least 4 characters</li>
+    <li *ngIf="f.pwd.errors.maxlength" class="error-text"style="color:white;">  Password must be no more than 20 characters</li>
+    <li *ngIf="f.pwd.errors.required" class="error-text"style="color:white;">  Password is required
       <div class="glitch" data-text="The password is in the questions">The password is in the questions</div>
     </li>
   </ul>
@@ -120,3 +120,88 @@
     Create a new account? <a href="#" id="login" routerLink="/sign-up">Sign Up</a>
   </div>
 </form>
+
+<!--<form>-->
+<!--  <div class="form-group" [formGroup]="loginForm2" (ngSubmit)="logIn()">-->
+<!--    <label for="email">Email address</label>-->
+<!--    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Username" formControlName="email" name="email">-->
+<!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+<!--  </div>-->
+<!--  <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)" >-->
+<!--    <li *ngIf="f.email.errors.minlength" class="error-text" >  Username must be at least 5 characters</li>-->
+<!--    <li *ngIf="f.email.errors.maxlength" class="error-text">  Username must be no more than 100 characters</li>-->
+<!--    <li *ngIf="f.email.errors.required" class="error-text">  Username is required </li>-->
+<!--  </ul>-->
+<!--  <div class="form-group">-->
+<!--    <label for="password" class="label">Password</label>-->
+<!--    <input [type]="fieldTextType ? 'text' : 'password'" name="email" class="form-control" placeholder="Password" formControlName="pwd" >-->
+<!--  </div>-->
+<!--  <ul *ngIf="f.pwd.errors && (f.pwd.dirty || f.pwd.touched)">-->
+<!--    <li *ngIf="f.pwd.errors.minlength" class="error-text">  Password must be at least 4 characters</li>-->
+<!--    <li *ngIf="f.pwd.errors.maxlength" class="error-text">  Password must be no more than 20 characters</li>-->
+<!--    <li *ngIf="f.pwd.errors.required" class="error-text">  Password is required-->
+<!--      <div class="glitch" data-text="The password is in the questions">The password is in the questions</div>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--  <div class="form-group form-check">-->
+<!--    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--    <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-info text-white login-button botton-color" value="Log in" style="color: darkred"-->
+<!--          [disabled]="!(f.pwd.errors === null && f.email.errors === null)">Submit</button>-->
+<!--  <div class="account-exist" style="color: black">-->
+<!--    Create a new account? <a href="#" id="login" routerLink="/sign-up">Sign Up</a>-->
+<!--  </div>-->
+<!--</form>-->
+
+
+<!--<form [formGroup]="loginForm2" (ngSubmit)="logIn()" >-->
+<!--  <div class="form-group row">-->
+<!--    <div class="field">-->
+<!--    <label for="email" class="col-sm-2 col-form-label">Email</label>-->
+<!--    <div class="col-sm-10">-->
+<!--      <input type="text" name="email" class="form-control" id="inputEmail3" placeholder="" formControlName="email"  >-->
+<!--    </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">-->
+<!--    <li *ngIf="f.email.errors.minlength" class="error-text"style="color:white;">  Username must be at least 5 characters</li>-->
+<!--    <li *ngIf="f.email.errors.maxlength" class="error-text"style="color:white;">  Username must be no more than 100 characters</li>-->
+<!--    <li *ngIf="f.email.errors.required" class="error-text"style="color:white;">  Username is required </li>-->
+<!--  </ul>-->
+
+
+<!--  <div class="form-group row">-->
+<!--    <div class="field">-->
+
+<!--    <label for="password" class="col-sm-2 col-form-label" formControlName="pwd" placeholder="">Password</label>-->
+<!--    <div class="col-sm-10">-->
+<!--      <input [type]="fieldTextType ? 'text' : 'password'" name="email" class="form-control" id="inputPassword3" placeholder="Password">-->
+<!--    </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <ul *ngIf="f.pwd.errors && (f.pwd.dirty || f.pwd.touched)">-->
+<!--    <li *ngIf="f.pwd.errors.minlength" class="error-text"style="color:white;">  Password must be at least 4 characters</li>-->
+<!--    <li *ngIf="f.pwd.errors.maxlength" class="error-text"style="color:white;">  Password must be no more than 20 characters</li>-->
+<!--    <li *ngIf="f.pwd.errors.required" class="error-text"style="color:white;">  Password is required-->
+<!--      <div class="glitch" data-text="The password is in the questions">The password is in the questions</div>-->
+<!--    </li>-->
+<!--  </ul>-->
+
+
+<!--  <fieldset class="form-group">-->
+<!--  </fieldset>-->
+<!--  <div class="form-group row">-->
+<!--    <div class="col-sm-10">-->
+<!--&lt;!&ndash;      <input type="submit" class="btn btn-info text-white login-button botton-color" [disabled]="!(f.pwd.errors === null && f.email.errors === null)">Sign in</input>&ndash;&gt;-->
+<!--      <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Log in" style="color: darkred">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="account-exist" style="color: black">-->
+<!--     Create a new account? <a href="#" id="login" routerLink="/sign-up">Sign Up</a>-->
+<!--     </div>-->
+<!--</form>-->
+
+
