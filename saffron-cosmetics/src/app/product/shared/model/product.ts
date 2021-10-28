@@ -1,5 +1,5 @@
 export interface Product{
-  id: number;
+  id: string;
   name: string;
   productCode: string;
   variant?: string;
@@ -10,6 +10,4 @@ export interface Product{
   genderId?: number;
   brandId?: number;
   secondaryCategoryId?: number;
-
-
 }

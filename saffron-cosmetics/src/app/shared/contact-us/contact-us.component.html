@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="contactForm">
-      <form>
+      <form [formGroup]="contactForm" (ngSubmit)="send">
            <div class="inputBox">
           <input type="text" name="" required="required">
           <span> Full Name</span>
@@ -47,7 +47,7 @@
 
         <div class="inputBox">
           <div class="g-recaptcha" data-sitekey="mySiteKey"></div>
-          <input type="Submit" name="" value="Send">
+           <button type = "Submit"> Send</button>
         </div>
        </form>
      </div>

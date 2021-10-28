@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from "../shared/product.service";
+import {ProductService} from "../shared/services/product.service";
 import {Router} from "@angular/router";
 import {Product} from "../shared/model/product";
 
@@ -15,7 +15,10 @@ export class ListComponent implements OnInit {
                private  router: Router) { }
 
   ngOnInit(): void {
-
+      this.productService.readAllProducts()
+      .subscribe(listOfProducts => {
+      this.products$ = listOfProducts;
+      });
 
   }
 
