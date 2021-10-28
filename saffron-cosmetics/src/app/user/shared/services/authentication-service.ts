@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
 import jwt_decode from 'jwt-decode';
+import {User} from "../model/user";
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    Authorization: 'my-auth-token'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -72,6 +80,22 @@ export class AuthenticationService {
       }));
   };
 
+  signUp( user: User): Observable<User>{
+    httpOptions.headers = httpOptions.headers.set('Authorization','Bearer' + this.getToken());
+    return this.http.post<User>(environment.apiURL + '/api/user', user);
+
+    // return this.http.post<any>(environment.apiURL + '/api/user', {username, password})
+    //   .pipe(map(response =>{
+    //     const token = response && response.token;
+    //     console.log(response);
+    //     if(token){
+    //       localStorage.setItem('currentUser', JSON.stringify({username: username, token: token }));
+    //       return true;
+    //     } else {
+    //       return false;
+    //     }
+    //   }));
+  };
 
   setUpStorage({decodedToken, response}: { decodedToken: any, response: any }): void {
     let currentUser = null;

@@ -50,8 +50,15 @@
     </li>
   </ul>
 
+<!--  <div class="form-group form-check">-->
+<!--    <input type="checkbox" class="form-check-input" id="adminCheckBox" formControlName="adminCheck">-->
+<!--    <label class="form-check-label" for="adminCheckBox" style="color: white">Are you an Admin?</label>-->
+<!--  </div>-->
+
+
+
   <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Log in">
-  <div class="account-exist">
+  <div class="account-exist" style="color: white;">
     Already have an account? <a href="#" id="login"style="color: white;">Login</a>
   </div>
 </form>

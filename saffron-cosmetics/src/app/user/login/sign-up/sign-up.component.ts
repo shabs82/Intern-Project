@@ -15,6 +15,8 @@ export class SignUpComponent implements OnInit {
   submitted = false;
   loading = false;
   errormessage = '';
+  // @ts-ignore
+  isAdmin: boolean;
 
   // @ts-ignore
   fieldTextType: boolean;
@@ -32,7 +34,8 @@ export class SignUpComponent implements OnInit {
       name : ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(200)])],
       lastName : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
       email : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(200)])],
-      pwd : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
+      pwd : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(20)])],
+      // adminCheck: ['']
     });
   }
 
@@ -46,8 +49,13 @@ export class SignUpComponent implements OnInit {
     }
     this.loading = true;
 
-    console.log(this.loginForm.value.email, this.loginForm.value.pwd);
-    this.authenticationService.login(this.loginForm.value.email, this.loginForm.value.pwd,).subscribe(success => {
+    console.log('Email', this.loginForm.value.email);
+    console.log('Password',this.loginForm.value.pwd);
+    //this.loginForm.value.adminCheck
+    // @ts-ignore
+    this.authenticationService.signUp({email: this.loginForm.value.email, password: this.loginForm.value.pwd})
+      .subscribe(success => {
+        console.log('Success', success);
         this.router.navigate(['/']);
       },
       error => {
