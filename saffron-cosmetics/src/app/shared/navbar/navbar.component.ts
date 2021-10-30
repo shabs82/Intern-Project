@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from "../../product/shared/product.service";
+import {ProductService} from "../../product/shared/services/product.service";
+
 
 @Component({
   selector: 'app-navbar',

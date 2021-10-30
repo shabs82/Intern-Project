@@ -17,4 +17,8 @@ export class ProductService {
   getProductById(id: string): Observable<Product>{
     return this.http.get<Product>('https://localhost:44375/api/product/id');
   }
+  sendSecondaryClassId(secondaryClassId: any): Observable<any> {
+    debugger;
+    return this.http.post<any>('https://localhost:44375/api/product', {secondaryClassId})
+  }
 }
