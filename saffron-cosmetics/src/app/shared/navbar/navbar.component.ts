@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductService} from "../../product/shared/product.service";
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
 
+  selectChangeLink(event: { target: any; srcElement: any; currentTarget: any; }) {
+    var target = event.target || event.srcElement || event.currentTarget;
+    var secondaryClassId = target.attributes.id.value;
+    debugger;
+    this.productService.sendSecondaryClassId(secondaryClassId);
+    console.log(secondaryClassId)
+  }
 }
