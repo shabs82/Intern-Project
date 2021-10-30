@@ -38,10 +38,11 @@ export class LoginComponent implements OnInit {
     this.loading = true;
 
     console.log(this.loginForm2.value.email, this.loginForm2.value.pwd);
-    this.authenticationService.login(this.loginForm2.value.email, this.loginForm2.value.pwd).subscribe(success => {
+    this.authenticationService.login(this.loginForm2.value.email, this.loginForm2.value.pwd)
+      .subscribe(success => {
       //window.location.reload();
       this.router.navigate(['/']);
-
+      window.location.reload();
       },
       error => {
         this.errormessage = error.message;

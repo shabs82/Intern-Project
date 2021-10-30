@@ -4,6 +4,11 @@
   border: 3px solid #73AD21;
   padding: 10px; background-color: black;">
 
+  <div class="headline">
+    <h1 style="color: white"> Welcome to Saffron Cosmetics. </h1>
+
+  </div>
+
   <div class="field">
     <input type="text" name="name" class="input small-letters" placeholder="" formControlName="name" />
     <label for="name" class="label" style="color: white;">First Name</label>
@@ -60,5 +65,71 @@
   <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Log in">
   <div class="account-exist" style="color: white;">
     Already have an account? <a href="#" id="login"style="color: white;">Login</a>
+    <h5 > Remember to login with your new account</h5>
   </div>
 </form>
+
+
+<!--<form class="form" method="post" action="#">-->
+<!--  <div class="signUp">-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" placeholder="First Name" formControlName="name"  name="email" class="input small-letters" required="">-->
+<!--    </div>-->
+<!--    <ul *ngIf="f.name.errors && (f.name.dirty || f.name.touched)">-->
+<!--      <li *ngIf="f.name.errors.minlength" class="error-text" style="color: white;">  First Name must be at least 2 characters</li>-->
+<!--      <li *ngIf="f.name.errors.maxlength" class="error-text"style="color: white;">  First Name must be no more than 100 characters</li>-->
+<!--      <li *ngIf="f.name.errors.required" class="error-text"style="color: white;">  First Name is required </li>-->
+<!--    </ul>-->
+
+<!--    <div class="form-group">-->
+<!--      <input type="text" placeholder="Last Name" formControlName="lastName"  name="email" class="input small-letters" required="">-->
+<!--    </div>-->
+<!--    <ul *ngIf="f.lastName.errors && (f.lastName.dirty || f.lastName.touched)">-->
+<!--      <li *ngIf="f.lastName.errors.minlength" class="error-text"style="color: white;">  Last Name must be at least 5 characters</li>-->
+<!--      <li *ngIf="f.lastName.errors.maxlength" class="error-text"style="color: white;">  Last Name must be no more than 100 characters</li>-->
+<!--      <li *ngIf="f.lastName.errors.required" class="error-text"style="color: white;">  Last Name is required </li>-->
+<!--    </ul>-->
+
+<!--    <div class="form-group">-->
+<!--      <input type="text" placeholder="Username/Email" formControlName="email"  name="email" class="input small-letters" required="">-->
+<!--    </div>-->
+<!--    <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">-->
+<!--      <li *ngIf="f.email.errors.minlength" class="error-text"style="color: white;">  E-Mail must be at least 5 characters</li>-->
+<!--      <li *ngIf="f.email.errors.maxlength" class="error-text"style="color: white;">  E-Mail must be no more than 100 characters</li>-->
+<!--      <li *ngIf="f.email.errors.required" class="error-text"style="color: white;">  E-Mail is required </li>-->
+<!--    </ul>-->
+
+<!--    <div class="form-group">-->
+<!--      <input input [type]="fieldTextType ? 'text' : 'password'"  placeholder="Password" formControlName="pwd" name="password" class="input small-letters" required="">-->
+<!--    </div>-->
+<!--    <ul *ngIf="f.pwd.errors && (f.pwd.dirty || f.pwd.touched)">-->
+<!--      <li *ngIf="f.pwd.errors.minlength" class="error-text"style="color: white;">  Password must be at least 5 characters</li>-->
+<!--      <li *ngIf="f.pwd.errors.maxlength" class="error-text"style="color: white;">  Password must be no more than 20 characters</li>-->
+<!--      <li *ngIf="f.pwd.errors.required" class="error-text"style="color: white;">  Password is required-->
+<!--        <div class="glitch" data-text="The password is in the questions"style="color: white;">The password is in the questions</div>-->
+<!--      </li>-->
+<!--    </ul>-->
+
+
+<!--    <button type="submit" class="btn" style="color: black; background-color: darkred">Sign up</button>-->
+<!--    <div class="account-exist" style="color: white">-->
+<!--      Already have an account? <a href="#" id="/login"style="color: black;">Login</a>-->
+<!--      Remember to login with your new account after sign-up.-->
+<!--    </div>-->
+<!--    <div class="login-reminder" style="color: white" id="log-remind" >-->
+<!--      Remember to login with your new account after sign-up.-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</form>-->
+
+<!--<div class="field">-->
+<!--  <input type="text" name="name" class="input small-letters" placeholder="" formControlName="name" />-->
+<!--  <label for="name" class="label" style="color: white;">First Name</label>-->
+<!--</div>-->
+
+<!--<ul *ngIf="f.name.errors && (f.name.dirty || f.name.touched)">-->
+<!--  <li *ngIf="f.name.errors.minlength" class="error-text" style="color: white;">  First Name must be at least 2 characters</li>-->
+<!--  <li *ngIf="f.name.errors.maxlength" class="error-text"style="color: white;">  First Name must be no more than 100 characters</li>-->
+<!--  <li *ngIf="f.name.errors.required" class="error-text"style="color: white;">  First Name is required </li>-->
+<!--</ul>-->
