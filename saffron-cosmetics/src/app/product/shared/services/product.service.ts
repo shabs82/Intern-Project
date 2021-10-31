@@ -17,8 +17,18 @@ export class ProductService {
   getProductById(id: string): Observable<Product>{
     return this.http.get<Product>('https://localhost:44375/api/product/id');
   }
-  sendSecondaryClassId(secondaryClassId: any): Observable<any> {
-    debugger;
-    return this.http.post<any>('https://localhost:44375/api/product', {secondaryClassId})
+
+  async getProductsBySecondaryClassId(secondaryClassId: number): Promise<any[]> {
+    const uspromise = await this.http.get<any>('https://localhost:44375/api/secondarycategory/' + secondaryClassId).toPromise();
+    return uspromise.map((a: { id: any; name: any; productCode: any; price: any; availability: any; description: any; }) => {
+      console.log(a);
+      const id = a.id;
+      const name = a.name;
+      const productCode = a.productCode;
+      const price = a.price;
+      const availability = a.availability;
+      const description = a.description;
+      return {id: id, name: name, productCode: productCode, price: price, availability: availability, description: description} as Product ;
+    });
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../product/shared/services/product.service";
+import {Product} from "../../product/shared/model/product";
 
 
 @Component({
@@ -9,16 +10,17 @@ import {ProductService} from "../../product/shared/services/product.service";
 })
 export class NavbarComponent implements OnInit {
 
+  productsByCategoryId: Product[] | undefined;
+
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
 
-  selectChangeLink(event: { target: any; srcElement: any; currentTarget: any; }) {
+  async selectChangeLink(event: { target: any; srcElement: any; currentTarget: any; }) {
     var target = event.target || event.srcElement || event.currentTarget;
     var secondaryClassId = target.attributes.id.value;
+    this.productsByCategoryId = await this.productService.getProductsBySecondaryClassId(secondaryClassId);
     debugger;
-    this.productService.sendSecondaryClassId(secondaryClassId);
-    console.log(secondaryClassId)
   }
 }
