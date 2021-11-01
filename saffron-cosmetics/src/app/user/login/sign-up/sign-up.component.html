@@ -136,3 +136,70 @@
 <!--  <li *ngIf="f.name.errors.maxlength" class="error-text"style="color: white;">  First Name must be no more than 100 characters</li>-->
 <!--  <li *ngIf="f.name.errors.required" class="error-text"style="color: white;">  First Name is required </li>-->
 <!--</ul>-->
+
+<section class="contact">
+  <div class="content">
+    <h5 style="color: white">Welcome to Saffron Cosmetics</h5>
+  </div>
+  <div class="container-fluid">
+    <div class="contactForm">
+      <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+        <div class="inputBox">
+          <input type="text" name="name" required="required" formControlName="name" placeholder="">
+          <span> First Name</span>
+        </div>
+        <ul *ngIf="f.name.errors && (f.name.dirty || f.name.touched)">
+          <li *ngIf="f.name.errors.minlength" class="error-text" style="color: white;">  First Name must be at least 2 characters</li>
+          <li *ngIf="f.name.errors.maxlength" class="error-text"style="color: white;">  First Name must be no more than 100 characters</li>
+          <li *ngIf="f.name.errors.required" class="error-text"style="color: white;">  First Name is required </li>
+        </ul>
+
+        <div class="inputBox">
+          <input type="text" name="lastName" required="required" formControlName="lastName">
+          <span> Last Name</span>
+        </div>
+        <ul *ngIf="f.lastName.errors && (f.lastName.dirty || f.lastName.touched)">
+          <li *ngIf="f.lastName.errors.minlength" class="error-text"style="color: white;">  Last Name must be at least 5 characters</li>
+          <li *ngIf="f.lastName.errors.maxlength" class="error-text"style="color: white;">  Last Name must be no more than 100 characters</li>
+          <li *ngIf="f.lastName.errors.required" class="error-text"style="color: white;">  Last Name is required </li>
+        </ul>
+
+        <div class="inputBox">
+          <input type="text" name="email" required="required" placeholder="" formControlName="email">
+          <span>Email</span>
+        </div>
+        <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
+          <li *ngIf="f.email.errors.minlength" class="error-text"style="color: white;">  E-Mail must be at least 5 characters</li>
+          <li *ngIf="f.email.errors.maxlength" class="error-text"style="color: white;">  E-Mail must be no more than 100 characters</li>
+          <li *ngIf="f.email.errors.required" class="error-text"style="color: white;">  E-Mail is required </li>
+        </ul>
+
+
+        <div class="inputBox">
+          <input [type]="fieldTextType ? 'text' : 'password'" name="email" required="required" formControlName="pwd">
+          <span> Password</span>
+        </div>
+
+        <ul *ngIf="f.pwd.errors && (f.pwd.dirty || f.pwd.touched)">
+          <li *ngIf="f.pwd.errors.minlength" class="error-text"style="color: white;">  Password must be at least 5 characters</li>
+          <li *ngIf="f.pwd.errors.maxlength" class="error-text"style="color: white;">  Password must be no more than 20 characters</li>
+          <li *ngIf="f.pwd.errors.required" class="error-text"style="color: white;">  Password is required
+            <div class="glitch" data-text="The password is in the questions"style="color: white;">The password is in the questions</div>
+          </li>
+        </ul>
+
+
+
+        <div class="inputBox">
+          <div class="g-recaptcha" data-sitekey="mySiteKey"></div>
+          <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null)" class="btn btn-info text-white login-button button-color" name="" value="Sign in">
+        </div>
+        <div class="account-exist" style="color: white;">
+          Already have an account? <a href="#" id="login"style="color: white;">Login</a>
+          <h6 > Remember to login with your new account</h6>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
