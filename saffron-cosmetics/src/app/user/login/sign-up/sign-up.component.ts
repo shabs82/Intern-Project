@@ -33,7 +33,7 @@ export class SignUpComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       name : ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(200)])],
       lastName : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
-      email : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(200)])],
+      email : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(200)])],
       pwd : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(20)])],
       // adminCheck: ['']
     });
