@@ -86,13 +86,17 @@
 <!--</form>-->
 
 
-<form [formGroup]="loginForm2" (ngSubmit)="logIn()" novalidate style="margin: auto;
+<form [formGroup]="loginForm2" (ngSubmit)="logIn()" novalidate style="margin: 0 auto;
   width: 60%;
   border: 3px solid #73AD21;
-  padding: 10px; background-color: black;">
+  padding: 10px; background-color: #202123;
+">
 
-  <div class="field">
-    <input type="text" name="email" class="input small-letters" placeholder="" formControlName="email" />
+  <img src="assets/Navbar/logo.png" class="rounded mx-auto d-block">
+  <h3 style="color: white"> Welcome to Saffron Cosmetics. </h3>
+
+    <div class="field mb-3 rounded mx-auto d-block">
+    <input type="text" name="email" class="input small-letters " placeholder="" formControlName="email" />
     <label for="email" class="label" style="color: white;"><b>Username</b></label>
   </div>
 
@@ -102,7 +106,7 @@
     <li *ngIf="f.email.errors.required" class="error-text"style="color:white;">  Username is required </li>
   </ul>
 
-  <div class="field">
+  <div class="field mb-3">
     <input [type]="fieldTextType ? 'text' : 'password'" name="password" class="input small-letters" formControlName="pwd" placeholder=""/>
     <label for="password" class="label" style="color: white;"><b>Password</b></label>
   </div>

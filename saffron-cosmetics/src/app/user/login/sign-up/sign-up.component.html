@@ -2,9 +2,11 @@
 <form [formGroup]="loginForm" (ngSubmit)="signIn()" novalidate style="margin: auto;
   width: 60%;
   border: 3px solid #73AD21;
-  padding: 10px; background-color: black;">
+  padding: 10px; background-color: #202123; ">
+  <div class="align-items-center">
 
   <div class="headline">
+    <img src="assets/Navbar/logo.png" class="rounded mx-auto d-block">
     <h1 style="color: white"> Welcome to Saffron Cosmetics. </h1>
 
   </div>
@@ -66,6 +68,7 @@
   <div class="account-exist" style="color: white;">
     Already have an account? <a href="#" id="login"style="color: white;">Login</a>
     <h5 > Remember to login with your new account</h5>
+  </div>
   </div>
 </form>
 
