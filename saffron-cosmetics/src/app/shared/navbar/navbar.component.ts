@@ -18,12 +18,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async selectChangeLink(event: { target: any; srcElement: any; currentTarget: any; }) {
+  selectChangeLink(event: { target: any; srcElement: any; currentTarget: any; }) {
     var target = event.target || event.srcElement || event.currentTarget;
     var secondaryClassId = target.attributes.id.value;
-    debugger;
     this.router.navigate(['/product/product-list', secondaryClassId])
-    this.productsByCategoryId = await this.productService.getProductsBySecondaryClassId(secondaryClassId);
 
   }
 }

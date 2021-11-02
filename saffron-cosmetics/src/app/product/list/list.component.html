@@ -1,7 +1,5 @@
-<div>
-   <ul>
-     <li>
-
-     </li>
-   </ul>
+<div class="card-container" >
+  <div class="productCard" *ngFor="let product of productsByCategoryId">
+    <app-product-item></app-product-item>
+  </div>
 </div>
