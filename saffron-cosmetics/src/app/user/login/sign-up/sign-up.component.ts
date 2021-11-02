@@ -12,6 +12,8 @@ import {Router} from "@angular/router";
 export class SignUpComponent implements OnInit {
 
   loginForm!: FormGroup;
+  // @ts-ignore
+  // aFormGroup: FormGroup;
   submitted = false;
   loading = false;
   errormessage = '';
@@ -35,9 +37,16 @@ export class SignUpComponent implements OnInit {
       lastName : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
       email : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(200)])],
       pwd : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(20)])],
+      recaptcha: ['', Validators.required]
       // adminCheck: ['']
     });
+    // this.aFormGroup = this.formBuilder.group({
+    //   recaptcha: ['', Validators.required]
+    // });
   }
+
+  siteKey:string = "6LdNqg0dAAAAAG-tuIiGAPulOIkivnkKbKXtKtBp";
+
 
   get f(): any { return this.loginForm.controls; }
 

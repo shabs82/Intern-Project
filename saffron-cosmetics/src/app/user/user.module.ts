@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { NgxCaptchaModule } from 'ngx-captcha';
+
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
 import { LoginComponent } from './login/login.component';
@@ -20,7 +22,8 @@ import {AppModule} from "../app.module";
     UserRoutingModule,
     NgbButtonsModule,
     ReactiveFormsModule,
-    AppModule
+    AppModule,
+    NgxCaptchaModule
   ]
 })
 export class UserModule { }
