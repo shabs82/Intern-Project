@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductService} from "../shared/services/product.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {Product} from "../shared/model/product";
+import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
   selector: 'app-detail',
@@ -10,18 +11,19 @@ import {Product} from "../shared/model/product";
 })
 export class DetailComponent implements OnInit {
 
-  products$ : Product | undefined;
-
   constructor(private productService: ProductService,
-              private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.productService.getProductById('id')
-     .subscribe( product => {
-        this.products$ = product
-      });
-
+    this.route.params.subscribe((paramData)  =>{
+      this.productService.getProductById(paramData['id'])
+        .subscribe((backendData) =>{
+        if(backendData.availability == -1 ){
+          //Change the frontend button to out of stock.
+        }
+        console.log(backendData);
+      })
+    })
   }
 
 }
