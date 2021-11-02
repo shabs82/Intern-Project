@@ -20,7 +20,6 @@ export class ListComponent implements OnInit {
   }
 
   async refresh(): Promise<void> {
-    debugger
     let secondaryClassId = parseInt(<string>this.route.snapshot.paramMap.get('secondaryClassId'))
     this.productsByCategoryId = await this.productService.getProductsBySecondaryClassId(secondaryClassId);
     console.log(this.productsByCategoryId)

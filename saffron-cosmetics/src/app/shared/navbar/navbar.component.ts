@@ -13,7 +13,8 @@ export class NavbarComponent implements OnInit {
 
   productsByCategoryId: Product[] | undefined;
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,5 @@ export class NavbarComponent implements OnInit {
     var target = event.target || event.srcElement || event.currentTarget;
     var secondaryClassId = target.attributes.id.value;
     this.router.navigate(['/product/product-list', secondaryClassId])
-
   }
 }
