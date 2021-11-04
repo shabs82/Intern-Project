@@ -38,7 +38,6 @@ export class SignUpComponent implements OnInit {
       email : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(200)])],
       pwd : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(20)])],
       recaptcha: ['', Validators.required]
-      // adminCheck: ['']
     });
     // this.aFormGroup = this.formBuilder.group({
     //   recaptcha: ['', Validators.required]
