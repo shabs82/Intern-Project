@@ -15,16 +15,16 @@
     </button>
     <div class="collapse my-acc-class navbar-collapse justify-content-end" style="width: 100%"  id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-sm-5-0">
-        <li class="nav-item">
-          <a class="nav-link topMenu" routerLink="/login" style="color: white">
-             <i class="fas fa-user-circle"></i> MyAccount</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link topMenu" routerLink="/login" style="color: white">-->
+<!--&lt;!&ndash;             <i class="fas fa-user-circle"></i> MyAccount</a>&ndash;&gt;-->
+<!--        </li>-->
         <li class="nav-item">
           <a class="nav-link active topMenu" style="color: white" aria-current="page" href="#">
             <i class="fas fa-heart"></i> WishList</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link item dropdown-toggle " style="font-size: 18px" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
+          <a class="nav-link item dropdown-toggle fas fa-user-circle" style="font-size: 18px" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">MyAccount</a>
           <div class="dropdown-menu">
             <a *ngIf="isLoggedIn" class="dropdown-item" (click)="logout()"> Sign Out</a>
             <a *ngIf="!isLoggedIn" class="dropdown-item" href="/sign-up"> Sign in</a>
