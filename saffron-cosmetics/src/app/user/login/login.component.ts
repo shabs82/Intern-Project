@@ -26,9 +26,12 @@ export class LoginComponent implements OnInit {
     this.loginForm2 = this.formBuilder.group({
       email : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(200)])],
       pwd : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(20)])],
+      recaptcha: ['', Validators.required]
     });
   }
   get f(): any { return this.loginForm2.controls; }
+
+  siteKey:string = "6LdNqg0dAAAAAG-tuIiGAPulOIkivnkKbKXtKtBp";
 
   logIn() {
     this.submitted = true;
