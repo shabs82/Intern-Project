@@ -158,11 +158,21 @@
           </li>
         </ul>
 
+        <ngx-recaptcha2 #captchaElem
+                        [siteKey]="siteKey"
+                        formControlName="recaptcha">
+        </ngx-recaptcha2>
+
+        <ul *ngIf="f.recaptcha.errors && (f.recaptcha.dirty || f.recaptcha.touched)">
+          <li *ngIf="f.recaptcha.errors.required" class="error-text"style="color: white;">  Password is required
+            <div class="glitch" data-text="Remember to click here"style="color: white;">The password is in the questions</div>
+          </li>
+        </ul>
 
 
         <div class="inputBox">
           <div class="g-recaptcha" data-sitekey="mySiteKey"></div>
-          <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null)" class="btn btn-info text-white login-button button-color" name="" value="Log in">
+          <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null && f.recaptcha.errors === null)" class="btn btn-info text-white login-button button-color" name="" value="Log in">
         </div>
         <div class="account-exist" style="color: white">
           Create a new account? <a href="#" id="login" routerLink="/sign-up">Sign Up</a>
