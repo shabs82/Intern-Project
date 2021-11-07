@@ -6,19 +6,21 @@
   font-size: 18px;
   margin-right: 6px;
   margin-left: 6px;
-  border-bottom: 2px solid transparent;
-}
-
-.links-bar:hover{
-  border-bottom: 2px solid #FA1F12;
-  color: #FA1F12;
-}
-
-.distance{
-  margin: 0px;
+  cursor: default;
+  color: white !important;
+  //border-bottom: 2px solid transparent;
 }
 
 .dropdown:hover .dropdown-menu{
   display: block;
 }
 
+#nav .primary:hover a {
+  background-color: #fff;
+  color: black !important;
+}
+
+.dropdown-item:hover{
+  background-color: #EFEDF3 !important;
+  cursor: pointer;
+}
