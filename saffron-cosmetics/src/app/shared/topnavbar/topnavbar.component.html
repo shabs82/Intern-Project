@@ -24,7 +24,7 @@
             <i class="fas fa-heart"></i> WishList</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link item dropdown-toggle fas fa-user-circle" style="font-size: 18px" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">MyAccount</a>
+          <a class="nav-link item dropdown-toggle fas fa-user-circle" style="font-size: 18px" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> MyAccount</a>
           <div class="dropdown-menu">
             <a *ngIf="isLoggedIn" class="dropdown-item" (click)="logout()"> Sign Out</a>
             <a *ngIf="!isLoggedIn" class="dropdown-item" href="/sign-up"> Sign in</a>
