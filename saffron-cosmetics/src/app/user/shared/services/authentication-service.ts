@@ -73,6 +73,7 @@ export class AuthenticationService {
         console.log(response);
         if(token){
           localStorage.setItem('currentUser', JSON.stringify({username: username, token: token }));
+          debugger
           return true;
         } else {
           return false;
@@ -119,8 +120,8 @@ export class AuthenticationService {
 
 
   getToken(): string {
-    // @ts-ignore
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
     return currentUser && currentUser.token;
   }
 
@@ -132,8 +133,9 @@ export class AuthenticationService {
 
 
   getUserID(): string {
-    // @ts-ignore
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    debugger
+    const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
+
     return currentUser && currentUser.id;
   }
 
@@ -158,20 +160,20 @@ export class AuthenticationService {
   }
 
 
-  // @ts-ignore
-  updateUser(user: { name: string; lastName: string; email: string; pwd: string; address: string; postCode: string; phoneNumber: string; id: number;}): Observable<User> {
-    httpOptions.headers =
-      httpOptions.headers.set('Authorization', 'Bearer ' + this.getToken());
-    this.http.put<User>(environment.apiURL+ '/api/user' + user.id, user).subscribe(
-      data => {
-        console.log(data);
-        return data;
-      },
-      error => console.log('oops', error)
-    );
+  // // @ts-ignore
+  // updateUser(user: { name: string; lastName: string; email: string; pwd: string; address: string; postCode: string; phoneNumber: string; id: number;}): Observable<User> {
+  //   httpOptions.headers =
+  //     httpOptions.headers.set('Authorization', 'Bearer ' + this.getToken());
+  //   this.http.put<User>(environment.apiURL+ '/api/user' + user.id, user).subscribe(
+  //     data => {
+  //       console.log(data);
+  //       return data;
+  //     },
+  //     error => console.log('oops', error)
+  //   );
 
 
-  }
+
 
   readUserById(id: number): Observable<User> {
     return this.http.get<User>(environment.apiURL + '/api/user' + id);

@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthenticationService} from "../user/shared/services/authentication-service";
 import {ActivatedRoute, Router} from "@angular/router";
 import { Location } from '@angular/common'
+import {UserService} from "../user/shared/services/user-service";
 
 @Component({
   selector: 'app-user-update',
@@ -23,12 +24,13 @@ export class UserUpdateComponent implements OnInit {
 
   });
 
-  constructor(private authService: AuthenticationService, private router: Router, private route: ActivatedRoute, private location: Location) { }
+  constructor(private userService: UserService, private authenticationService: AuthenticationService,
+              private router: Router, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit(): void {
-    // @ts-ignore
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.authService.readUserById(this.id).subscribe(userFromRest => {
+    var thisUserID = parseInt(this.authenticationService.getUserID());
+    debugger;
+    this.userService.readUserById(thisUserID).subscribe(userFromRest => {
       this.updateForm.patchValue({
         name : userFromRest.firstName,
         lastName : userFromRest.lastName,
@@ -46,7 +48,7 @@ export class UserUpdateComponent implements OnInit {
   saveChanges() {
     const user = this.updateForm.value;
     user.id = this.id;
-    this.authService.updateUser(user);
+    this.userService.updateUser(user);
     //   .then(() => {
     //   this.router.navigateByUrl('/');
     // });

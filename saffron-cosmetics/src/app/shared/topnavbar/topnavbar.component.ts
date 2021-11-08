@@ -14,16 +14,16 @@ export class TopnavbarComponent implements OnInit {
   currentUser = this.authenticationService.getToken();
   user = this.authenticationService.getUserName();
   thisUserID = this.authenticationService.getUserID();
-  // @ts-ignore
+
   isLoggedIn: boolean;
-  // @ts-ignore
   isAdmin: boolean;
   /** Boolean values are used to store true or false values.*/
 
   logout(): any {
     this.authenticationService.logout();
-    this.router.navigate(['/']);
-    window.location.reload();
+    this.router.navigate(['/home']);
+    //window.location.reload();
+    this.refresh();
   }
 
   refresh(): void{
@@ -31,6 +31,7 @@ export class TopnavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    debugger
     this.authenticationService.isLoggedIn().subscribe(loggedIn => this.isLoggedIn = loggedIn);
     this.authenticationService.isLogAdmin().subscribe(loggedIn => this.isAdmin = loggedIn);
   }

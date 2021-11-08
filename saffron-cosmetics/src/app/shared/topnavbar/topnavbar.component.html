@@ -30,7 +30,7 @@
             <a *ngIf="!isLoggedIn" class="dropdown-item" href="/sign-up"> Sign in</a>
             <a *ngIf="isLoggedIn && isAdmin" class="dropdown-item"> {{user}}</a>
             <a *ngIf="isLoggedIn && !isAdmin" class="dropdown-item" >{{user}}</a>
-            <a *ngIf="isLoggedIn" class="dropdown-item " href="/user-update/{{thisUserID}}"> Update Your Account</a>
+            <a *ngIf="isLoggedIn" class="dropdown-item " routerLink="/user-update/{{thisUserID}}"> Update Your Account</a>
             <a class="dropdown-item" href="/login">Log in</a>
           </div>
         </li>
