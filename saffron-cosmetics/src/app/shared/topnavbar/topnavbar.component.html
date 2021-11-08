@@ -26,11 +26,11 @@
         <li class="nav-item dropdown">
           <a class="nav-link item topMenu"  style=" color: white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> MyAccount</a>
           <div class="dropdown-menu">
-            <a *ngIf="isLoggedIn" class="dropdown-item" (click)="logout()"> Sign Out</a>
-            <a *ngIf="!isLoggedIn" class="dropdown-item" href="/sign-up"> Sign in</a>
+            <a *ngIf="isLoggedIn" class="dropdown-item" (click)="logout()">Sign Out</a>
+            <a *ngIf="!isLoggedIn" class="dropdown-item" href="/sign-up">Sign in</a>
             <a *ngIf="isLoggedIn && isAdmin" class="dropdown-item"> {{user}}</a>
             <a *ngIf="isLoggedIn && !isAdmin" class="dropdown-item" >{{user}}</a>
-            <a *ngIf="isLoggedIn" class="dropdown-item " routerLink="/user-update/{{thisUserID}}"> Update Your Account</a>
+            <a *ngIf="isLoggedIn" class="dropdown-item " routerLink="/user-update">Update Your Account</a>
             <a class="dropdown-item" href="/login">Log in</a>
           </div>
         </li>

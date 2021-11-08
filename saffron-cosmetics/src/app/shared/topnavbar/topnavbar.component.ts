@@ -31,7 +31,6 @@ export class TopnavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger
     this.authenticationService.isLoggedIn().subscribe(loggedIn => this.isLoggedIn = loggedIn);
     this.authenticationService.isLogAdmin().subscribe(loggedIn => this.isAdmin = loggedIn);
   }

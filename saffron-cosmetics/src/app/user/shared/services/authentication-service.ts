@@ -70,9 +70,10 @@ export class AuthenticationService {
     return this.http.post<any>(environment.apiURL + '/api/token', {username, password})
       .pipe(map(response =>{
         const token = response && response.token;
+        const id = response.id
         console.log(response);
         if(token){
-          localStorage.setItem('currentUser', JSON.stringify({username: username, token: token }));
+          localStorage.setItem('currentUser', JSON.stringify({username: username, token: token, id: id}));
           debugger
           return true;
         } else {
@@ -81,7 +82,7 @@ export class AuthenticationService {
       }));
   };
 
-  signUp( user: User): Observable<User>{
+  signUp(user: User): Observable<User>{
     httpOptions.headers = httpOptions.headers.set('Authorization','Bearer' + this.getToken());
     return this.http.post<User>(environment.apiURL + '/api/user', user);
 
@@ -120,22 +121,17 @@ export class AuthenticationService {
 
 
   getToken(): string {
-
     const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
     return currentUser && currentUser.token;
   }
 
   getUserName(): string {
-    // @ts-ignore
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
     return currentUser && currentUser.username;
   }
 
-
   getUserID(): string {
-    debugger
     const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
-
     return currentUser && currentUser.id;
   }
 
@@ -148,32 +144,9 @@ export class AuthenticationService {
     }
   }
 
-  // logout(): void {
-  //   // remove user from local storage to log user out
-  //   this.isLoggedInSubject.next(false);
-  //   this.isLoggedAdmin.next(false);
-  //   localStorage.removeItem('currentUser');
-  // }
-
   logout(): void{
     localStorage.removeItem('currentUser');
   }
-
-
-  // // @ts-ignore
-  // updateUser(user: { name: string; lastName: string; email: string; pwd: string; address: string; postCode: string; phoneNumber: string; id: number;}): Observable<User> {
-  //   httpOptions.headers =
-  //     httpOptions.headers.set('Authorization', 'Bearer ' + this.getToken());
-  //   this.http.put<User>(environment.apiURL+ '/api/user' + user.id, user).subscribe(
-  //     data => {
-  //       console.log(data);
-  //       return data;
-  //     },
-  //     error => console.log('oops', error)
-  //   );
-
-
-
 
   readUserById(id: number): Observable<User> {
     return this.http.get<User>(environment.apiURL + '/api/user' + id);
