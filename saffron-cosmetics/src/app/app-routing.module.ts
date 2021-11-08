@@ -4,7 +4,7 @@ import { WelcomePageComponent} from "./welcome-page/welcome-page.component";
 import { ContactUsComponent} from "./shared/contact-us/contact-us.component";
 import {LoginComponent} from "./user/login/login.component";
 import {SignUpComponent} from "./user/login/sign-up/sign-up.component";
-import {UserUpdateComponent} from "./user-update/user-update.component";
+import {UserUpdateComponent} from "./user/user-update/user-update.component";
 
 
 

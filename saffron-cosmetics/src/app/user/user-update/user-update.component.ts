@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthenticationService} from "../user/shared/services/authentication-service";
+import {AuthenticationService} from "../shared/services/authentication-service";
 import {ActivatedRoute, Router} from "@angular/router";
 import { Location } from '@angular/common'
-import {UserService} from "../user/shared/services/user.service";
+import {UserService} from "../shared/services/user.service";
 
 @Component({
   selector: 'app-user-update',
@@ -44,6 +44,7 @@ export class UserUpdateComponent implements OnInit {
   }
 
   saveChanges() {
+    debugger
     const user = this.updateForm.value;
     user.id = this.id;
     this.userService.updateUser(user);
