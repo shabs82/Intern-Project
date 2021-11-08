@@ -131,6 +131,12 @@ export class AuthenticationService {
   }
 
 
+  getUserID(): string {
+    // @ts-ignore
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser && currentUser.id;
+  }
+
   getIsAdmin(): string | null {
     const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
     if (currentUser) {
@@ -149,6 +155,26 @@ export class AuthenticationService {
 
   logout(): void{
     localStorage.removeItem('currentUser');
+  }
+
+
+  // @ts-ignore
+  updateUser(user: { name: string; lastName: string; email: string; pwd: string; address: string; postCode: string; phoneNumber: string; id: number;}): Observable<User> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.getToken());
+    this.http.put<User>(environment.apiURL+ '/api/user' + user.id, user).subscribe(
+      data => {
+        console.log(data);
+        return data;
+      },
+      error => console.log('oops', error)
+    );
+
+
+  }
+
+  readUserById(id: number): Observable<User> {
+    return this.http.get<User>(environment.apiURL + '/api/user' + id);
   }
 }
 

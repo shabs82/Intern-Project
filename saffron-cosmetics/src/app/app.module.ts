@@ -16,6 +16,7 @@ import { DiscountsComponent } from './shared/discounts/discounts.component';
 import { SignUpComponent } from './user/login/sign-up/sign-up.component';
 import {AuthenticationService} from "./user/shared/services/authentication-service";
 import {LoginComponent} from "./user/login/login.component";
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 
 
@@ -32,6 +33,7 @@ import {LoginComponent} from "./user/login/login.component";
     ContactUsComponent,
     DiscountsComponent,
     SignUpComponent,
+    UserUpdateComponent,
 
   ],
   imports: [

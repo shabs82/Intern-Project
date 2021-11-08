@@ -188,6 +188,38 @@
           </li>
         </ul>
 
+
+        <div class="inputBox">
+          <input type="text" name="address" required="required" formControlName="address">
+          <span>Address </span>
+        </div>
+        <ul *ngIf="f.address.errors && (f.address.dirty || f.address.touched)">
+          <li *ngIf="f.address.errors.minlength" class="error-text"style="color: white;">  Address must be at least 5 characters</li>
+          <li *ngIf="f.address.errors.maxlength" class="error-text"style="color: white;">  Address must be no more than 100 characters</li>
+          <li *ngIf="f.address.errors.required" class="error-text"style="color: white;">  Address is required </li>
+        </ul>
+
+
+        <div class="inputBox">
+          <input type="number" name="postCode" required="required" formControlName="postCode">
+          <span>Your Post Code </span>
+        </div>
+        <ul *ngIf="f.postCode.errors && (f.postCode.dirty || f.postCode.touched)">
+          <li *ngIf="f.postCode.errors.minlength" class="error-text"style="color: white;">  Post Code must be at least 5 characters</li>
+          <li *ngIf="f.postCode.errors.maxlength" class="error-text"style="color: white;">  Post Code must be no more than 100 characters</li>
+          <li *ngIf="f.postCode.errors.required" class="error-text"style="color: white;">  Post Code is required </li>
+        </ul>
+
+        <div class="inputBox">
+          <input type="number" name="phoneNumber" required="required" formControlName="phoneNumber">
+          <span>Your Phone number </span>
+        </div>
+        <ul *ngIf="f.phoneNumber.errors && (f.phoneNumber.dirty || f.phoneNumber.touched)">
+          <li *ngIf="f.phoneNumber.errors.minlength" class="error-text"style="color: white;">  Post Code must be at least 5 characters</li>
+          <li *ngIf="f.phoneNumber.errors.maxlength" class="error-text"style="color: white;">  Post Code must be no more than 100 characters</li>
+          <li *ngIf="f.phoneNumber.errors.required" class="error-text"style="color: white;">  Post Code is required </li>
+        </ul>
+
         <ngx-recaptcha2 #captchaElem
                         [siteKey]="siteKey"
                         formControlName="recaptcha">
@@ -209,7 +241,7 @@
 
 
         <div class="account-exist" style="color: white;">
-          Already have an account? <a href="#" id="login"  routerLink="/login"style="color: white;">Login</a>
+          Already have an account? <a href="#" id="login"  routerLink="/login" >Login</a>
           <h6 > Remember to login with your new account</h6>
         </div>
 

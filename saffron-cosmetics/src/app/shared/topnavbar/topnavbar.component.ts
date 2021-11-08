@@ -13,6 +13,7 @@ export class TopnavbarComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService, private  router: Router) { }
   currentUser = this.authenticationService.getToken();
   user = this.authenticationService.getUserName();
+  thisUserID = this.authenticationService.getUserID();
   // @ts-ignore
   isLoggedIn: boolean;
   // @ts-ignore
