@@ -21,7 +21,6 @@ export class UserUpdateComponent implements OnInit {
     address : new FormControl(''),
     postCode : new FormControl(''),
     phoneNumber: new FormControl('')
-
   });
 
   constructor(private userService: UserService, private authenticationService: AuthenticationService,
