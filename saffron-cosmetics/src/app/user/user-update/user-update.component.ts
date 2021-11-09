@@ -14,10 +14,10 @@ export class UserUpdateComponent implements OnInit {
   id: number;
 
   updateForm = new FormGroup({
-    name : new FormControl(''),
+    firstName : new FormControl(''),
     lastName : new FormControl(''),
     email : new FormControl(''),
-    pwd : new FormControl(''),
+    password : new FormControl(''),
     address : new FormControl(''),
     postCode : new FormControl(''),
     phoneNumber: new FormControl('')
@@ -32,9 +32,9 @@ export class UserUpdateComponent implements OnInit {
     this.userService.readUserById(this.id).subscribe(userFromRest => {
       console.log(userFromRest)
       this.updateForm.patchValue({
-        name : userFromRest.firstName,
+        firstName : userFromRest.firstName,
         lastName : userFromRest.lastName,
-        email : userFromRest.username,
+        email : userFromRest.email,
         pwd : userFromRest.password,
         address : userFromRest.address,
         postCode : userFromRest.postCode,
@@ -43,12 +43,10 @@ export class UserUpdateComponent implements OnInit {
     });
   }
 
-  saveChanges() {
-    debugger
+  async saveChanges() {
     const user = this.updateForm.value;
     user.id = this.id;
-    this.userService.updateUser(user);
-    this.router.navigateByUrl('/');
+    await this.userService.updateUser(user).subscribe(() => {this.router.navigateByUrl('/');});
   }
 
   back(): void {

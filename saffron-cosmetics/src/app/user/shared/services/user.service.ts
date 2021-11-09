@@ -25,14 +25,6 @@ export class UserService {
 
 
   updateUser(user: User): Observable<User> {
-    //return this.http.put<User>(environment.apiURL + '/api/user/' + user.id, user).subscribe(
-     //data => {
-     //   console.log(data);
-     //   return data;
-     // },
-     // error => console.log('oops', error)
-    // );
-    debugger
     console.log(user.id)
     return this.http.put<User>(environment.apiURL + '/api/user/' + user.id, user);
   }
