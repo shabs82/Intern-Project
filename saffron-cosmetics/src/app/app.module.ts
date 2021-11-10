@@ -17,7 +17,11 @@ import { SignUpComponent } from './user/login/sign-up/sign-up.component';
 import {AuthenticationService} from "./user/shared/services/authentication-service";
 import {LoginComponent} from "./user/login/login.component";
 import { UserUpdateComponent } from './user/user-update/user-update.component';
-
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import {AuthState} from "./user/shared/state/auth/auth.state";
+import {NgxsModule} from "@ngxs/store";
+import {environment} from "../environments/environment";
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 
 
@@ -34,6 +38,7 @@ import { UserUpdateComponent } from './user/user-update/user-update.component';
     DiscountsComponent,
     SignUpComponent,
     UserUpdateComponent,
+    UserDetailComponent,
 
   ],
   imports: [
@@ -44,7 +49,13 @@ import { UserUpdateComponent } from './user/user-update/user-update.component';
     ReactiveFormsModule,
     NgbAlertModule,
     NgxCaptchaModule,
-    FormsModule
+    FormsModule,
+    NgxsModule.forRoot([AuthState], {
+      developmentMode: !environment.production
+    }),
+    NgxsStoragePluginModule.forRoot({
+      key: ['']
+    }),
   ],
   providers: [AuthenticationService],
   exports: [

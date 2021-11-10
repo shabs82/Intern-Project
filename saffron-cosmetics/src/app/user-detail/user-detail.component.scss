@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+  padding: 50px 25px 0;
+  max-width: 668px;
+  width: 100%;
+  margin: auto;
+}
+
+.wrapper ::before {
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background: url('../../../src/assets/welcome-page/saffron-advent-calendar-for-women.jpg') no-repeat center;
+  min-height: 100vh;
+  z-index: -1;
+}
+.wrapper .headline h5{
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 20px;
+  alignment: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.wrapper .form {
+  max-width: 350px;
+  width: 100%;
+  margin: auto;
+}
+
+.wrapper .form-group{
+  margin-bottom: 15px;
+}
+
+.wrapper .form-group input{
+  display: block;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  padding: 11px 15px;
+  height: 48px;
+  border-radius: 5px;
+  color: #222222;
+  border: #4E83DB;
+  box-shadow: none;
+  width: 100%;
+}
+.wrapper .form-group input:focus {
+  outline: none;
+}
+.wrapper .form-group input ::placeholder{
+  color: #222222;
+  font-size: 12px;
+  font-weight: 300;
+}
+.wrapper .btn {
+  width: 100%;
+  margin: 15px 0 30px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 12px 29px;
+  height: 48px;
+  text-transform: uppercase;
+  border: none;
+  color: white;
+  background-color: #24262b;
+  border-radius: 2px;
+  cursor: pointer;
+  text-align: center;
+
+}
+.wrapper .btn:focus {
+  outline: none;
+}
+.wrapper .account-exist{
+  color: #222222;
+  border-top: 1px solid lightgrey;
+  padding-top: 20px;
+  text-align: center;
+}
+.wrapper .account-exist a{
+  color: #4E83DB;
+}
+.wrapper .forget-password{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+.wrapper .forget-password a{
+  color: #4E83DB;
+}
+.wrapper .forget-password .check-box{
+  font-size: 12px;
+  color: black;
+}
+
+.signup.inActive{
+  display: none;
+}
+.signin{
+  display: none;
+}
+.signin .active{
+  display: block;
+}
+@media (max-width: 1030px) {
+  .wrapper ::before{
+    left: -25%;
+    min-height: 60vh;
+    height: 500px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper{
+    max-width: 550px;
+  }
+
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500&display=swap');
+
+.some-class{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kaisei Opti', serif;
+}
+.contact{
+  position: relative;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url('../../../src/assets/welcome-page/Update-background.jpg') no-repeat;
+  background-size: 100%;
+}
+
+.contact .content{
+  max-width: 800px;
+  text-align: center;
+}
+
+.contact .content h5{
+  font-size: 36px;
+  font-weight: 500;
+  color: #24262b;
+}
+
+.contact .content p {
+  font-weight: 300;
+  color: #24262b;
+}
+.container-fluid{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.container-fluid .Contact-Info{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  border: antiquewhite 2px solid;
+}
+.container-fluid .Contact-Info .box {
+  position: relative;
+  display: flex;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px 10px 10px 20px;
+}
+.container-fluid .Contact-Info .box .icon{
+  min-width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+}
+.container-fluid .Contact-Info .box .text{
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #fff;
+  flex-direction: column;
+  font-weight: 300;
+  align-content: center;
+}
+.container-fluid .Contact-Info .box .text h6{
+  color: #4E83DB;
+}
+.contactForm{
+  width: 40%;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.9);
+  border: antiquewhite 2px solid;
+}
+.contactForm h5{
+  font-size: 30px;
+  color: #3D2022;
+  font-weight: 500;
+}
+.contactForm .inputBox{
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+
+}
+.contactForm .inputBox input, .contactForm .inputBox textarea{
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #24262b;
+  outline: none;
+  resize: none;
+  color: #000000;
+}
+.contactForm .inputBox span{
+  position: absolute;
+  left: 0;
+  font-size: 14px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  padding: 7px 0 0 10px;
+}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span{
+  color: #FA1F12;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+.contactForm .inputBox input[type="Submit"]{
+  width: 100%;
+  background: #24262b;
+  color: #000000;;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+}
+.contactForm .inputBox input[type="Submit"]:hover{
+  width: 100%;
+  background: antiquewhite;
+  color: #222222;
+}
+@media (max-width: 991px) {
+  .contact{
+    padding: 50px;
+  }
+  .container-fluid{
+    flex-direction: column;
+  }
+  .container-fluid .ContactInfo{
+    margin-bottom: 40px;
+  }
+  .container-fluid .Contact-Info, contactForm{
+    width: 100%;
+  }
+}
+
+.input-text{
+
+}
+
+body {
+  margin: 0;
+  padding-top: 40px;
+  color: #2e323c;
+  background: #f5f6fa;
+  position: relative;
+  height: 100%;
+}
+.account-settings .user-profile {
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+  margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+  margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #9fa8b9;
+}
+.account-settings .about {
+  margin: 2rem 0 0 0;
+  text-align: center;
+}
+.account-settings .about h5 {
+  margin: 0 0 15px 0;
+  color: #007ae1;
+}
+.account-settings .about p {
+  font-size: 0.825rem;
+}
+.form-control {
+  border: 1px solid #cfd1d8;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: .825rem;
+  background: #ffffff;
+  color: #2e323c;
+}
+
+.card {
+  background: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  margin-bottom: 1rem;
+}
+
