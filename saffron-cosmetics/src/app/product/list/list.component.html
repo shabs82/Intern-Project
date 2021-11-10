@@ -1,5 +1,7 @@
 <div class="card-container" >
-  <div class="productCard" *ngFor="let product of productsByCategoryId">
+  <div class="row row-cols-md-4">
+   <div class="productCard" *ngFor="let product of productsByCategoryId">
     <app-product-item [productItem]="product"></app-product-item>
-  </div>
+   </div>
+ </div>
 </div>
