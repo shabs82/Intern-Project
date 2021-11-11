@@ -19,11 +19,15 @@ export class UserDetailComponent implements OnInit {
   constructor(private location: Location, private authenticationService: AuthenticationService, private store: Store,) {
     this.currentUser.subscribe((data) =>{
       console.log(data);
+
       this.user = data;
+      console.log(this.user);
     })
   }
   @Select(AuthState.getUser) currentUser: Observable<User>;
+
   user: User;
+
   userinfo = this.authenticationService.getUser();
   userName = this.authenticationService.getUserName();
   // currentUser = this.authenticationService.getToken();

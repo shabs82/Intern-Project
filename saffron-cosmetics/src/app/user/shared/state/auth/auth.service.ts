@@ -47,14 +47,16 @@ export class AuthService {
    const response =  await this.http.post<any>(environment.apiURL + '/api/token', {username, password}).toPromise();
    //Decode token
     const decodedToken = jwt_decode(response.token);
+    console.log(response);
+    debugger
     if (response.token) {
       // @ts-ignore
       if ('Administrator' === decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']) {
         // @ts-ignore
-        return {id:response.id ,email: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],isAdmin:true, firstName: response.username ,token: response.token} as User;
+        return {id:response.id ,email: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],isAdmin:true, firstName: response.firstName, lastName: response.lastName, phoneNumber: response.phoneNumber, address: response.address, postCode: response.postCode, token: response.token} as User;
       } else {
         // @ts-ignore
-        return {id:response.id,email: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],isAdmin:true, firstName: response.username ,token: response.token} as User;
+        return {id:response.id,email: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],isAdmin:true, firstName: response.firstName,lastName: response.lastName, phoneNumber: response.phoneNumber, address: response.address, postCode: response.postCode, token: response.token} as User;
       }
     }
 

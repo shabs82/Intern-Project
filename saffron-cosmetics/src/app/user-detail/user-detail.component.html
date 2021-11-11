@@ -152,10 +152,10 @@
       <div class="card h-100">
         <div class="card-body">
           <div class="account-settings">
-            <div class="user-profile">
-              <h5> Welcome</h5>
+            <div class="user-profile" style="font-family: 'Poppins', sans-serif">
+              <h5 style="font-family: 'Poppins', sans-serif"> Welcome</h5>
               <h5 class="user-name">{{user.firstName}}</h5>
-              <h6 class="user-address">{{user.address}}</h6>
+
             </div>
             <div class="options">
               <h5>Options:</h5>
@@ -180,9 +180,8 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div class="form-group">
-                <label for="fullName">Full Name:</label>
-                <p>{{user.lastName}}
-                  {{user.firstName}}</p>
+                <label>Full Name:</label>
+                <p>{{user.firstName}} {{user.lastName}}</p>
                 <!--                <input type="textarea" class="form-control" id="fullName" placeholder="{{userName}}">-->
 <!--                <label> {{user}}</label>-->
               </div>
@@ -202,12 +201,7 @@
 
               </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-              <div class="form-group">
-                <label for="website">Website URL</label>
-                <input type="url" class="form-control" id="website" placeholder="Website url">
-              </div>
-            </div>
+
           </div>
           <div class="row gutters">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
