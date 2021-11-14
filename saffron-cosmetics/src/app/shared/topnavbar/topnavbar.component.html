@@ -29,7 +29,7 @@
             <a *ngIf="!user" class="dropdown-item" href="/sign-up">Sign in</a>
             <a *ngIf="user && user.isAdmin" class="dropdown-item" routerLink="/user-details"> {{user.firstName}}</a>
             <a *ngIf="user && !user.isAdmin" class="dropdown-item" routerLink="/user-details">{{user.firstName}}</a>
-            <a *ngIf="user" class="dropdown-item " routerLink="/user-update">Update Your Account</a>
+<!--            <a *ngIf="user" class="dropdown-item " routerLink="/user-update">Update Your Account</a>-->
             <a *ngIf="user" class="dropdown-item" (click)="logout()">Sign Out</a>
             <a *ngIf="!user" class="dropdown-item" href="/login">Log in</a>
           </div>

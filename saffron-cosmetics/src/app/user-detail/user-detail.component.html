@@ -147,18 +147,19 @@
 <!--</section>-->
 
 <div class="container">
-  <div class="row gutters">
+  <div class="row gutters" >
     <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
       <div class="card h-100">
-        <div class="card-body">
+        <div class="card-body" >
+<!--          style="background-color: #1816"-->
           <div class="account-settings">
-            <div class="user-profile" style="font-family: 'Poppins', sans-serif">
-              <h5 style="font-family: 'Poppins', sans-serif"> Welcome</h5>
-              <h5 class="user-name">{{user.firstName}}</h5>
+            <div class="user-profile" >
+              <h5 style="font-family: 'Kaisei Opti', serif; color: black"> Welcome</h5>
+              <h5 style="font-family: 'Kaisei Opti', serif"class="user-name">{{user.firstName}} {{user.lastName}}</h5>
 
             </div>
             <div class="options">
-              <h5>Options:</h5>
+              <h5 style="font-family: 'Kaisei Opti', serif">Options:</h5>
               <div>
               <button type="button" id="submit" name="submit" class="btn btn-info" routerLink="/user-update"> Update your Account</button>
               </div>
@@ -173,7 +174,8 @@
     </div>
     <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
       <div class="card h-100">
-        <div class="card-body">
+        <div class="card-body" >
+<!--          style="background-color: #e34f4f"-->
           <div class="row gutters">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <h6 class="mb-2 text-primary">Personal Details</h6>
@@ -239,8 +241,8 @@
           <div class="row gutters">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="text-right">
-                <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
-                <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+                <button type="button" id="submit" name="submit" class="btn btn-secondary" (click)="back()">Back</button>
+<!--                <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>-->
               </div>
             </div>
           </div>

@@ -6,7 +6,14 @@
   user-select: none;
   font-family: 'Poppins', sans-serif;
 }
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500&display=swap');
+.things{
+  color: black;
+  font-size: 15px;
+  font-family: 'Kaisei Opti', serif;
+  border-bottom: 2px solid transparent;
 
+}
 .wrapper{
   padding: 50px 25px 0;
   max-width: 668px;
