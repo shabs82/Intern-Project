@@ -130,6 +130,16 @@ export class AuthenticationService {
     return currentUser && currentUser.username;
   }
 
+  getFirstName(): string {
+    const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
+    return currentUser && currentUser.name;
+  }
+
+  getUser(): string {
+    const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
+    return currentUser && currentUser.firstName && currentUser.lastName;
+  }
+
   getUserID(): string {
     const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
     return currentUser && currentUser.id;
@@ -150,6 +160,11 @@ export class AuthenticationService {
 
   readUserById(id: number): Observable<User> {
     return this.http.get<User>(environment.apiURL + '/api/user' + id);
+  }
+
+  getUserMail() {
+    const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
+    return currentUser && currentUser.email;
   }
 }
 

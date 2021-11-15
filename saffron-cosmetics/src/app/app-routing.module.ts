@@ -5,6 +5,7 @@ import { ContactUsComponent} from "./shared/contact-us/contact-us.component";
 import {LoginComponent} from "./user/login/login.component";
 import {SignUpComponent} from "./user/login/sign-up/sign-up.component";
 import {UserUpdateComponent} from "./user/user-update/user-update.component";
+import {UserDetailComponent} from "./user-detail/user-detail.component";
 
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'user-update', component: UserUpdateComponent},
+  { path: 'user-details', component: UserDetailComponent},
   { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
   { path: 'product', loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
 ];

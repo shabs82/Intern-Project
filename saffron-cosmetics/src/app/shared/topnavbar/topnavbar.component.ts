@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from "../../user/shared/services/authentication-service";
 import {Router} from "@angular/router";
+import {AuthState} from "../../user/shared/state/auth/auth.state";
+import {Observable} from "rxjs";
+import {Select, Store} from "@ngxs/store";
+import {User} from "../../user/shared/model/user";
+import {Logout} from "../../user/shared/state/auth/auth.action";
 
 @Component({
   selector: 'app-topnavbar',
@@ -10,29 +15,32 @@ import {Router} from "@angular/router";
 export class TopnavbarComponent implements OnInit {
 
 
-  constructor(private authenticationService: AuthenticationService, private  router: Router) { }
-  currentUser = this.authenticationService.getToken();
-  user = this.authenticationService.getUserName();
-  thisUserID = this.authenticationService.getUserID();
+  constructor(private store: Store, private  router: Router) {
+    this.currentUser.subscribe((data) =>{
+      console.log(data);
+      this.user = data;
+    })
+  }
 
-  isLoggedIn: boolean;
-  isAdmin: boolean;
+  @Select(AuthState.getUser) currentUser: Observable<User>;
+  user: User;
+
   /** Boolean values are used to store true or false values.*/
 
   logout(): any {
-    this.authenticationService.logout();
-    this.router.navigate(['/home']);
-    //window.location.reload();
-    this.refresh();
+    this.store.dispatch(new Logout()).subscribe(success => {
+        //window.location.reload();
+        //this.router.navigate(['/']);
+        //window.location.reload();
+      },
+      error => {
+      });
   }
 
   refresh(): void{
-    window.location.reload();
   }
 
   ngOnInit(): void {
-    this.authenticationService.isLoggedIn().subscribe(loggedIn => this.isLoggedIn = loggedIn);
-    this.authenticationService.isLogAdmin().subscribe(loggedIn => this.isAdmin = loggedIn);
   }
 
 }
