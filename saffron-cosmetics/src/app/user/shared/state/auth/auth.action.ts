@@ -13,3 +13,8 @@ export class SignUp {
 export class Logout {
   static readonly type = '[Auth] Logout';
 }
+
+export class NewPassword {
+  static readonly type = '[Auth] New Password';
+  constructor(public newPassword: string, public password: string) {}
+}
