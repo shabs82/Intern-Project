@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {User} from "../user/shared/model/user";
+import {User} from "../shared/model/user";
 import {FormGroup} from "@angular/forms";
 import {Location} from "@angular/common";
-import {AuthenticationService} from "../user/shared/services/authentication-service";
+import {AuthenticationService} from "../shared/services/authentication-service";
 import {Select, Store} from "@ngxs/store";
-import {AuthState} from "../user/shared/state/auth/auth.state";
+import {AuthState} from "../shared/state/auth/auth.state";
 import {Observable} from "rxjs";
 
 @Component({

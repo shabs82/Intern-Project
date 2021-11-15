@@ -5,7 +5,7 @@ import { ContactUsComponent} from "./shared/contact-us/contact-us.component";
 import {LoginComponent} from "./user/login/login.component";
 import {SignUpComponent} from "./user/login/sign-up/sign-up.component";
 import {UserUpdateComponent} from "./user/user-update/user-update.component";
-import {UserDetailComponent} from "./user-detail/user-detail.component";
+import {UserDetailComponent} from "./user/user-detail/user-detail.component";
 import {ForgotPasswordComponent} from "./user/forgot-password/forgot-password.component";
 
 

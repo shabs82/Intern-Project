@@ -17,7 +17,7 @@ import { SignUpComponent } from './user/login/sign-up/sign-up.component';
 import {AuthenticationService} from "./user/shared/services/authentication-service";
 import {LoginComponent} from "./user/login/login.component";
 import { UserUpdateComponent } from './user/user-update/user-update.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import {AuthState} from "./user/shared/state/auth/auth.state";
 import {NgxsModule} from "@ngxs/store";
 import {environment} from "../environments/environment";
