@@ -81,7 +81,7 @@ export class SignUpComponent implements OnInit {
     //     this.errormessage = error.message;
     //     this.loading = false;
     //   });
-    this.store.dispatch(new SignUp({email: this.loginForm.value.email, password: this.loginForm.value.pwd, firstName: this.loginForm.value.name,
+    this.store.dispatch(new SignUp( {email: this.loginForm.value.email, password: this.loginForm.value.pwd, firstName: this.loginForm.value.name,
      lastName: this.loginForm.value.lastName, postCode: this.loginForm.value.postCode, address: this.loginForm.value.address, phoneNumber: this.loginForm.value.phoneNumber}))
       .subscribe(success =>{
       console.log('Success', success);

@@ -150,6 +150,7 @@
           <span> Password</span>
         </div>
 
+
         <ul *ngIf="f.pwd.errors && (f.pwd.dirty || f.pwd.touched)">
           <li *ngIf="f.pwd.errors.minlength" class="error-text"style="color: white;">  Password must be at least 5 characters</li>
           <li *ngIf="f.pwd.errors.maxlength" class="error-text"style="color: white;">  Password must be no more than 20 characters</li>
@@ -157,6 +158,11 @@
             <div class="glitch" data-text="The password is in the questions"style="color: white;">The password is in the questions</div>
           </li>
         </ul>
+
+        <div class="password-forgot" style="color: white; ">
+           <a href="#" id="forgot-password" routerLink="/forgot-password">Forgotten password</a>
+        </div>
+
 
         <ngx-recaptcha2 #captchaElem
                         [siteKey]="siteKey"

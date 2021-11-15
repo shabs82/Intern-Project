@@ -22,6 +22,7 @@ import {AuthState} from "./user/shared/state/auth/auth.state";
 import {NgxsModule} from "@ngxs/store";
 import {environment} from "../environments/environment";
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 
 
 
@@ -39,6 +40,7 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
     SignUpComponent,
     UserUpdateComponent,
     UserDetailComponent,
+    ForgotPasswordComponent,
 
   ],
   imports: [

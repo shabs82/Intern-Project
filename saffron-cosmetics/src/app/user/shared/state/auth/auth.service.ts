@@ -66,19 +66,8 @@ export class AuthService {
 
   async signUp(user: User): Promise<User>{
     //httpOptions.headers = httpOptions.headers.set('Authorization','Bearer' + this.getToken());
-    return  await this.http.post<User>(environment.apiURL + '/api/user', user).toPromise();
+    return await this.http.post<User>(environment.apiURL + '/api/user', user).toPromise();
 
-    // return this.http.post<any>(environment.apiURL + '/api/user', {username, password})
-    //   .pipe(map(response =>{
-    //     const token = response && response.token;
-    //     console.log(response);
-    //     if(token){
-    //       localStorage.setItem('currentUser', JSON.stringify({username: username, token: token }));
-    //       return true;
-    //     } else {
-    //       return false;
-    //     }
-    //   }));
   };
 
 
@@ -110,5 +99,13 @@ export class AuthService {
     console.log(currentUser);
     localStorage.setItem('currentUser', currentUser);
   }
+
+  forgotPassword(){
+    console.log('This is the method for updating user password');
+  //   return this.http.post<any>(environment.apiURL + '/api/user'),{
+  //
+  //   }
+  }
+
 
 }

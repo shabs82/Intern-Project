@@ -20,7 +20,7 @@ export class AuthStateModel {
 @Injectable()
 export class AuthState {
 
-  constructor(    private authService: AuthService,) {
+  constructor(private authService: AuthService,) {
   }
 
   @Selector()
