@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+h1 {
+  text-align: center;
+  padding-top: 30px;
+  border-bottom: 3px solid #F85B32;
+  width: 260px;
+  display: table;
+  margin: 0 auto;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.cart-page{
+  margin: 80px auto;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+th{
+  text-align: left;
+  padding: 5px;
+  color: #fff;
+  background: #F85B32;
+  font-weight: normal;
+  font-size: 17px;
+}
+td{
+  padding: 10px 5px;
+}
+td input{
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+td a {
+  color: #007ae1;
+  font-size: 12px;
+}
+td img{
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.total-price{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total-price table{
+  border-top: 3px solid #FA1F12;
+  width: 100%;
+  max-width: 360px;
+}
+td:last-child{
+  text-align: right;
+}
+th:last-child{
+  text-align: right;
+}
+@media only screen and (max-width: 600px) {
+  .cart-info p{
+    display: none;
+  }
+}
+
