@@ -15,7 +15,7 @@ export class ProductService {
  }
 
   getProductById(id: string): Observable<Product>{
-    return this.http.get<Product>('https://localhost:44375/api/product/id');
+    return this.http.get<Product>('https://localhost:44375/api/product/'+ id);
   }
 
   async getProductsBySecondaryClassId(secondaryClassId: number): Promise<any[]> {
