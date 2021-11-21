@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthenticationService} from "../../shared/services/authentication-service";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {Store} from "@ngxs/store";
+import {LoginUser, SignUp} from "../../shared/state/auth/auth.action";
 
 @Component({
   selector: 'app-sign-up',
@@ -29,7 +31,7 @@ export class SignUpComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService,private formBuilder: FormBuilder,
               private http: HttpClient,
-              private  router: Router) { }
+              private  router: Router, private store:Store) { }
 
   ngOnInit(): any {
     this.loginForm = this.formBuilder.group({
@@ -37,11 +39,11 @@ export class SignUpComponent implements OnInit {
       lastName : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
       email : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(200)])],
       pwd : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(20)])],
+      address : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(30)])],
+      postCode : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
+      phoneNumber : ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(20)])],
       recaptcha: ['', Validators.required]
     });
-    // this.aFormGroup = this.formBuilder.group({
-    //   recaptcha: ['', Validators.required]
-    // });
   }
 
   siteKey:string = "6LdNqg0dAAAAAG-tuIiGAPulOIkivnkKbKXtKtBp";
@@ -59,17 +61,24 @@ export class SignUpComponent implements OnInit {
 
     console.log('Email', this.loginForm.value.email);
     console.log('Password',this.loginForm.value.pwd);
+    console.log('First Name',this.loginForm.value.name);
+    console.log('Last Name',this.loginForm.value.lastName);
+    console.log('Address',this.loginForm.value.address);
+    console.log('Post COde',this.loginForm.value.postCode);
+    console.log('Phone Number',this.loginForm.value.phoneNumber);
     //this.loginForm.value.adminCheck
     // @ts-ignore
-    this.authenticationService.signUp({email: this.loginForm.value.email, password: this.loginForm.value.pwd})
-      .subscribe(success => {
-        console.log('Success', success);
-        this.router.navigate(['/']);
-      },
-      error => {
+    this.store.dispatch(new SignUp({email: this.loginForm.value.email, password: this.loginForm.value.pwd, firstName: this.loginForm.value.name,
+     lastName: this.loginForm.value.lastName, postCode: this.loginForm.value.postCode, address: this.loginForm.value.address, phoneNumber: this.loginForm.value.phoneNumber}))
+      .subscribe(success =>{
+      console.log('Success', success);
+        },
+        error => {
         this.errormessage = error.message;
-        this.loading = false;
-      });
+          this.loading = false;
+        }
+      )
+
   }
 
   toggleFieldTextType(): any {

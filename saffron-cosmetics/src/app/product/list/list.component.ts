@@ -12,7 +12,8 @@ export class ListComponent implements OnInit {
 
   productsByCategoryId: Product[] | undefined;
 
-  constructor( private productService : ProductService, private route: ActivatedRoute) { }
+  constructor( private productService : ProductService, private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.refresh();
@@ -26,5 +27,9 @@ export class ListComponent implements OnInit {
   }
 
 
+  selectSingleProduct(product: Product) {
+    this.router.navigate(['/product/product-detail', product.id])
 
+
+  }
 }

@@ -3,6 +3,11 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../shared/services/authentication-service";
+import {Select, Store} from "@ngxs/store";
+import {LoginUser} from "../shared/state/auth/auth.action";
+import {AuthState} from "../shared/state/auth/auth.state";
+import {Observable} from "rxjs";
+import {User} from "../shared/model/user";
 
 @Component({
   selector: `app-login`,
@@ -19,8 +24,16 @@ export class LoginComponent implements OnInit {
   fieldTextType: boolean;
   userExists = false;
 
-  constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService, private http: HttpClient,
-              private  router: Router) { }
+  @Select(AuthState.getUser) currentUser: Observable<User>;
+
+  constructor(private formBuilder: FormBuilder, private store:Store, private http: HttpClient,
+              private  router: Router) {
+    this.currentUser.subscribe((data) =>{
+      if(data){
+        this.router.navigate(['/']);
+      }
+    })
+  }
 
   ngOnInit(): any {
     this.loginForm2 = this.formBuilder.group({
@@ -41,11 +54,11 @@ export class LoginComponent implements OnInit {
     this.loading = true;
 
     console.log(this.loginForm2.value.email, this.loginForm2.value.pwd);
-    this.authenticationService.login(this.loginForm2.value.email, this.loginForm2.value.pwd)
+    this.store.dispatch(new LoginUser(this.loginForm2.value.email, this.loginForm2.value.pwd))
       .subscribe(success => {
       //window.location.reload();
-      this.router.navigate(['/']);
-      window.location.reload();
+      //this.router.navigate(['/']);
+      //window.location.reload();
       },
       error => {
         this.errormessage = error.message;

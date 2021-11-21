@@ -4,92 +4,99 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-       <ul class="navbar-nav" id="nav">
-        <li class="nav-item active primary">
-          <a class="nav-link links-bar" style="cursor: pointer" routerLink="/">Home <span class="sr-only">(current)</span></a>
+       <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link links-bar" style="color: white" routerLink="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item dropdown primary">
-          <a class="nav-link links-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown links-bar" style="color: white" routerLink="/product/product-list" id="eyes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Eyes
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a *ngFor="let item of eyeArray"
-               class="dropdown-item" (click)="selectChangeLink($event)"
-               [id]="item.id">{{item.label}}</a>
+            <a class="dropdown-item" (click)="selectChangeLink($event)" id="14" routerLink="/">Eye Pencil</a>
+            <a class="dropdown-item" (click)="selectChangeLink($event)" id="13" routerLink="/">Mascara</a>
+            <a class="dropdown-item" (click)="selectChangeLink($event)" id="12" routerLink="/">Eye Brow</a>
+            <a class="dropdown-item" data-value="4" routerLink="/">Eye Lashes</a>
+            <a class="dropdown-item" data-value="5" routerLink="/">Eye Liner</a>
+            <a class="dropdown-item" data-value="6" routerLink="/">Eye Shadow</a>
+            <a class="dropdown-item" data-value="7" routerLink="/">Eye Lenses</a>
+            <a class="dropdown-item" data-value="8" routerLink="/">Kajal & Eye Shader</a>
+            <a class="dropdown-item" data-value="9" routerLink="/">Eye/Lips</a>
           </div>
         </li>
-        <li class="nav-item dropdown primary">
-          <a class="nav-link links-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown links-bar" style="color: white" routerLink="/product/product-list" id="lips" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Lips
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Colour Change Lipstick</a>
-            <a class="dropdown-item">Glitter Lipstick</a>
-            <a class="dropdown-item">Lip Gloss</a>
-            <a class="dropdown-item">Lip Liner</a>
-            <a class="dropdown-item">Lipstick</a>
-            <a class="dropdown-item">Lipstick/Lip Liner</a>
-            <a class="dropdown-item">Nude Colour Lipstick</a>
-            <a class="dropdown-item">Pro-Matte Lipstick</a>
-            <a class="dropdown-item">Zombie Nights Lipstick</a>
-            <a class="dropdown-item">Diamond Shine Lipstick</a>
+            <a class="dropdown-item" routerLink="/">Colour Change Lipstick</a>
+            <a class="dropdown-item" routerLink="/">Glitter Lipstick</a>
+            <a class="dropdown-item"  routerLink="/">Lip Gloss</a>
+            <a class="dropdown-item" routerLink="/">Lip Liner</a>
+            <a class="dropdown-item" (click)="selectChangeLink($event)" id="17" routerLink="/">Lipstick</a>
+            <a class="dropdown-item" routerLink="/">Lipstick/Lip Liner</a>
+            <a class="dropdown-item" routerLink="/">Nude Colour Lipstick</a>
+            <a class="dropdown-item"  routerLink="/">Pro-Matte Lipstick</a>
+            <a class="dropdown-item" routerLink="/">Zombie Nights Lipstick</a>
+            <a class="dropdown-item" routerLink="/">Diamond Shine Lipstick</a>
           </div>
         </li>
-        <li class="nav-item dropdown primary">
-          <a class="nav-link links-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown links-bar" style="color: white" href='#' id="nails" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Nails
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Nails Polish</a>
-            <a class="dropdown-item">Glitter Nail polish</a>
-            <a class="dropdown-item">Gel Effect Nail Polish DUO</a>
-            <a class="dropdown-item">Zombie Nights Nail Polish</a>
-            <a class="dropdown-item">Nail Accessories</a>
-            <a class="dropdown-item">Nail Art Nail Polish</a>
-            <a class="dropdown-item">Metallic Nail Polish</a>
+            <a class="dropdown-item" (click)="selectChangeLink($event)" id="21" routerLink="/">Nail Polish</a>
+            <a class="dropdown-item" routerLink="/">Glitter Nail polish</a>
+            <a class="dropdown-item" routerLink="/">Gel Effect Nail Polish DUO</a>
+            <a class="dropdown-item" routerLink="/">Zombie Nights Nail Polish</a>
+            <a class="dropdown-item"  routerLink="/">Nail Accessories</a>
+            <a class="dropdown-item" routerLink="/">Nail Art Nail Polish</a>
+            <a class="dropdown-item" routerLink="/">Metallic Nail Polish</a>
           </div>
         </li>
-        <li class="nav-item dropdown primary">
-          <a class="nav-link links-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown links-bar" style="color: white" href='#' id="face" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Face
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Compact Powder</a>
-            <a class="dropdown-item">Foundation</a>
-            <a class="dropdown-item">Blusher</a>
-            <a class="dropdown-item">Concealer/Contour</a>
-            <a class="dropdown-item">Concealer/Pencil</a>
-            <a class="dropdown-item">Foundation/Concealer</a>
-            <a class="dropdown-item">Primer</a>
-            <a class="dropdown-item">Bronzing/Highlighters</a>
+            <a class="dropdown-item" (click)="selectChangeLink($event)" id="8" routerLink="/">Compact Powder</a>
+            <a class="dropdown-item" routerLink="/">Foundation</a>
+            <a class="dropdown-item" routerLink="/">Blusher</a>
+            <a class="dropdown-item" routerLink="/">Concealer/Contour</a>
+            <a class="dropdown-item" routerLink="/">Concealer/Pencil</a>
+            <a class="dropdown-item"  routerLink="/">Foundation/Concealer</a>
+            <a class="dropdown-item" routerLink="/">Primer</a>
+            <a class="dropdown-item" routerLink="/">Bronzing/Highlighters</a>
           </div>
         </li>
-        <li class="nav-item dropdown primary">
-          <a class="nav-link links-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown links-bar" style="color: white" href='#' id="fragrance" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Fragrance
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Womens Fragrance</a>
-            <a class="dropdown-item">Mens Fragrance</a>
-            <a class="dropdown-item">Unisex Fragrance</a>
+            <a class="dropdown-item"  routerLink="/">Womens Fragrance</a>
+            <a class="dropdown-item" routerLink="/">Mens Fragrance</a>
+            <a class="dropdown-item" routerLink="/">Unisex Fragrance</a>
           </div>
         </li>
-        <li class="nav-item dropdown primary">
-          <a class="nav-link links-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown links-bar" style="color: white" href='#' id="accessories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Accessories
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Make Up Applicators</a>
-            <a class="dropdown-item">Make Up Brushes</a>
-            <a class="dropdown-item">Vanity Case</a>
+            <a class="dropdown-item"  routerLink="/">Make Up Applicators</a>
+            <a class="dropdown-item" routerLink="/">Make Up Brushes</a>
+            <a class="dropdown-item" routerLink="/">Vanity Case</a>
           </div>
         </li>
-        <li class="nav-item dropdown primary">
-          <a class="nav-link links-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown links-bar" style="color: white" href='#' id="giftsets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             GiftSets
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Gift Sets</a>
+            <a class="dropdown-item" routerLink="/">Gift Sets</a>
+
           </div>
         </li>
       </ul>

@@ -1,7 +1,12 @@
 export class User {
-  //mail: string;
   id?: number;
-  username?: string;
+  email?: string;
+  firstName: string;
+  lastName: string;
+  address: string;
+  postCode: string;
+  phoneNumber: string;
   password?: string;
   isAdmin?: boolean;
+  token: string;
 }
