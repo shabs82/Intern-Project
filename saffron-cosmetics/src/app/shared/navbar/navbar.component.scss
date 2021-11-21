@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sansita+Swashed&display=swap');
 
 .links-bar {
-  color: white !important;
   font-family: 'Slabo 27px', serif;
   font-size: 18px;
   margin-right: 6px;
   margin-left: 6px;
   cursor: default;
+  color: white !important;
   //border-bottom: 2px solid transparent;
 }
 
@@ -15,13 +15,13 @@
   display: block;
 }
 
-#nav .primary:hover a {
-  background-color: #fff;
+.dropdown-item:hover{
+  background-color: #EFEDF3;
+  cursor: pointer;
+}
+
+li:hover{
   color: black !important;
 }
 
-.dropdown-item:hover{
-  background-color: #EFEDF3 !important;
-  cursor: pointer;
-}
 
