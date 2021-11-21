@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
 
-  eyeArray = [{id:8,label:'Eye Shadow'}, {id:9,label:'Eye Liner'}, {id:10,label:'Eye Lenses'}, {id:11,label:'Eyebrows'}, {id:12,label:'Mascara'}, {id:13,label:'Eye Pencil'},
+  eyeArray = [{id:8,label:'Eye Shadow'}, {id:9,label:'Eye Liner'}, {id:10,label:'Eye Lenses'}, {id:11,label:'Eyebrows'}, {id:12,label:'Mascara'}, {id:14,label:'Eye Pencil'},
     {id:15,label:'Eye Lashes'}, {id:23,label:'Kajal & Eye Shade'}]
 
   constructor(private productService: ProductService, private router: Router) {
