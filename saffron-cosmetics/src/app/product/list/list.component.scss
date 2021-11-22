@@ -6,17 +6,19 @@
 }
 
 .productCard {
+  align-items: center;
+  text-align: center;
   margin: 20px;
   width: 200px;
   height: 350px;
   display: block;
 }
+#imagee{
+
+}
+
 .productCard :hover{
-  margin: 22px;
-  width: 202px;
-  height: 352px;
+  margin: 3px;
   display: block;
   cursor: pointer;
-  border: #4d4d4d;
-
 }
