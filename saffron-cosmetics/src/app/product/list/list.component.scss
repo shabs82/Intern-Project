@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Ubuntu&display=swap');
+
 .card-container{
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
-  margin: 10px;
+  margin: 80px;
+  text-align:center;
+  align-items: center;
 }
 
 .productCard {
   align-items: center;
   text-align: center;
-  margin: 20px;
+  margin: 10px 30px 10px 30px;
   width: 200px;
   height: 350px;
   display: block;
@@ -19,4 +23,12 @@
   margin: 3px;
   display: block;
   cursor: pointer;
+}
+
+.header{
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  margin: 0 30px 60px 30px;
+  border-bottom: 3px solid #FA1F12;
 }
