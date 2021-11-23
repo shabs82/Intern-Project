@@ -2,6 +2,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductService} from "../shared/services/product.service";
 import {ActivatedRoute} from "@angular/router";
+import {Product} from "../shared/model/product";
 
 
 @Component({
@@ -11,19 +12,25 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class DetailComponent implements OnInit {
 
+  product: Product;
+
   constructor(private productService: ProductService,
               private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((paramData)  =>{
       this.productService.getProductById(paramData['id'])
-        .subscribe((backendData) =>{
-        if(backendData.availability == -1 ){
+        .subscribe((product) =>{
+          this.product = product;
+        if(product.availability == -1 ){
           //Change the frontend button to out of stock.
         }
-        console.log(backendData);
+        console.log(product);
       })
     })
   }
 
+  addToCart() {
+
+  }
 }
