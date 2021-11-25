@@ -86,4 +86,7 @@ export class SignUpComponent implements OnInit {
   }
 
 
+  SignUpAlert() {
+    alert("You're now part of the Saffron Cosmetics family,  please log in with your new account.")
+  }
 }
