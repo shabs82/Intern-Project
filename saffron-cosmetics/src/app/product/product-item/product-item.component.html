@@ -1,16 +1,12 @@
-<div class="imgContainer">
+<div class="imgDiv">
   <img src="assets/products/{{productItem.id}}.jpg" class="prodImg" alt="...">
-
 </div>
-<div>
+<div class="name">
   <h6>{{productItem.name}}</h6>
 </div>
-<div>
-  <h6>{{productItem.price}}</h6>
+<div class="price">
+  <h6>£{{productItem.price}}</h6>
 </div>
 
 
 
-<div style="align-content: center">
-  <button (click)="addToCart()">Add to Cart</button>
-</div>

@@ -44,9 +44,6 @@ export class SignUpComponent implements OnInit {
       phoneNumber : ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(20)])],
       recaptcha: ['', Validators.required]
     });
-    // this.aFormGroup = this.formBuilder.group({
-    //   recaptcha: ['', Validators.required]
-    // });
   }
 
   siteKey:string = "6LdNqg0dAAAAAG-tuIiGAPulOIkivnkKbKXtKtBp";
@@ -71,16 +68,6 @@ export class SignUpComponent implements OnInit {
     console.log('Phone Number',this.loginForm.value.phoneNumber);
     //this.loginForm.value.adminCheck
     // @ts-ignore
-    // this.authenticationService.signUp({email: this.loginForm.value.email, password: this.loginForm.value.pwd, firstName: this.loginForm.value.name,
-    // lastName: this.loginForm.value.lastName, postCode: this.loginForm.value.postCode, address: this.loginForm.value.address, phoneNumber: this.loginForm.value.phoneNumber})
-    //   .subscribe(success => {
-    //     console.log('Success', success);
-    //     this.router.navigate(['/']);
-    //   },
-    //   error => {
-    //     this.errormessage = error.message;
-    //     this.loading = false;
-    //   });
     this.store.dispatch(new SignUp({email: this.loginForm.value.email, password: this.loginForm.value.pwd, firstName: this.loginForm.value.name,
      lastName: this.loginForm.value.lastName, postCode: this.loginForm.value.postCode, address: this.loginForm.value.address, phoneNumber: this.loginForm.value.phoneNumber}))
       .subscribe(success =>{
@@ -99,4 +86,7 @@ export class SignUpComponent implements OnInit {
   }
 
 
+  SignUpAlert() {
+    alert("You're now part of the Saffron Cosmetics family,  please log in with your new account.")
+  }
 }

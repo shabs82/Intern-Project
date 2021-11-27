@@ -11,10 +11,14 @@ import {ProductService} from "../shared/services/product.service";
 export class ListComponent implements OnInit {
 
   productsByCategoryId: Product[] | undefined;
+  secCatId = 0;
 
-  constructor( private productService : ProductService, private route: ActivatedRoute) { }
+  constructor( private productService : ProductService, private route: ActivatedRoute,
+              private router: Router) {
+  }
 
   ngOnInit(): void {
+
     this.refresh();
 
   }
@@ -22,9 +26,28 @@ export class ListComponent implements OnInit {
   async refresh(): Promise<void> {
     let secondaryClassId = parseInt(<string>this.route.snapshot.paramMap.get('secondaryClassId'))
     this.productsByCategoryId = await this.productService.getProductsBySecondaryClassId(secondaryClassId);
-    console.log(this.productsByCategoryId)
+    console.log(secondaryClassId);
+    let newLocation = `/pathName/${secondaryClassId}`;
+    // override default re-use strategy
+    this.router
+      .routeReuseStrategy
+      .shouldReuseRoute = function () {
+      return false;
+    };
+    this.router
+      .navigateByUrl(newLocation)
+      .then(
+        (worked) => {
+          //works only because we hooked
+          //the routeReuseStrategy.shouldReuseRoute above
+        },
+        (error) => {
+        }
+      );
   }
 
 
-
+  selectSingleProduct(product: Product) {
+    this.router.navigate(['/product/product-detail', product.id])
+  }
 }

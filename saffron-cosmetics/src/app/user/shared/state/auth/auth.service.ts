@@ -21,27 +21,7 @@ export class AuthService {
 
   constructor(private http: HttpClient ) {
   }
-  //Add Api Urls
-  // login(username: string, password: string): Observable<boolean> {
-  //   return this.http.post<any>(environment.apiURL + 'token', {username, password})
-  //     .pipe(map(response => {
-  //       const token = response.token;
-  //       //login successful if there's a jwt token in the response.
-  //       const decodedToken = jwt_decode(token);
-  //       if (token){
-  //         //Store username and jwt token in local storage to keep user logged in between page refreshes
-  //         this.setUpStorage({decodedToken: decodedToken, response: response});
-  //         this.isLoggedInSubject.next(true);
-  //         this.isLoggedAdmin.next(true);
-  //         window.location.reload();
-  //         return true;
-  //       } else{
-  //         this.isLoggedInSubject.next(false);
-  //         this.isLoggedAdmin.next(false);
-  //         return false;
-  //       }
-  //     }));
-  // }
+
 
   async loginUser(username: string, password: string): Promise<any>{
    const response =  await this.http.post<any>(environment.apiURL + '/api/token', {username, password}).toPromise();
@@ -50,6 +30,8 @@ export class AuthService {
     console.log(response);
     debugger
     if (response.token) {
+      // @ts-ignore
+      localStorage.setItem('currentUser', JSON.stringify({email: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'], id: response.id}));
       // @ts-ignore
       if ('Administrator' === decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']) {
         // @ts-ignore
@@ -68,17 +50,6 @@ export class AuthService {
     //httpOptions.headers = httpOptions.headers.set('Authorization','Bearer' + this.getToken());
     return  await this.http.post<User>(environment.apiURL + '/api/user', user).toPromise();
 
-    // return this.http.post<any>(environment.apiURL + '/api/user', {username, password})
-    //   .pipe(map(response =>{
-    //     const token = response && response.token;
-    //     console.log(response);
-    //     if(token){
-    //       localStorage.setItem('currentUser', JSON.stringify({username: username, token: token }));
-    //       return true;
-    //     } else {
-    //       return false;
-    //     }
-    //   }));
   };
 
 

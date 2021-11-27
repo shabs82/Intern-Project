@@ -1,1 +1,14 @@
-<p>detail works!</p>
+<div class="productDiv">
+<div class="imgDiv">
+  <img src="assets/products/{{product.id}}.jpg" class="prodImg" alt="...">
+</div>
+<div class="name">
+  <h6>{{product.name}}</h6>
+</div>
+<div class="price">
+  <h6>£{{product.price}}</h6>
+</div>
+<div class="addToCart" (click)="addToCart()">
+  <h6>Add To Cart</h6>
+</div>
+</div>
