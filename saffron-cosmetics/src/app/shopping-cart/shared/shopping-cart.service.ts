@@ -29,4 +29,8 @@ export class ShoppingCartService {
   saveChanges(): void {
     localStorage.setItem('selectedProductOrders', JSON.stringify(this.selectedProductOrders));
   }
+
+  removeFromCart(id: number | undefined) {
+    localStorage.removeItem('selectedProductOrders');
+  }
 }

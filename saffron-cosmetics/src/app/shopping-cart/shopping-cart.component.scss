@@ -54,7 +54,6 @@ td img{
 }
 
 .total-price table{
-  border-top: 3px solid #FA1F12;
   width: 100%;
   max-width: 360px;
 }
@@ -68,5 +67,14 @@ th:last-child{
   .cart-info p{
     display: none;
   }
+}
+
+.productCell{
+  border-bottom: 3px solid #FA1F12;
+}
+
+.removeBtn{
+  cursor: pointer;
+  color: #007ae1;
 }
 

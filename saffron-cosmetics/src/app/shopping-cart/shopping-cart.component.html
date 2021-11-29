@@ -1,41 +1,26 @@
 <h1>Shopping cart</h1>
 <div class="container cart-page">
-  <table>
+  <table >
     <tr>
       <th style="padding-left: 20px">Product</th>
       <th>Model</th>
       <th>Quantity</th>
       <th>Subtotal</th>
     </tr>
-    <tr>
+    <tr *ngFor="let product of usersSelectedProducts" class="productCell">
       <td>
         <div class="cart-info">
-          <img src="assets/products/1.jpg" alt="">
+          <img src="assets/products/{{product.product?.id}}.jpg" alt="">
           <div>
-            <p>Pencil</p>
-            <small>Price: $50.00</small>
-            <a href="">Remove</a>
+            <p>{{product.product?.name}}</p>
+            <small>£{{product.product?.price}}</small>
+            <small (click)="removeProductFromShoppingCart(product.product?.id)" class="removeBtn">  Remove</small>
           </div>
         </div>
       </td>
-      <td>Very Good model</td>
-      <td><input type="number" value="1"></td>
-      <td>60$</td>
-    </tr>
-    <tr>
-      <td>
-        <div class="cart-info">
-          <img src="assets/products/1.jpg" alt="">
-          <div>
-            <p>Pencil</p>
-            <small>Price: $50.00</small>
-            <a href="">Remove</a>
-          </div>
-        </div>
-      </td>
-      <td>Very Good model</td>
-      <td><input type="number" value="1"></td>
-      <td>60$</td>
+      <td>{{product.product?.description}}</td>
+      <td><input id="price" type="number" value="{{product.quantity}}"></td>
+      <td>£{{product.product?.price}}</td>
     </tr>
   </table>
   <div class="total-price">
