@@ -2,7 +2,7 @@
 <div class="container cart-page">
   <table >
     <tr>
-      <th style="padding-left: 20px">Product</th>
+      <th>Product</th>
       <th>Model</th>
       <th>Quantity</th>
       <th>Subtotal</th>
@@ -14,20 +14,20 @@
           <div>
             <p>{{product.product?.name}}</p>
             <small>£{{product.product?.price}}</small>
-            <small (click)="removeProductFromShoppingCart(product.product?.id)" class="removeBtn">  Remove</small>
+            <small (click)="removeProductFromShoppingCart(product.product!)" class="removeBtn">  Remove</small>
           </div>
         </div>
       </td>
-      <td>{{product.product?.description}}</td>
+      <td class="description"><span class="descriptionText">{{product.product?.description}}</span></td>
       <td><input id="price" type="number" value="{{product.quantity}}"></td>
-      <td>£{{product.product?.price}}</td>
+      <td>£{{product.quantity * product.product!.price | number: "1.2-2"}}</td>
     </tr>
   </table>
   <div class="total-price">
     <table>
       <tr>
         <td>Total</td>
-        <td>$200.00</td>
+        <td>${{totalPrice}}</td>
       </tr>
     </table>
   </div>

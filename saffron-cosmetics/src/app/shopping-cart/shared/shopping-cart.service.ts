@@ -8,6 +8,8 @@ import {BehaviorSubject} from "rxjs";
 })
 export class ShoppingCartService {
 
+  private totalPriceSubject = new BehaviorSubject<number>(this.getTotalPrice(this.loadOrderedProducts()));
+  totalPrice$ = this.totalPriceSubject.asObservable();
   selectedProductOrders: SelectedProductOrderModel[] = [];
 
   constructor() { }
@@ -30,7 +32,22 @@ export class ShoppingCartService {
     localStorage.setItem('selectedProductOrders', JSON.stringify(this.selectedProductOrders));
   }
 
-  removeFromCart(id: number | undefined) {
-    localStorage.removeItem('selectedProductOrders');
+  getTotalPrice(selectedProduct: SelectedProductOrderModel[]): number {
+    let totalPrice = 0;
+    for (const orderedProduct of selectedProduct) {
+      totalPrice += orderedProduct.quantity * orderedProduct.product!.price;
+    }
+    return totalPrice;
+  }
+
+  loadOrderedProducts(): SelectedProductOrderModel[] {
+    return JSON.parse(<string>localStorage.getItem('selectedProductOrders'));
+  }
+
+  removeFromCart(product: Product) {
+    debugger;
+    const selectedProductsOrders = this.loadOrderedProducts();
+    const currentOrderedProduct = this.loadOrderedProducts().find(p => p.product!.id === product.id);
+
   }
 }
