@@ -55,7 +55,7 @@ import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
       developmentMode: !environment.production
     }),
     NgxsStoragePluginModule.forRoot({
-      key: ['']
+      key: ['auth']
     }),
   ],
   providers: [AuthenticationService],

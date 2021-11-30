@@ -202,7 +202,7 @@
 
         <div class="inputBox">
           <input type="number" name="postCode" required="required" formControlName="postCode">
-          <span>Your Post Code </span>
+          <span>Post Code </span>
         </div>
         <ul *ngIf="f.postCode.errors && (f.postCode.dirty || f.postCode.touched)">
           <li *ngIf="f.postCode.errors.minlength" class="error-text"style="color: white;">  Post Code must be at least 5 characters</li>
@@ -212,7 +212,7 @@
 
         <div class="inputBox">
           <input type="number" name="phoneNumber" required="required" formControlName="phoneNumber">
-          <span>Your Phone number </span>
+          <span>Phone number </span>
         </div>
         <ul *ngIf="f.phoneNumber.errors && (f.phoneNumber.dirty || f.phoneNumber.touched)">
           <li *ngIf="f.phoneNumber.errors.minlength" class="error-text"style="color: white;">  Post Code must be at least 5 characters</li>
@@ -234,7 +234,7 @@
 
         <div class="inputBox">
           <div class="g-recaptcha" data-sitekey="mySiteKey"></div>
-          <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null && f.recaptcha.errors === null && f.name.errors === null && f.lastName.errors === null)" class="btn btn-info text-white login-button button-color" name="" (click)="SignUpAlert()" value="Sign in">
+          <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null && f.recaptcha.errors === null && f.name.errors === null && f.lastName.errors === null)" class="btn btn-info text-white login-button button-color" name="" (click)="SignUpAlert()" value="Sign Up">
         </div>
 
 
