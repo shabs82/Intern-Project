@@ -23,10 +23,19 @@ export class ShoppingCartComponent implements OnInit {
     this.totalPriceSub = this.cartService.totalPrice$.subscribe(totalPrice => {
       this.totalPrice = totalPrice;
     });
-    console.log(this.totalPrice)
   }
 
   removeProductFromShoppingCart(product: Product) {
-    this.cartService.removeFromCart(product);
+    this.cartService.removeAllProductFromCart(product);
+    this.usersSelectedProducts = this.cartService.loadOrderedProducts();
+  }
+
+  removeOneQuantityOfSelectedProductFromCart(product: Product) {
+    this.cartService.removeOneQuantityOfSelectedProductFromCart(product);
+    this.usersSelectedProducts = this.cartService.loadOrderedProducts();
+  }
+
+  addOneQuantityOfSelectedProductFromCart(product: Product) {
+
   }
 }

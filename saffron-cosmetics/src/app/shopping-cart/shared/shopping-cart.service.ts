@@ -12,7 +12,9 @@ export class ShoppingCartService {
   totalPrice$ = this.totalPriceSubject.asObservable();
   selectedProductOrders: SelectedProductOrderModel[] = [];
 
-  constructor() { }
+  constructor() {
+    this.selectedProductOrders = this.loadOrderedProducts();
+  }
 
   addToCart(product: Product) {
     const currentSelectedProductOrder = this.selectedProductOrders.find(ol => ol.product?.id === product.id);
@@ -44,10 +46,27 @@ export class ShoppingCartService {
     return JSON.parse(<string>localStorage.getItem('selectedProductOrders'));
   }
 
-  removeFromCart(product: Product) {
-    debugger;
-    const selectedProductsOrders = this.loadOrderedProducts();
-    const currentOrderedProduct = this.loadOrderedProducts().find(p => p.product!.id === product.id);
+  removeAllProductFromCart(product: Product) {
+    const currentOrderedProduct = this.selectedProductOrders.find(p => p.product!.id === product.id);
+      this.selectedProductOrders.forEach((orderLine: SelectedProductOrderModel, index) => {
+        if (orderLine === currentOrderedProduct) {
+          this.selectedProductOrders.splice(index, 1);
+        }
+      });
+    this.saveChanges();
+  }
 
+  removeOneQuantityOfSelectedProductFromCart(product: Product) {
+    const currentOrderedProduct = this.selectedProductOrders.find(p => p.product!.id === product.id);
+    if (currentOrderedProduct!.quantity > 1) {
+      currentOrderedProduct!.quantity--;
+    } else {
+      this.selectedProductOrders.forEach((orderLine: SelectedProductOrderModel, index) => {
+        if (orderLine === currentOrderedProduct) {
+          this.selectedProductOrders.splice(index, 1);
+        }
+      });
+    }
+    this.saveChanges();
   }
 }

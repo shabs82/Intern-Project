@@ -86,6 +86,19 @@ th:last-child{
   text-align: center;
   align-items: center;
 }
-th{
 
+.quantity{
+  width: 100px;
+  text-align: center;
+  align-items: center;
+}
+.addQ{
+  cursor: pointer;
+  padding-right: 7px;
+  color: green;
+}
+.deleteQ{
+  cursor: pointer;
+  padding-left: 7px;
+  color: black;
 }

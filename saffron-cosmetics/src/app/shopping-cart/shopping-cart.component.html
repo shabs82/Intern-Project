@@ -19,8 +19,9 @@
         </div>
       </td>
       <td class="description"><span class="descriptionText">{{product.product?.description}}</span></td>
-      <td><input id="price" type="number" value="{{product.quantity}}"></td>
-      <td>£{{product.quantity * product.product!.price | number: "1.2-2"}}</td>
+      <td class="quantity"><i class="fas fa-plus addQ" (click)="addOneQuantityOfSelectedProductFromCart(product.product!)"></i><input id="price" value="{{product.quantity}}">
+                                    <i class="fas fa-minus deleteQ" (click)="removeOneQuantityOfSelectedProductFromCart(product.product!)"></i></td>
+      <td class="price">£{{product.quantity * product.product!.price | number: "1.2-2"}}</td>
     </tr>
   </table>
   <div class="total-price">
