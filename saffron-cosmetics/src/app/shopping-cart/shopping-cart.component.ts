@@ -35,7 +35,8 @@ export class ShoppingCartComponent implements OnInit {
     this.usersSelectedProducts = this.cartService.loadOrderedProducts();
   }
 
-  addOneQuantityOfSelectedProductFromCart(product: Product) {
-
+  addOneQuantityOfSelectedProductToCart(product: Product) {
+    this.cartService.addToCart(product);
+    this.usersSelectedProducts = this.cartService.loadOrderedProducts();
   }
 }

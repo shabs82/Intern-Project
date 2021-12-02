@@ -69,4 +69,8 @@ export class ShoppingCartService {
     }
     this.saveChanges();
   }
+
+  addOneQuantityOfSelectedProductToCart(product: Product) {
+    
+  }
 }
