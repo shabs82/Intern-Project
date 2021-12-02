@@ -46,7 +46,7 @@ export class ShoppingCartService {
     return JSON.parse(<string>localStorage.getItem('selectedProductOrders'));
   }
 
-  removeAllProductFromCart(product: Product) {
+  removeWholeProductFromCart(product: Product) {
     const currentOrderedProduct = this.selectedProductOrders.find(p => p.product!.id === product.id);
       this.selectedProductOrders.forEach((orderLine: SelectedProductOrderModel, index) => {
         if (orderLine === currentOrderedProduct) {

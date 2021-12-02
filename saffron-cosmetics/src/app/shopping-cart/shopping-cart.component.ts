@@ -13,20 +13,20 @@ export class ShoppingCartComponent implements OnInit {
 
   usersSelectedProducts : SelectedProductOrderModel[] = [];
   totalPrice: number;
-  private qtySub: Subscription;
   private totalPriceSub: Subscription;
 
   constructor(private cartService: ShoppingCartService) { }
 
   ngOnInit(): void {
     this.usersSelectedProducts = JSON.parse(<string>localStorage.getItem('selectedProductOrders'));
+    debugger;
     this.totalPriceSub = this.cartService.totalPrice$.subscribe(totalPrice => {
       this.totalPrice = totalPrice;
     });
   }
 
   removeProductFromShoppingCart(product: Product) {
-    this.cartService.removeAllProductFromCart(product);
+    this.cartService.removeWholeProductFromCart(product);
     this.usersSelectedProducts = this.cartService.loadOrderedProducts();
   }
 
