@@ -23,12 +23,13 @@ table{
     flex-wrap: wrap;
 }
 th{
-  text-align: left;
   padding: 5px;
   color: #fff;
   background: #F85B32;
   font-weight: normal;
   font-size: 17px;
+  text-align: center;
+  align-items: center;
 }
 td{
   padding: 10px 5px;
@@ -54,7 +55,6 @@ td img{
 }
 
 .total-price table{
-  border-top: 3px solid #FA1F12;
   width: 100%;
   max-width: 360px;
 }
@@ -70,3 +70,35 @@ th:last-child{
   }
 }
 
+.productCell{
+  border-bottom: 3px solid #FA1F12;
+}
+
+.removeBtn{
+  cursor: pointer;
+  color: #007ae1;
+}
+.descriptionText{
+  padding-right: 300px;
+}
+
+.description{
+  text-align: center;
+  align-items: center;
+}
+
+.quantity{
+  width: 100px;
+  text-align: center;
+  align-items: center;
+}
+.addQ{
+  cursor: pointer;
+  padding-right: 7px;
+  color: green;
+}
+.deleteQ{
+  cursor: pointer;
+  padding-left: 7px;
+  color: black;
+}

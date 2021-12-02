@@ -12,7 +12,6 @@ import { BottomFooterComponent } from './shared/bottom-footer/bottom-footer.comp
 import { ContactUsComponent } from './shared/contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgxCaptchaModule } from 'ngx-captcha';
-import { DiscountsComponent } from './shared/discounts/discounts.component';
 import { SignUpComponent } from './user/login/sign-up/sign-up.component';
 import {AuthenticationService} from "./user/shared/services/authentication-service";
 import {LoginComponent} from "./user/login/login.component";
@@ -36,7 +35,6 @@ import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
     WelcomePageComponent,
     BottomFooterComponent,
     ContactUsComponent,
-    DiscountsComponent,
     SignUpComponent,
     UserUpdateComponent,
     ShoppingCartComponent,
