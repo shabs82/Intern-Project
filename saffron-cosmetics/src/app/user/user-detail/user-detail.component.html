@@ -1,170 +1,37 @@
-<!--<p>user-detail works!</p>-->
-<!--<div *ngIf="user">-->
 
-<!--  <h2>{{user.firstName | uppercase}} {{user.lastName | uppercase}} Details</h2>-->
-<!--  <div><span>id: </span>{{user.id}}</div>-->
-<!--  <div>-->
-<!--    <label for="hero-name">User name: </label>-->
-<!--    <input id="hero-name" [(ngModel)]="user.email" placeholder="name">-->
-<!--  </div>-->
+  <section class="h-50 gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card">
+            <div class="rounded-top text-white d-flex flex-row" style="background-color: #d10000; height:200px;">
+              <div class="ms-1 mt-5 d-flex flex-column" style="width: 150px;">
 
-<!--</div>-->
-
-<!--<section class="contact">-->
-<!--  <div class="content">-->
-<!--    <h5 style="color: white">My details</h5>-->
-<!--  </div>-->
-<!--  <div class="container-fluid">-->
-<!--    <div class="contactForm">-->
-<!--      <form [formGroup]="detailForm">-->
-<!--        <div class="field" style="color: white">-->
-<!--          <label style="color: white"> First Name</label>-->
-<!--         <textarea>{{user.firstName}}</textarea>-->
-<!--          <textarea>{{userinfo}}</textarea>-->
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white"> Last Name</label>-->
-<!--          <input type="text" name="lastName" required="required" formControlName="lastName">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white">Email</label>-->
-<!--          <input type="text" name="email" required="required" placeholder="" formControlName="email">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white">Address </label>-->
-<!--          <input type="text" name="address" required="required" formControlName="address">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white">Your Post Code </label>-->
-<!--          <input type="number" name="postCode" required="required" formControlName="postCode">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white">Your Phone number </label>-->
-<!--          <input type="number" name="phoneNumber" required="required" formControlName="phoneNumber">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="field">-->
-
-<!--&lt;!&ndash;          <input type="submit"  class="btn btn-info text-white login-button button-color" name="" value="Save your Changes">&ndash;&gt;-->
-<!--          <input class="btn btn-info text-white exit-button button-color" (click)="back()" value="Back">-->
-<!--        </div>-->
-
-
-<!--      </form>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
-
-
-
-<!--<p>user-detail works!</p>-->
-<!--<div *ngIf="user">-->
-
-<!--  <h2>{{user.firstName | uppercase}} {{user.lastName | uppercase}} Details</h2>-->
-<!--  <div><span>id: </span>{{user.id}}</div>-->
-<!--  <div>-->
-<!--    <label for="hero-name">User name: </label>-->
-<!--    <input id="hero-name" [(ngModel)]="user.email" placeholder="name">-->
-<!--  </div>-->
-
-<!--</div>-->
-
-<!--<section class="contact">-->
-<!--  <div class="content">-->
-<!--    <h5 style="color: white">My details</h5>-->
-<!--  </div>-->
-<!--  <div class="container-fluid">-->
-<!--    <div class="contactForm">-->
-<!--      <form [formGroup]="detailForm">-->
-<!--        <div class="field" style="color: white">-->
-<!--          <label style="color: white"> First Name</label>-->
-<!--          <textarea>{{user.firstName}}</textarea>-->
-<!--          <textarea>{{userinfo}}</textarea>-->
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white"> Last Name</label>-->
-<!--          <input type="text" name="lastName" required="required" formControlName="lastName">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white">Email</label>-->
-<!--          <input type="text" name="email" required="required" placeholder="" formControlName="email">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white">Address </label>-->
-<!--          <input type="text" name="address" required="required" formControlName="address">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white">Your Post Code </label>-->
-<!--          <input type="number" name="postCode" required="required" formControlName="postCode">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white">Your Phone number </label>-->
-<!--          <input type="number" name="phoneNumber" required="required" formControlName="phoneNumber">-->
-
-<!--        </div>-->
-
-
-<!--        <div class="field">-->
-
-<!--          &lt;!&ndash;          <input type="submit"  class="btn btn-info text-white login-button button-color" name="" value="Save your Changes">&ndash;&gt;-->
-<!--          <input class="btn btn-info text-white exit-button button-color" (click)="back()" value="Back">-->
-<!--        </div>-->
-
-
-<!--      </form>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
-
-<div class="container">
-  <div class="row gutters" >
-    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-      <div class="card h-100">
-        <div class="card-body" >
-<!--          style="background-color: #1816"-->
-          <div class="account-settings">
-            <div class="user-profile" >
-              <h5 style="font-family: 'Kaisei Opti', serif; color: black"> Welcome</h5>
-              <h5 style="font-family: 'Kaisei Opti', serif"class="user-name">{{user.firstName}} {{user.lastName}}</h5>
+                <h6 class="btn btn-outline-dark" data-mdb-ripple-color="light" style="z-index: 1; color: white" >Personal Details</h6>
+              </div>
+              <div class="ms-3" style="margin-top: 100px;">
+                <h6>Welcome</h6>
+                <h5>{{user.firstName}} {{user.lastName}}</h5>
+                <p>New York</p>
+              </div>
+            </div>
+            <div class="p-4 text-black" style="background-color: #f8f9fa;">
 
             </div>
-            <div class="options">
-              <h5 style="font-family: 'Kaisei Opti', serif">Options:</h5>
-              <div>
-              <button type="button" id="submit" name="submit" class="btn btn-info" routerLink="/user-update"> Update your Account</button>
+            <div class="card-body p-4 text-black">
+              <div class="mb-10">
+                <p class="lead fw-normal mb-1">About You</p>
+                <div class="p-4" style="background-color: #f8f9fa;">
+                  <p class="font-italic mb-1">Full Name: {{user.firstName}} {{user.lastName}}</p>
+                  <p class="font-italic mb-1">Phone: {{user.phoneNumber}}</p>
+                  <p class="font-italic mb-1"> Address: {{user.address}}</p>
+                  <p class="font-italic mb-0">Zip Code: {{user.postCode}}</p>
+                  <p class="font-italic mb-0">Email: {{user.email}}</p>
+                </div>
               </div>
-              <div>
-              <button type="button" id="submit" name="submit" class="btn btn-warning"  routerLink="/user-update"> Change Password</button>
+              <div class="d-flex justify-content-between align-items-center mb-4">
+
+                <p class="mb-0"><a href="#!" class="text-muted"  (click)="back()">Back</a></p>
               </div>
 
             </div>
@@ -172,87 +39,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-      <div class="card h-100">
-        <div class="card-body" >
-<!--          style="background-color: #e34f4f"-->
-          <div class="row gutters">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-              <h6 class="mb-2 text-primary">Personal Details</h6>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-              <div class="form-group">
-                <label>Full Name:</label>
-                <p>{{user.firstName}} {{user.lastName}}</p>
-                <!--                <input type="textarea" class="form-control" id="fullName" placeholder="{{userName}}">-->
-<!--                <label> {{user}}</label>-->
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-              <div class="form-group">
-                <label for="eMail" style="color: black">Email:</label>
-                {{user.email}}
-<!--                <input type="email" class="form-control" id="eMail" placeholder="Enter email ID">-->
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-              <div class="form-group">
-                <label for="phone">Phone:</label>
-<!--                <input type="text" class="form-control" id="phone" placeholder="Enter phone number">-->
-                <label id="phone" >{{user.phoneNumber}}</label>
-
-              </div>
-            </div>
-
-          </div>
-          <div class="row gutters">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-              <h6 class="mt-3 mb-2 text-primary">Address:</h6>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-              <div class="form-group">
-                <label for="Street">Street:</label>
-<!--                <input type="name" class="form-control" id="Street" placeholder="Enter Street">-->
-                {{user.address}}
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-<!--              <div class="form-group">-->
-<!--                <label for="ciTy">City</label>-->
-<!--                <input type="name" class="form-control" id="ciTy" placeholder="Enter City">-->
-<!--              </div>-->
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-<!--              <div class="form-group">-->
-<!--                <label for="sTate">State</label>-->
-<!--                <input type="text" class="form-control" id="sTate" placeholder="{{user.address}}">-->
-<!--              </div>-->
-<!--            </div>-->
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-              <div class="form-group">
-                <label for="zIp">Zip Code:</label>
-<!--                <label id="zIp">{{user.postCode}}</label>-->
-                {{user.postCode}}
-<!--                <input type="text" class="form-control" id="zIp" placeholder="Zip Code">-->
-
-              </div>
-            </div>
-          </div>
-          <div class="row gutters">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-              <div class="text-right">
-                <button type="button" id="submit" name="submit" class="btn btn-secondary" (click)="back()">Back</button>
-<!--                <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>-->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+  </section>
 
 
 
