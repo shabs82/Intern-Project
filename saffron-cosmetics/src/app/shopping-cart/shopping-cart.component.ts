@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {SelectedProductOrderModel} from "./shared/selected-product-order.model";
 import {ShoppingCartService} from "./shared/shopping-cart.service";
-import {Subscription} from "rxjs";
+import {Subject, Subscription} from "rxjs";
 import {Product} from "../product/shared/model/product";
+import {takeUntil} from "rxjs/operators";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -19,10 +20,13 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.usersSelectedProducts = JSON.parse(<string>localStorage.getItem('selectedProductOrders'));
-    debugger;
-    this.totalPriceSub = this.cartService.totalPrice$.subscribe(totalPrice => {
-      this.totalPrice = totalPrice;
-    });
+    this.totalPriceSub = this.cartService.totalPrice$
+            .subscribe(totalPrice => {
+              this.totalPrice = totalPrice;
+            });
+  }
+
+  ngOnDestroy(){
   }
 
   removeProductFromShoppingCart(product: Product) {

@@ -21,6 +21,7 @@ import {NgxsModule} from "@ngxs/store";
 import {AuthState} from "./user/shared/state/auth/auth.state";
 import {environment} from "../environments/environment";
 import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
+import {ShoppingCartService} from "./shopping-cart/shared/shopping-cart.service";
 
 
 
@@ -56,7 +57,7 @@ import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
       key: ['auth']
     }),
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, ShoppingCartService],
   exports: [
     SignUpComponent
   ],

@@ -8,12 +8,34 @@ import {BehaviorSubject} from "rxjs";
 })
 export class ShoppingCartService {
 
-  private totalPriceSubject = new BehaviorSubject<number>(this.getTotalPrice(this.loadOrderedProducts()));
+  calTotalPrice  = (selectedProducts: SelectedProductOrderModel[]) : number => {
+    let totalPrice = 0;
+    for (const orderedProduct of selectedProducts) {
+      totalPrice += orderedProduct.quantity * orderedProduct.product!.price;
+    }
+    return totalPrice;
+  }
+
+  public totalPriceSubject = new BehaviorSubject<number>(this.calTotalPrice(this.loadOrderedProducts()));
   totalPrice$ = this.totalPriceSubject.asObservable();
+
+  public quantitySubject = new BehaviorSubject<number>(this.getTotalQuantity(this.loadOrderedProducts()));
+  quantity$ = this.quantitySubject.asObservable();
+
   selectedProductOrders: SelectedProductOrderModel[] = [];
 
   constructor() {
     this.selectedProductOrders = this.loadOrderedProducts();
+  }
+
+  setTotalPrice(totalPrice: number): void {
+    localStorage.setItem('totalPrice', JSON.stringify(totalPrice));
+    this.totalPriceSubject.next(JSON.parse(<string>localStorage.getItem('totalPrice')));
+  }
+
+  setCartCount(quantity: number): void {
+    localStorage.setItem('quantity', JSON.stringify(quantity));
+    this.quantitySubject.next(JSON.parse(<string>localStorage.getItem('quantity')));
   }
 
   addToCart(product: Product) {
@@ -32,14 +54,25 @@ export class ShoppingCartService {
 
   saveChanges(): void {
     localStorage.setItem('selectedProductOrders', JSON.stringify(this.selectedProductOrders));
+    this.setCartCount(this.getTotalQuantity(this.loadOrderedProducts()));
+    this.setTotalPrice(this.getTotalPrice(this.loadOrderedProducts()));
   }
 
-  getTotalPrice(selectedProduct: SelectedProductOrderModel[]): number {
+
+  getTotalPrice(selectedProducts: SelectedProductOrderModel[]): number {
     let totalPrice = 0;
-    for (const orderedProduct of selectedProduct) {
+    for (const orderedProduct of selectedProducts) {
       totalPrice += orderedProduct.quantity * orderedProduct.product!.price;
     }
     return totalPrice;
+  }
+
+  getTotalQuantity(selectedProducts: SelectedProductOrderModel[]): number {
+    let q = 0;
+    for (const orderedProduct of selectedProducts) {
+      q += orderedProduct.quantity;
+    }
+    return q;
   }
 
   loadOrderedProducts(): SelectedProductOrderModel[] {
@@ -68,9 +101,5 @@ export class ShoppingCartService {
       });
     }
     this.saveChanges();
-  }
-
-  addOneQuantityOfSelectedProductToCart(product: Product) {
-    
   }
 }
