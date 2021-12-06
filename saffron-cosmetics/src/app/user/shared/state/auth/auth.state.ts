@@ -1,7 +1,7 @@
 import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {User} from "../../model/user";
 import {Injectable} from "@angular/core";
-import {LoginUser, Logout, SignUp} from "./auth.action";
+import {LoginUser, LoginWithGoogle, Logout, ResetPassword, SignUp} from "./auth.action";
 import {AuthService} from "./auth.service";
 
 export class AuthStateModel {
@@ -40,6 +40,19 @@ export class AuthState {
 
   }
 
+  @Action(LoginWithGoogle)
+  loginWithGoogle({getState, setState}: StateContext<AuthStateModel>): any {
+    return this.authService.loginGoogle().then((result) => {
+      const state = getState();
+      setState({
+        ...state,
+        loggedInUser: result,
+      });
+    });
+
+  }
+
+
   @Action(SignUp)
   signUp({getState, setState}: StateContext<AuthStateModel>, {user}: SignUp): any {
     return this.authService.signUp(user).then((result) => {
@@ -62,5 +75,10 @@ export class AuthState {
         loggedInUser: undefined,
       });
 
+  }
+
+  @Action(ResetPassword)
+  resetPassword({dispatch}: StateContext<AuthStateModel>, {mailInput}: ResetPassword){
+    this.authService.sendResetPassword(mailInput.email);
   }
 }

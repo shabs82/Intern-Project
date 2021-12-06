@@ -21,8 +21,14 @@ import {NgxsModule} from "@ngxs/store";
 import {AuthState} from "./user/shared/state/auth/auth.state";
 import {environment} from "../environments/environment";
 import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
-
-
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {AlertService} from "ngx-alerts";
 
 
 
@@ -38,6 +44,8 @@ import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
     SignUpComponent,
     UserUpdateComponent,
     ShoppingCartComponent,
+    ForgotPasswordComponent,
+
 
   ],
   imports: [
@@ -55,8 +63,11 @@ import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
     NgxsStoragePluginModule.forRoot({
       key: ['auth']
     }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, AlertService],
   exports: [
     SignUpComponent
   ],

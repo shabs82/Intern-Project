@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "saffron-cosmetics"
+  },
+  "targets": {
+    "saffron-cosmetics": {
+      "hosting": {
+        "saffron-cosmetics": [
+          "saffron-cosmetics"
+        ]
+      }
+    }
+  }
+}

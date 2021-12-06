@@ -6,6 +6,11 @@ import {map} from "rxjs/operators";
 import {User} from "../../model/user";
 
 import jwt_decode from 'jwt-decode';
+import {UserDto} from "../../dtos/user-dto";
+
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
+import {AngularFireDatabase} from "@angular/fire/compat/database";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,8 +23,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  changePasswordUrl = "http://localhost:4200/change-password/";
 
-  constructor(private http: HttpClient ) {
+  constructor(private http: HttpClient, private afAuth: AngularFireAuth, private db: AngularFireDatabase ) {
   }
 
 
@@ -43,7 +49,7 @@ export class AuthService {
     }
 
     //Default if token cannot be decoded
-     return {id:response.id , firstName: response.username,token: response.token} as User;
+     return {id:response.id , firstName: response.username} as User;
   };
 
   async signUp(user: User): Promise<User>{
@@ -53,13 +59,6 @@ export class AuthService {
   };
 
 
-  logout(): void{
-    localStorage.removeItem('currentUser');
-  }
-
-  readUserById(id: number): Observable<User> {
-    return this.http.get<User>(environment.apiURL + '/api/user' + id);
-  }
 
 
   setUpStorage({decodedToken, response}: { decodedToken: any, response: any }): void {
@@ -77,9 +76,64 @@ export class AuthService {
         token: response.token
       });
     }
-    this.logout(); // Delete existing user
+    //this.logout(); // Delete existing user
     console.log(currentUser);
     localStorage.setItem('currentUser', currentUser);
   }
+
+
+
+private async updateUserData(
+  credentials: any,
+  ): Promise<any> {
+
+  const user = await this.afAuth.currentUser;
+
+  // @ts-ignore
+  const userId =  user.uid;
+  const userIds = credentials.additionalUserInfo.profile.id;
+  const email = credentials.additionalUserInfo.profile.email;
+  const firstName = credentials.additionalUserInfo.profile.firstName;
+  const lastName = credentials.additionalUserInfo.profile.lastName;
+  const address = credentials.additionalUserInfo.profile.address;
+  const postCode = credentials.additionalUserInfo.profile.postCode;
+  const phoneNumber = credentials.additionalUserInfo.profile.phoneNumber;
+
+  const newUser = {
+    id:userIds,
+    email:email,
+    firstName:firstName,
+    lastName:lastName,
+    address:address,
+    postCode:postCode,
+    phoneNumber:phoneNumber
+  } as User;
+// Write the new post's data simultaneously in the posts list and the user's post list.
+  await this.db.database.ref('/Users/' + userId).update(newUser).catch((error) => {throw new Error(error.message);});
+  return newUser;
+}
+
+
+async loginGoogle(): Promise<any> {
+  const credential = await this.afAuth
+    .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    .catch((error) => {
+      throw new Error(error.message);
+    });
+  return await this.updateUserData(credential);
+}
+
+
+async sendResetPassword(email: string): Promise<any> {
+  return await this.afAuth
+    .sendPasswordResetEmail(email)
+    .then(() => {
+
+    })
+    .catch((error) => {
+      throw new Error(error.message);
+    });
+}
+
 
 }

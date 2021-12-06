@@ -158,6 +158,8 @@
           </li>
         </ul>
 
+
+
         <ngx-recaptcha2 #captchaElem
                         [siteKey]="siteKey"
                         formControlName="recaptcha">
@@ -169,6 +171,9 @@
           </li>
         </ul>
 
+        <div class="password-forgot" style="color: white; ">
+          <a href="#" id="forgot-password" routerLink="/forgot-password">Forgotten password</a>
+        </div>
 
         <div class="inputBox">
           <div class="g-recaptcha" data-sitekey="mySiteKey"></div>
@@ -180,6 +185,7 @@
       </form>
     </div>
   </div>
+  <button (click)="loginGoogle()">GOOGLE LOGIN HERE</button>
 </section>
 
 <!--<form class="form" method="post" action="#" style="color: black">-->

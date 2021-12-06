@@ -4,7 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../shared/services/authentication-service";
 import {Select, Store} from "@ngxs/store";
-import {LoginUser} from "../shared/state/auth/auth.action";
+import {LoginUser, LoginWithGoogle} from "../shared/state/auth/auth.action";
 import {AuthState} from "../shared/state/auth/auth.state";
 import {Observable} from "rxjs";
 import {User} from "../shared/model/user";
@@ -67,5 +67,9 @@ export class LoginComponent implements OnInit {
   }
   toggleFieldTextType(): any {
     this.fieldTextType = !this.fieldTextType;
+  }
+
+  loginGoogle() {
+    this.store.dispatch(new LoginWithGoogle());
   }
 }
