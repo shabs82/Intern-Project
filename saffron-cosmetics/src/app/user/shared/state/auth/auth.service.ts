@@ -96,17 +96,18 @@ private async updateUserData(
   const firstName = credentials.additionalUserInfo.profile.firstName;
   const lastName = credentials.additionalUserInfo.profile.lastName;
   const address = credentials.additionalUserInfo.profile.address;
+
   const postCode = credentials.additionalUserInfo.profile.postCode;
   const phoneNumber = credentials.additionalUserInfo.profile.phoneNumber;
 
   const newUser = {
-    id:userIds,
+    address:address,
     email:email,
     firstName:firstName,
+    id:userIds,
     lastName:lastName,
-    address:address,
-    postCode:postCode,
-    phoneNumber:phoneNumber
+    phoneNumber:phoneNumber,
+    postCode:postCode
   } as User;
 // Write the new post's data simultaneously in the posts list and the user's post list.
   await this.db.database.ref('/Users/' + userId).update(newUser).catch((error) => {throw new Error(error.message);});
@@ -136,4 +137,11 @@ async sendResetPassword(email: string): Promise<any> {
 }
 
 
+  forgotPassword(mail: string) {
+    return this.http.post(environment.apiURL + '/api/forgot-password', mail);
+  }
+
+  resetPassword(token: string, password: string, confirmPassword: string) {
+    return this.http.post(environment.apiURL + '/api/forgot-password', { token, password, confirmPassword });
+  }
 }

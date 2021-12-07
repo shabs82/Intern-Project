@@ -5,6 +5,7 @@ import {Store} from "@ngxs/store";
 import {ResetPassword} from "../shared/state/auth/auth.action";
 import {UserDto} from "../shared/dtos/user-dto";
 import { AlertService } from 'ngx-alerts';
+import {error} from "@angular/compiler/src/util";
 
 
 
@@ -42,11 +43,16 @@ export class ForgotPasswordComponent implements OnInit {
 
   sendResetMail(mailInput: UserDto) {
     //this.authenticationService.forgotPassword();
+    const mail = mailInput;
     this.submitted = true;
     if (this.mailForm.invalid){
       return;
     }
-    this.store.dispatch(new ResetPassword(mailInput));
+    // this.store.dispatch(new ResetPassword(mailInput));
+    this.authenticationService.forgotPassword(this.mailForm.value.email).subscribe({
+      next:() => console.log('Please check your mail for password reset functions'),
+      error: error => console.log('This is an error')
+    });
 
   }
 }
