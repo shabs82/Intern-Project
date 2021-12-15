@@ -45,6 +45,11 @@
           <span> Write Message</span>
         </div>
 
+        <ngx-recaptcha2 #captchaElem
+                        [siteKey]="siteKey"
+                        formControlName="recaptcha">
+        </ngx-recaptcha2>
+
         <div class="inputBox">
           <div class="g-recaptcha" data-sitekey="mySiteKey"></div>
            <button type = "Submit"> Send</button>
