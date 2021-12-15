@@ -21,6 +21,7 @@ import {NgxsModule} from "@ngxs/store";
 import {AuthState} from "./user/shared/state/auth/auth.state";
 import {environment} from "../environments/environment";
 import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 
@@ -38,6 +39,7 @@ import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
     SignUpComponent,
     UserUpdateComponent,
     ShoppingCartComponent,
+    WishlistComponent,
 
   ],
   imports: [

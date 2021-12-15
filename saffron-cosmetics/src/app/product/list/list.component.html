@@ -1,9 +1,11 @@
 <div class="card-container">
-  <h1 class="header">Products</h1>
+  <h5 class="header">Products</h5>
   <div class="row">
     <div class="productCard" (click)="selectSingleProduct(product)" *ngFor="let product of productsByCategoryId">
+
      <div>
     <app-product-item [productItem]="product"></app-product-item>
+
      </div>
    </div>
  </div>
