@@ -33,7 +33,7 @@ export class SearchService {
 
   search(q: string): Observable<SearchOption[]> {
     return this.http.get<SearchOption[]>(
-      environment.apiURL + 'api/Product/search/filteredProducts?name=' + q
+      environment.apiURL + '/api/Product/search/filteredProducts?name=' + q
     );
   }
 
