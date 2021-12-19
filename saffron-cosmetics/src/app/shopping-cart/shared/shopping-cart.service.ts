@@ -42,6 +42,7 @@ export class ShoppingCartService {
   }
 
   addToCart(product: Product) {
+    debugger;
     const currentSelectedProductOrder = this.selectedProductOrders.find(ol => ol.product?.id === product.id);
     if (currentSelectedProductOrder) {
       currentSelectedProductOrder.quantity++;
