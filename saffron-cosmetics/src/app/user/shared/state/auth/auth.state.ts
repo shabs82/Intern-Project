@@ -1,8 +1,9 @@
 import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {User} from "../../model/user";
 import {Injectable} from "@angular/core";
-import {LoginUser, Logout, SignUp} from "./auth.action";
+import {LoginUser, Logout, SignUp, UpdateUser} from "./auth.action";
 import {AuthService} from "./auth.service";
+import {UserService} from "../../services/user.service";
 
 export class AuthStateModel {
   // @ts-ignore
@@ -20,7 +21,7 @@ export class AuthStateModel {
 @Injectable()
 export class AuthState {
 
-  constructor(    private authService: AuthService,) {
+  constructor(    private authService: AuthService, private userService: UserService) {
   }
 
   @Selector()
@@ -51,6 +52,31 @@ export class AuthState {
     });
 
   }
+  @Action(UpdateUser)
+  updateUser({getState, setState}: StateContext<AuthStateModel>, {user}: UpdateUser): any {
+    return this.userService.updateUser(user).subscribe((result) => {
+      const state = getState();
+      setState({
+        ...state,
+        loggedInUser: result,
+      })
+    })
+    //   .then((result) => {
+    //   const state = getState();
+    //   setState({
+    //     ...state,
+    //     loggedInUser: result,
+    //   });
+    // });
+
+    const state = getState();
+    setState({
+      ...state,
+      // @ts-ignore
+      loggedInUser: user,
+    });
+  }
+
 
   @Action(Logout)
   logout({getState, setState}: StateContext<AuthStateModel>): any {

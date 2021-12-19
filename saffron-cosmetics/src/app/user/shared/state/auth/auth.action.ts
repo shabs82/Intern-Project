@@ -10,6 +10,11 @@ export class SignUp {
   constructor(public user: User) {}
 }
 
+export class UpdateUser {
+  static readonly type = '[Auth] Update User';
+  constructor(public user: User) {}
+}
+
 export class Logout {
   static readonly type = '[Auth] Logout';
 }

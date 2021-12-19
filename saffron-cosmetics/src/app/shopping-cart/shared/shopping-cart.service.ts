@@ -10,9 +10,12 @@ export class ShoppingCartService {
 
   calTotalPrice  = (selectedProducts: SelectedProductOrderModel[]) : number => {
     let totalPrice = 0;
-    for (const orderedProduct of selectedProducts) {
-      totalPrice += orderedProduct.quantity * orderedProduct.product!.price;
+    if(selectedProducts != null){
+      for (const orderedProduct of selectedProducts) {
+        totalPrice += orderedProduct.quantity * orderedProduct.product!.price;
+      }
     }
+
     return totalPrice;
   }
 
@@ -69,9 +72,12 @@ export class ShoppingCartService {
 
   getTotalQuantity(selectedProducts: SelectedProductOrderModel[]): number {
     let q = 0;
-    for (const orderedProduct of selectedProducts) {
-      q += orderedProduct.quantity;
+    if(selectedProducts != null){
+      for (const orderedProduct of selectedProducts) {
+        q += orderedProduct.quantity;
+      }
     }
+
     return q;
   }
 
