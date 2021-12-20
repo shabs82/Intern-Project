@@ -35,4 +35,8 @@ export class ProductItemComponent implements OnInit {
     this.addedToWishlist = true;
 
   }
+
+  selectSingleProduct(productItem: Product) {
+    this.router.navigate(['/product/product-detail', productItem.id])
+  }
 }

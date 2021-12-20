@@ -18,23 +18,33 @@ export class WishlistService {
   saveChanges(): void{
     localStorage.setItem('favouriteProducts', JSON.stringify(this.productsInFavourites));
 
+
   }
   loadFavouriteProducts(): Product[] {
+    if(JSON.parse(<string>localStorage.getItem('favouriteProducts')) != null)
     return JSON.parse(<string>localStorage.getItem('favouriteProducts'));
+    else
+      return [];
   }
 
 
   removeFromWishlist(productItem: Product) {
-    // @ts-ignore
-    this.productsInFavourites.splice(productItem)
-
-
+    debugger;
+    const currentFavouriteProduct = this.productsInFavourites.find(p => p.id === productItem.id);
+    this.productsInFavourites.forEach((p: Product, index) => {
+      if (p === currentFavouriteProduct) {
+        this.productsInFavourites.splice(index, 1);
+      }
+    });
+    this.saveChanges();
   }
 
   addToWishList(productItem: Product) {
-    this.productsInFavourites.push(productItem)
-    this.saveChanges()
-
-
+    debugger;
+      const currentFavouriteProduct = this.productsInFavourites.find(p => p.id === productItem.id);
+      if (!currentFavouriteProduct) {
+        this.productsInFavourites.push(productItem)
+        this.saveChanges()
+      }
   }
 }
