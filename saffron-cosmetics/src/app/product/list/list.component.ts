@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Product} from "../shared/model/product";
 import {ProductService} from "../shared/services/product.service";
+import {WishlistService} from "../../wishlist/shared/wishlist.service";
 
 @Component({
   selector: 'app-list',
@@ -13,8 +14,9 @@ export class ListComponent implements OnInit {
   productsByCategoryId: Product[] | undefined;
   secCatId = 0;
 
+
   constructor( private productService : ProductService, private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router, private wishListService: WishlistService) {
   }
 
   ngOnInit(): void {
@@ -50,4 +52,7 @@ export class ListComponent implements OnInit {
   selectSingleProduct(product: Product) {
     this.router.navigate(['/product/product-detail', product.id])
   }
-}
+
+
+  }
+

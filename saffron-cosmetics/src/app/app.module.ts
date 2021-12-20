@@ -21,9 +21,13 @@ import {NgxsModule} from "@ngxs/store";
 import {AuthState} from "./user/shared/state/auth/auth.state";
 import {environment} from "../environments/environment";
 import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
+
 import {ShoppingCartService} from "./shopping-cart/shared/shopping-cart.service";
 import {SearchModule} from "./search/search.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
+import { WishlistComponent } from './wishlist/wishlist.component';
+
 
 
 
@@ -41,6 +45,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     SignUpComponent,
     UserUpdateComponent,
     ShoppingCartComponent,
+    WishlistComponent,
 
   ],
   imports: [
