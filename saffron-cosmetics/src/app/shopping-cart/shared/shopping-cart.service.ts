@@ -78,7 +78,6 @@ export class ShoppingCartService {
         q += orderedProduct.quantity;
       }
     }
-
     return q;
   }
 
