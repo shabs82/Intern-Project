@@ -27,6 +27,7 @@ import {SearchModule} from "./search/search.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { DiscountLineComponent } from './welcome-page/discount-line/discount-line.component';
 
 
 
@@ -46,6 +47,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     UserUpdateComponent,
     ShoppingCartComponent,
     WishlistComponent,
+    DiscountLineComponent,
 
   ],
   imports: [

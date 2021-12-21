@@ -1,29 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-light-blue-skin topnavbar" style="background: #202123">
   <div class="container-fluid">
     <img src="assets/Navbar/logo.png" class="navbar-brand">
-    <app-widget-search-bar></app-widget-search-bar>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse my-acc-class navbar-collapse justify-content-end" style="width: 100%"  id="navbarTogglerDemo02">
+    <div class="search-div">
+      <app-widget-search-bar></app-widget-search-bar>
+    </div>
+    <div class="collapse my-acc-class navbar-collapse justify-content-end" style="margin-left: 100px">
       <ul class="navbar-nav me-auto mb-2 mb-sm-5-0">
         <li class="nav-item">
-          <a class="nav-link active topMenu" style="color: white" aria-current="page" href="#">
+          <a class="nav-link active topMenu" style="color: white;" aria-current="page" href="#">
             <i class="fas fa-heart"></i> WishList</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link item topMenu"  style=" color: white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i> MyAccount</a>
+          <a class="nav-link item topMenu" style="color: white;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i> MyAccount</a>
           <div class="dropdown-menu">
-            <a *ngIf="!user" class="dropdown-item" href="/sign-up">Sign in</a>
-            <a *ngIf="user && user.isAdmin" class="dropdown-item" routerLink="/user-details"> {{user.firstName}}</a>
-            <a *ngIf="user && !user.isAdmin" class="dropdown-item" routerLink="/user-details">{{user.firstName}}</a>
-<!--            <a *ngIf="user" class="dropdown-item " routerLink="/user-update">Update Your Account</a>-->
-            <a *ngIf="user" class="dropdown-item" (click)="logout()">Sign Out</a>
-            <a *ngIf="!user" class="dropdown-item" href="/login">Log in</a>
+            <a *ngIf="!user" class="dropdown-item" routerLink="/sign-up">Sign in</a>
+            <a *ngIf="user && user.isAdmin" class="dropdown-item" routerLink="/user-details">Hi, {{user.firstName}}</a>
+            <a *ngIf="user && !user.isAdmin" class="dropdown-item" routerLink="/user-details">Hi, {{user.firstName}}</a>
+            <a *ngIf="user" class="dropdown-item" style="cursor: pointer" (click)="logout()">Sign Out</a>
+            <a *ngIf="!user" class="dropdown-item" routerLink="/login">Log in</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link topMenu" style="color: white" routerLink="/shopping-cart">
+          <a class="nav-link topMenu" style="color: white;" routerLink="/shopping-cart">
             <i class="fas fa-shopping-basket"></i> Shopping Bag ({{totalQuantity}})</a>
         </li>
       </ul>

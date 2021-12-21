@@ -6,11 +6,17 @@
   border-bottom: 2px solid transparent;
 
 }
+
+.search-div{
+  margin-right: 70px;
+  margin-left: 100px;
+  max-width: 300px;
+  width: 100%
+}
 .dropdown:hover .dropdown-menu {display: block;}
 .topMenu:hover{
-  color: darkgrey;
+  color: darkgrey !important;
   border-bottom: 2px solid #FA1F12;
-  text-align: right;
 }
 
 body{

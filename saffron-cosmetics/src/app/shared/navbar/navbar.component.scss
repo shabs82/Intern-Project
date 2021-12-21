@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sansita+Swashed&display=swap');
 
 .links-bar {
+  color: white !important;
   font-family: 'Slabo 27px', serif;
   font-size: 18px;
   margin-right: 6px;
   margin-left: 6px;
   cursor: default;
-  color: white !important;
+
   //border-bottom: 2px solid transparent;
 }
 
@@ -21,7 +22,7 @@
 }
 
 li:hover{
-  color: black !important;
+
 }
 
 
