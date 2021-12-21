@@ -11,15 +11,12 @@ export class WishlistService {
 
   constructor() {
     this.productsInFavourites = this.loadFavouriteProducts()
-
   }
-
 
   saveChanges(): void{
     localStorage.setItem('favouriteProducts', JSON.stringify(this.productsInFavourites));
-
-
   }
+
   loadFavouriteProducts(): Product[] {
     if(JSON.parse(<string>localStorage.getItem('favouriteProducts')) != null)
     return JSON.parse(<string>localStorage.getItem('favouriteProducts'));
@@ -29,7 +26,6 @@ export class WishlistService {
 
 
   removeFromWishlist(productItem: Product) {
-    debugger;
     const currentFavouriteProduct = this.productsInFavourites.find(p => p.id === productItem.id);
     this.productsInFavourites.forEach((p: Product, index) => {
       if (p === currentFavouriteProduct) {
@@ -40,11 +36,11 @@ export class WishlistService {
   }
 
   addToWishList(productItem: Product) {
-    debugger;
       const currentFavouriteProduct = this.productsInFavourites.find(p => p.id === productItem.id);
       if (!currentFavouriteProduct) {
         this.productsInFavourites.push(productItem)
         this.saveChanges()
       }
   }
+
 }

@@ -15,7 +15,6 @@ export class ShoppingCartService {
         totalPrice += orderedProduct.quantity * orderedProduct.product!.price;
       }
     }
-
     return totalPrice;
   }
 
@@ -43,7 +42,7 @@ export class ShoppingCartService {
 
   addToCart(product: Product) {
     debugger;
-    const currentSelectedProductOrder = this.selectedProductOrders.find(ol => ol.product?.id === product.id);
+    const currentSelectedProductOrder = this.selectedProductOrders.find(p => p.product?.id === product.id);
     if (currentSelectedProductOrder) {
       currentSelectedProductOrder.quantity++;
     } else {
@@ -82,13 +81,16 @@ export class ShoppingCartService {
   }
 
   loadOrderedProducts(): SelectedProductOrderModel[] {
+    if(JSON.parse(<string>localStorage.getItem('selectedProductOrders')) != null)
     return JSON.parse(<string>localStorage.getItem('selectedProductOrders'));
+    else
+      return [];
   }
 
   removeWholeProductFromCart(product: Product) {
     const currentOrderedProduct = this.selectedProductOrders.find(p => p.product!.id === product.id);
-      this.selectedProductOrders.forEach((orderLine: SelectedProductOrderModel, index) => {
-        if (orderLine === currentOrderedProduct) {
+      this.selectedProductOrders.forEach((p: SelectedProductOrderModel, index) => {
+        if (p === currentOrderedProduct) {
           this.selectedProductOrders.splice(index, 1);
         }
       });
@@ -100,8 +102,8 @@ export class ShoppingCartService {
     if (currentOrderedProduct!.quantity > 1) {
       currentOrderedProduct!.quantity--;
     } else {
-      this.selectedProductOrders.forEach((orderLine: SelectedProductOrderModel, index) => {
-        if (orderLine === currentOrderedProduct) {
+      this.selectedProductOrders.forEach((p: SelectedProductOrderModel, index) => {
+        if (p === currentOrderedProduct) {
           this.selectedProductOrders.splice(index, 1);
         }
       });
