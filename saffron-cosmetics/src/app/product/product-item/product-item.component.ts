@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../shared/model/product";
 import {ActivatedRoute, Router} from "@angular/router";
+import {WishlistService} from "../../wishlist/shared/wishlist.service";
 
 @Component({
   selector: 'app-product-item',
@@ -10,8 +11,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class ProductItemComponent implements OnInit {
 
   @Input() productItem: Product;
+  addedToWishlist: boolean = false;
 
-  constructor(private route:ActivatedRoute, private router:Router) {
+  constructor(private route:ActivatedRoute, private router:Router, private wishlistService: WishlistService) {
   }
 
   ngOnInit(): void {
@@ -20,5 +22,21 @@ export class ProductItemComponent implements OnInit {
 
   addToCart() {
 
+  }
+
+  handleRemoveFromWishlist(productItem : Product) {
+    this.wishlistService.removeFromWishlist(productItem)
+    this.addedToWishlist = false;
+
+  }
+
+  handleAddToWishlist(productItem: Product) {
+    this.wishlistService.addToWishList(productItem)
+    this.addedToWishlist = true;
+
+  }
+
+  selectSingleProduct(productItem: Product) {
+    this.router.navigate(['/product/product-detail', productItem.id])
   }
 }

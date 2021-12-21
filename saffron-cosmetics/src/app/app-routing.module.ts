@@ -7,6 +7,7 @@ import {SignUpComponent} from "./user/login/sign-up/sign-up.component";
 import {UserUpdateComponent} from "./user/user-update/user-update.component";
 import {UserDetailComponent} from "./user/user-detail/user-detail.component";
 import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
+import {WishlistComponent} from "./wishlist/wishlist.component";
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'user-update', component: UserUpdateComponent},
   { path: 'user-details', component: UserDetailComponent},
   { path: 'shopping-cart', component: ShoppingCartComponent},
+  { path: 'wishlist', component: WishlistComponent},
   { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
   { path: 'product', loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
 ];
