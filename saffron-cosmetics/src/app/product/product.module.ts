@@ -6,6 +6,7 @@ import { ProductComponent } from './product.component';
 import { DetailComponent } from './detail/detail.component';
 import { ListComponent } from './list/list.component';
 import { ProductItemComponent } from './product-item/product-item.component';
+import {NgbButtonsModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -15,9 +16,13 @@ import { ProductItemComponent } from './product-item/product-item.component';
     ListComponent,
     ProductItemComponent
   ],
+  exports: [
+    ProductItemComponent
+  ],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    NgbButtonsModule
   ]
 })
 export class ProductModule { }

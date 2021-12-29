@@ -1,0 +1,19 @@
+.imgDiv {
+  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 200px;
+}
+.btn{
+  align-items: end;
+
+}
+.prodImg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+}

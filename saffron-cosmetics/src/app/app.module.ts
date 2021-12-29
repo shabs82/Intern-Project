@@ -28,6 +28,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { DiscountLineComponent } from './welcome-page/discount-line/discount-line.component';
+import {ProductModule} from "./product/product.module";
 
 
 
@@ -66,6 +67,7 @@ import { DiscountLineComponent } from './welcome-page/discount-line/discount-lin
     NgxsStoragePluginModule.forRoot({
       key: ['auth']
     }),
+    ProductModule,
   ],
   providers: [AuthenticationService, ShoppingCartService],
   exports: [
