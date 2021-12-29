@@ -8,11 +8,13 @@ import {Product} from "../product/shared/model/product";
   styleUrls: ['./wishlist.component.scss']
 })
 export class WishlistComponent implements OnInit {
-  productsInFavourites$: Product[] = [];
+  productsInFavourites: Product[] = [];
 
   constructor(private wishListService: WishlistService) { }
 
   ngOnInit(): void {
+    this.productsInFavourites = this.wishListService.loadFavouriteProducts()
+
 
   }
 
