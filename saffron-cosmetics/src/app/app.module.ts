@@ -28,6 +28,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { DiscountLineComponent } from './welcome-page/discount-line/discount-line.component';
+import { PaymentComponent } from './shopping-cart/payment/payment.component';
 
 
 
@@ -48,6 +49,7 @@ import { DiscountLineComponent } from './welcome-page/discount-line/discount-lin
     ShoppingCartComponent,
     WishlistComponent,
     DiscountLineComponent,
+    PaymentComponent,
 
   ],
   imports: [

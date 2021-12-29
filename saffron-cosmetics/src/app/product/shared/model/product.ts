@@ -10,5 +10,4 @@ export interface Product{
   genderId?: number;
   brandId?: number;
   secondaryCategoryId?: number;
-  isFavorite?: boolean | false;
 }

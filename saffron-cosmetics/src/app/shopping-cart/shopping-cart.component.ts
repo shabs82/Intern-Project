@@ -4,6 +4,7 @@ import {ShoppingCartService} from "./shared/shopping-cart.service";
 import {Subject, Subscription} from "rxjs";
 import {Product} from "../product/shared/model/product";
 import {takeUntil} from "rxjs/operators";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -16,7 +17,7 @@ export class ShoppingCartComponent implements OnInit {
   totalPrice: number;
   private totalPriceSub: Subscription;
 
-  constructor(private cartService: ShoppingCartService) { }
+  constructor(private cartService: ShoppingCartService, private router:Router) { }
 
   ngOnInit(): void {
     this.usersSelectedProducts = JSON.parse(<string>localStorage.getItem('selectedProductOrders'));
@@ -42,5 +43,9 @@ export class ShoppingCartComponent implements OnInit {
   addOneQuantityOfSelectedProductToCart(product: Product) {
     this.cartService.addToCart(product);
     this.usersSelectedProducts = this.cartService.loadOrderedProducts();
+  }
+
+  goToPayment() {
+    this.router.navigate(['shopping-cart/payment'])
   }
 }
