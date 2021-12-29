@@ -25,10 +25,11 @@ import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
 import {ShoppingCartService} from "./shopping-cart/shared/shopping-cart.service";
 import {SearchModule} from "./search/search.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { DiscountLineComponent } from './welcome-page/discount-line/discount-line.component';
 import { PaymentComponent } from './shopping-cart/payment/payment.component';
+import {ProductModule} from "./product/product.module";
+
 
 
 
@@ -68,6 +69,7 @@ import { PaymentComponent } from './shopping-cart/payment/payment.component';
     NgxsStoragePluginModule.forRoot({
       key: ['auth']
     }),
+    ProductModule,
   ],
   providers: [AuthenticationService, ShoppingCartService],
   exports: [

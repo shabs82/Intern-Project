@@ -1,2 +1,26 @@
-<div class="card-container">
+<div class="wishlist-content" *ngFor="let favourite of productsInFavourites" >
+ <div class="card" >
+  <div class="card-body">
+   <div class="row">
+     <div class="col-md-1">
+       <img src="assets/products/{{favourite.id}}.jpg"  class="w-100" alt="img">
+     </div>
+     <div class="col-md-5">
+         <span>{{favourite.name}}</span>
+     </div>
+     <div class="col-md-1">
+       <span>£{{favourite.price}}</span>
+     </div>
+     <div class="col-md-2">
+       <button type="button" class="btn btn-secondary" (click)="removeFromFavourites(favourite)"> Remove </button>
+     </div>
+     <div class="col-md-2">
+       <button type="button" class="btn btn-primary" (click)="moveToBasket(favourite)"> AddToBasket</button>
+     </div>
+   </div>
+  </div>
+ </div>
 </div>
+
+
+
