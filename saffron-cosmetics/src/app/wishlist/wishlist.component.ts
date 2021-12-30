@@ -38,4 +38,7 @@ export class WishlistComponent implements OnInit {
     window.location.reload();
   }
 
+  backToDetail(favourite: Product) {
+    this.router.navigate(['/product/product-detail', favourite.id])
+  }
 }
