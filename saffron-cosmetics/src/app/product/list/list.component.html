@@ -1,11 +1,12 @@
+<div>
+<div class="headerDiv">
+  <h5 class="header">Products</h5>
+</div>
 <div class="card-container" >
-  <div><h5 class="header">Products</h5></div>
-
-  <div class="row">
-    <div class="productCard"  *ngFor="let product of productsByCategoryId">
-     <div>
+<div class="row">
+    <div class="productCard" *ngFor="let product of productsByCategoryId">
     <app-product-item [productItem]="product"></app-product-item>
-     </div>
    </div>
  </div>
+</div>
 </div>

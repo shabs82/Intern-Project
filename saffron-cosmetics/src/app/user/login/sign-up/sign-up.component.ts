@@ -46,7 +46,7 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  siteKey:string = "6LdNqg0dAAAAAG-tuIiGAPulOIkivnkKbKXtKtBp";
+  siteKey:string = "6LfxJ-MdAAAAAD1TbSutpykFG6_npZ5CZUVrKsVN";
 
 
   get f(): any { return this.loginForm.controls; }

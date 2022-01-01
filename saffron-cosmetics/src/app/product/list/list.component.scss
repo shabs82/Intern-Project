@@ -5,7 +5,17 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
-  margin: 80px;
+  margin: 50px;
+  text-align:center;
+  align-items: center;
+}
+
+.headerDiv{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  margin: 50px;
   text-align:center;
   align-items: center;
 }
@@ -13,7 +23,7 @@
 .productCard {
   align-items: center;
   text-align: center;
-  margin: 10px 30px 10px 30px;
+  margin: 10px 35px 10px 35px;
   width: 200px;
   height: 350px;
   display: block;
@@ -28,6 +38,5 @@
   font-weight: 700;
   font-family: 'Raleway', sans-serif;
   font-size: 50px;
-  margin: 0 30px 60px 30px;
   border-bottom: 3px solid #FA1F12;
 }

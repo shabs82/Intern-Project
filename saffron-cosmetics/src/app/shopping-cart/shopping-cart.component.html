@@ -10,7 +10,7 @@
     <tr *ngFor="let product of usersSelectedProducts" class="productCell">
       <td>
         <div class="cart-info">
-          <img src="assets/products/{{product.product?.id}}.jpg" alt="">
+          <img src="assets/products/{{product.product?.id}}.jpg" alt="product-pic">
           <div>
             <p>{{product.product?.name}}</p>
             <small>£{{product.product?.price}}</small>
@@ -21,14 +21,14 @@
       <td class="description"><span class="descriptionText">{{product.product?.description}}</span></td>
       <td class="quantity"><i class="fas fa-plus addQ" (click)="addOneQuantityOfSelectedProductToCart(product.product!)"></i><input disabled id="price" value="{{product.quantity}}">
                                     <i class="fas fa-minus deleteQ" (click)="removeOneQuantityOfSelectedProductFromCart(product.product!)"></i></td>
-      <td class="price">£{{product.quantity * product.product!.price | number: "1.2-2"}}</td>
+      <td class="price">£{{product.quantity * product.product!.price | number : "1.2-2"}}</td>
     </tr>
   </table>
   <div class="total-price">
     <table>
       <tr>
         <td>Total</td>
-        <td>${{totalPrice}}</td>
+        <td>${{totalPrice | number : "1.2-2"}}</td>
       </tr>
     </table>
   </div>

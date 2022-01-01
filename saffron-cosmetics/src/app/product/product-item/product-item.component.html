@@ -7,7 +7,6 @@
 </div>
 <div class="price">
   <strong>£{{productItem.price}}</strong>
-
   <i *ngIf = "addedToWishlist" class="fas fa-heart float right" (click)="handleRemoveFromWishlist(productItem)"></i>
   <i *ngIf="!addedToWishlist"  class="far fa-heart float right" (click)="handleAddToWishlist(productItem)"></i>
 </div>

@@ -24,7 +24,7 @@ export class ContactUsComponent implements OnInit {
       recaptcha: ['', Validators.required]
     });
   }
-  siteKey:string = "6LfCHGEcAAAAAL9ITK6V205-RsxZGDdhm6ngLxhl";
+  siteKey:string = "6LfxJ-MdAAAAAD1TbSutpykFG6_npZ5CZUVrKsVN";
 
   send(){
   const contactForm = this.contactForm.value;
