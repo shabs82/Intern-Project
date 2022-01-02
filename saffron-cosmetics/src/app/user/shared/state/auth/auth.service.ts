@@ -28,7 +28,7 @@ export class AuthService {
    //Decode token
     const decodedToken = jwt_decode(response.token);
     console.log(response);
-    debugger
+    // debugger
     if (response.token) {
       // @ts-ignore
       localStorage.setItem('currentUser', JSON.stringify({email: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'], id: response.id}));
