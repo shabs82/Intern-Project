@@ -26,10 +26,10 @@ export class ContactUsComponent implements OnInit {
   }
   siteKey:string = "6LfxJ-MdAAAAAD1TbSutpykFG6_npZ5CZUVrKsVN";
 
-  send(){
-  const contactForm = this.contactForm.value;
-  this.contactForm.reset();
-  this.router.navigateByUrl("/contact-us");
+  send() {
+    const contactForm = this.contactForm.value;
+    this.contactForm.reset();
+    this.router.navigateByUrl("/contact-us");
 
   }
 }
