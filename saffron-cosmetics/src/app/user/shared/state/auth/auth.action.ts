@@ -19,7 +19,3 @@ export class Logout {
   static readonly type = '[Auth] Logout';
 }
 
-// export class SetUpStorage {
-//   static readonly type = '[Auth] Setup Storage';
-//
-// }

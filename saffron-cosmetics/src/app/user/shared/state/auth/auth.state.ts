@@ -61,13 +61,6 @@ export class AuthState {
         loggedInUser: result,
       })
     })
-    //   .then((result) => {
-    //   const state = getState();
-    //   setState({
-    //     ...state,
-    //     loggedInUser: result,
-    //   });
-    // });
 
     const state = getState();
     setState({

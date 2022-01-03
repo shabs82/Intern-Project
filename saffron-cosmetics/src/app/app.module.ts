@@ -45,8 +45,6 @@ import {ProductModule} from "./product/product.module";
     WelcomePageComponent,
     BottomFooterComponent,
     ContactUsComponent,
-    SignUpComponent,
-    UserUpdateComponent,
     ShoppingCartComponent,
     WishlistComponent,
     DiscountLineComponent,
@@ -73,7 +71,7 @@ import {ProductModule} from "./product/product.module";
   ],
   providers: [AuthenticationService, ShoppingCartService],
   exports: [
-    SignUpComponent
+
   ],
   bootstrap: [AppComponent]
 })
