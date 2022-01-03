@@ -27,32 +27,30 @@
       </div>
     </div>
     <div class="contactForm">
-      <form [formGroup]="contactForm" (ngSubmit)="send">
+      <form action="https://formsubmit.co/shabeeh.sayed@gmail.com" method="POST">
            <div class="inputBox">
-          <input type="text" name="" required="required">
-          <span> Full Name</span>
+          <input type="text" name="name" required="required">
+         <span>Name</span>
         </div>
         <div class="inputBox">
-          <input type="text" name="" required="required">
-          <span>Mobile Num</span>
-        </div>
-        <div class="inputBox">
-          <input type="text" name="" required="required">
+          <input type="email" name="email" required="required">
           <span> Email</span>
         </div>
         <div class="inputBox">
           <input type="text" name="" required="required">
-          <span> Write Message</span>
+          <span>Write Message</span>
         </div>
-
-        <ngx-recaptcha2 #captchaElem
-                        [siteKey]="siteKey"
-                        formControlName="recaptcha">
-        </ngx-recaptcha2>
+        <input type="hidden" name="_next" value="https://saffroncosmetics.co.uk/home.html">
+        <input type="hidden" name="_subject" value="New Email Received!">
+        <input type="hidden" name="_autoresponse" value="This is an automated response. You will receive a reply within 48 hours.Please do not respond to this email.Thankyou">
+<!--        <ngx-recaptcha2 #captchaElem-->
+<!--                        [siteKey]="siteKey"-->
+<!--                        formControlName="recaptcha">-->
+<!--        </ngx-recaptcha2>-->
 
         <div class="inputBox">
-          <div class="g-recaptcha" data-sitekey="mySiteKey"></div>
-           <button type = "Submit"> Send</button>
+<!--          <div class="g-recaptcha" data-sitekey="mySiteKey"></div>-->
+           <button type = "submit"> Send</button>
         </div>
        </form>
      </div>
