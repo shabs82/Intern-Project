@@ -16,6 +16,7 @@ import {AuthState} from "./shared/state/auth/auth.state";
 import {environment} from "../../environments/environment";
 import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
 import {UserDetailComponent} from "./user-detail/user-detail.component";
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import {UserDetailComponent} from "./user-detail/user-detail.component";
     SignUpComponent,
     UserUpdateComponent,
     UserDetailComponent,
-
+    ChangePasswordComponent,
   ],
   imports: [
     CommonModule,
