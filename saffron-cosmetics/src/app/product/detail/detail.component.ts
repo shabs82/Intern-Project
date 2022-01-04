@@ -1,9 +1,10 @@
 
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductService} from "../shared/services/product.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Product} from "../shared/model/product";
 import {ShoppingCartService} from "../../shopping-cart/shared/shopping-cart.service";
+import {WishlistService} from "../../wishlist/shared/wishlist.service";
 
 
 @Component({
@@ -14,9 +15,12 @@ import {ShoppingCartService} from "../../shopping-cart/shared/shopping-cart.serv
 export class DetailComponent implements OnInit {
 
   product: Product;
+  addedToWishlist: boolean = false;
+
 
   constructor(private productService: ProductService,
-              private route: ActivatedRoute, private cartService: ShoppingCartService) {}
+              private route: ActivatedRoute, private cartService: ShoppingCartService,
+              private wishlistService: WishlistService, private router : Router ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((paramData)  =>{
@@ -33,5 +37,28 @@ export class DetailComponent implements OnInit {
 
   addToCart() {
     this.cartService.addToCart(this.product);
+  }
+
+  addToFavourites(product: Product) {
+    this.wishlistService.addToWishList(product);
+    this.addedToWishlist = true;
+    this.refreshPage();
+
+
+  }
+
+  removeFromFavourites(product: Product) {
+    this.wishlistService.removeFromWishlist(product);
+    this.addedToWishlist = false;
+    this.refreshPage();
+
+  }
+  refreshPage() {
+    window.location.reload();
+  }
+
+  goToWishlist(product: Product) {
+     //this.router.navigateByUrl(['/wishlist', product.id]);
+
   }
 }

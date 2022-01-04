@@ -14,7 +14,7 @@ export class WelcomePageComponent implements OnInit {
 
   ngOnInit(): void {
 
-      window.alert(" Enjoy exclusive 10% discount.Minimum spend £10. Use code 10 off 10");
+      window.alert(" Enjoy exclusive 10% discount. Minimum spend £10. Use code 10 off 10");
     }
 
 

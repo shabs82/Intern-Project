@@ -1,14 +1,50 @@
-<div class="productDiv">
-<div class="imgDiv">
-  <img src="assets/products/{{product.id}}.jpg" class="prodImg" alt="...">
+<div class="card-wrapper">
+  <div class="card">
+    <div class="productDiv g-col-4">
+        <div class="imgDiv">
+            <img src="assets/products/{{product.id}}.jpg" class="prodImg" alt="...">
+        </div>
+    </div>
+        <div class="product-name g-col-2">
+          <h6>{{product.name}}</h6>
+          <div class="price g-col-1">
+            <h6>£ {{product.price}}</h6>
+          </div>
+
+        <div class="product-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span> 4.7 (21)</span>
+        </div>
+        <ul>
+          <li> Available : <span> In Stock</span></li>
+        </ul>
+           <div class="product-description g-col-4">
+                <p><h6>{{product.description}}</h6><p>
+          </div>
+<!--            <div class="price g-col-1">-->
+<!--              <h6>£ {{product.price}}</h6>-->
+<!--            </div>-->
+
+      <div class=" purchase-info g-col-1">
+<!--        <input type = "number" min="0" value="1">-->
+             <button type = "button" class="btn" (click)="addToCart()">
+               Add To Cart <i class="fas fa-shopping-basket"></i>
+             </button>
+      </div>
+        <div class="favourite" (click)="goToWishlist(product)">
+          <button *ngIf="!addedToWishlist" type="button" class="btn" (click)="addToFavourites(product)">
+            Favourite <i class="fas fa-heart"></i>
+          </button>
+          <button *ngIf = "addedToWishlist" type="button" class="btn" (click)="removeFromFavourites(product)">
+            Favourite <i class="fas fa-heart"></i>
+          </button>
+        </div>
+    </div>
+  </div>
 </div>
-<div class="name">
-  <h6>{{product.name}}</h6>
-</div>
-<div class="price">
-  <h6>£{{product.price}}</h6>
-</div>
-<div class="addToCart" (click)="addToCart()">
-  <h6>Add To Cart</h6>
-</div>
-</div>
+
+
