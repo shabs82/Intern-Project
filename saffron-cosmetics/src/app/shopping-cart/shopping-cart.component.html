@@ -2,10 +2,10 @@
 <div class="container cart-page">
   <table >
     <tr>
-      <th>Product</th>
-      <th>Model</th>
+      <th>Items</th>
+      <th>Detail</th>
       <th>Quantity</th>
-      <th>Subtotal</th>
+      <th>OrderValue</th>
     </tr>
     <tr *ngFor="let product of usersSelectedProducts" class="productCell">
       <td>
@@ -14,7 +14,7 @@
           <div>
             <p>{{product.product?.name}}</p>
             <small>£{{product.product?.price}}</small>
-            <small (click)="removeProductFromShoppingCart(product.product!)" class="removeBtn">  Remove</small>
+            <small (click)="removeProductFromShoppingCart(product.product!)"  class="removeBtn"> Remove</small>
           </div>
         </div>
       </td>
@@ -27,10 +27,11 @@
   <div class="total-price">
     <table>
       <tr>
-        <td>Total</td>
-        <td>${{totalPrice | number : "1.2-2"}}</td>
+        <td>Sub-Total</td>
+        <td>£{{totalPrice | number : "1.2-2"}}</td>
       </tr>
     </table>
   </div>
   <p style="text-align: center; border: 1px solid gray; display: block; cursor: pointer" (click)="goToPayment();">Checkout</p>
+  <p>Enjoy exclusive 10% discount. Minimum spend £10. Use code 10 off 10</p>
 </div>
