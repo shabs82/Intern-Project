@@ -43,8 +43,6 @@ export class DetailComponent implements OnInit {
     this.wishlistService.addToWishList(product);
     this.addedToWishlist = true;
     this.refreshPage();
-
-
   }
 
   removeFromFavourites(product: Product) {
@@ -57,8 +55,4 @@ export class DetailComponent implements OnInit {
     window.location.reload();
   }
 
-  goToWishlist(product: Product) {
-     //this.router.navigateByUrl(['/wishlist', product.id]);
-
-  }
 }
