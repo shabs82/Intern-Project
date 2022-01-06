@@ -36,7 +36,7 @@ export class TopnavbarComponent implements OnInit {
   logout(): any {
     this.store.dispatch(new Logout()).subscribe(success => {
         //window.location.reload();
-        //this.router.navigate(['/']);
+        this.router.navigate(['/']);
         //window.location.reload();
       },
       error => {

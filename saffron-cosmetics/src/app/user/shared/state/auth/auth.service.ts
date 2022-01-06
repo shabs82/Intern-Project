@@ -18,6 +18,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  //This file holds the core logic of our authentication system.
 
   constructor(private http: HttpClient ) {
   }
@@ -47,7 +48,6 @@ export class AuthService {
   };
 
   async signUp(user: User): Promise<User>{
-    //httpOptions.headers = httpOptions.headers.set('Authorization','Bearer' + this.getToken());
     return  await this.http.post<User>(environment.apiURL + '/api/user', user).toPromise();
 
   };
