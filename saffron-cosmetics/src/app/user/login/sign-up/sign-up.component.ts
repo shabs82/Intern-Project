@@ -36,9 +36,9 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): any {
     this.loginForm = this.formBuilder.group({
       name : ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(200)])],
-      lastName : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
+      lastName : ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(20)])],
       email : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(200)])],
-      pwd : ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(20)])],
+      pwd : ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(20)])],
       address : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(30)])],
       postCode : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
       phoneNumber : ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(20)])],
@@ -72,6 +72,7 @@ export class SignUpComponent implements OnInit {
      lastName: this.loginForm.value.lastName, postCode: this.loginForm.value.postCode, address: this.loginForm.value.address, phoneNumber: this.loginForm.value.phoneNumber}))
       .subscribe(success =>{
       console.log('Success', success);
+      this.router.navigate(['/user/login'])
         },
         error => {
         this.errormessage = error.message;

@@ -8,96 +8,31 @@
         <div class="inputBox">
           <label style="color: white"> First Name</label>
           <input type="text" name="firstName" required="required" formControlName="firstName" placeholder="">
-
         </div>
-<!--        <ul *ngIf="f.name.errors && (f.name.dirty || f.name.touched)">-->
-<!--          <li *ngIf="f.name.errors.minlength" class="error-text" style="color: white;">  First Name must be at least 2 characters</li>-->
-<!--          <li *ngIf="f.name.errors.maxlength" class="error-text"style="color: white;">  First Name must be no more than 100 characters</li>-->
-<!--          <li *ngIf="f.name.errors.required" class="error-text"style="color: white;">  First Name is required </li>-->
-<!--        </ul>-->
-
         <div class="inputBox">
           <label style="color: white"> Last Name</label>
           <input type="text" name="lastName" required="required" formControlName="lastName">
-
         </div>
-<!--        <ul *ngIf="f.lastName.errors && (f.lastName.dirty || f.lastName.touched)">-->
-<!--          <li *ngIf="f.lastName.errors.minlength" class="error-text"style="color: white;">  Last Name must be at least 5 characters</li>-->
-<!--          <li *ngIf="f.lastName.errors.maxlength" class="error-text"style="color: white;">  Last Name must be no more than 100 characters</li>-->
-<!--          <li *ngIf="f.lastName.errors.required" class="error-text"style="color: white;">  Last Name is required </li>-->
-<!--        </ul>-->
-
         <div class="inputBox">
           <label style="color: white">Email</label>
           <input type="text" name="email" required="required" placeholder="" formControlName="email">
-
         </div>
-<!--        <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">-->
-<!--          <li *ngIf="f.email.errors.minlength" class="error-text"style="color: white;">  E-Mail must be at least 5 characters</li>-->
-<!--          <li *ngIf="f.email.errors.maxlength" class="error-text"style="color: white;">  E-Mail must be no more than 100 characters</li>-->
-<!--          <li *ngIf="f.email.errors.required" class="error-text"style="color: white;">  E-Mail is required </li>-->
-<!--        </ul>-->
-
-
-<!--        <div class="inputBox">-->
-<!--          <label style="color: white"> Password</label>-->
-<!--          <input type="password"  name="email" required="required" formControlName="pwd">-->
-
-<!--        </div>-->
-<!--        [type]="fieldTextType ? 'text' : 'password'"-->
-
-<!--        <ul *ngIf="f.pwd.errors && (f.pwd.dirty || f.pwd.touched)">-->
-<!--          <li *ngIf="f.pwd.errors.minlength" class="error-text"style="color: white;">  Password must be at least 5 characters</li>-->
-<!--          <li *ngIf="f.pwd.errors.maxlength" class="error-text"style="color: white;">  Password must be no more than 20 characters</li>-->
-<!--          <li *ngIf="f.pwd.errors.required" class="error-text"style="color: white;">  Password is required-->
-<!--            <div class="glitch" data-text="The password is in the questions"style="color: white;">The password is in the questions</div>-->
-<!--          </li>-->
-<!--        </ul>-->
-
-
         <div class="inputBox">
           <label style="color: white">Address </label>
           <input type="text" name="address" required="required" formControlName="address">
-
         </div>
-<!--        <ul *ngIf="f.address.errors && (f.address.dirty || f.address.touched)">-->
-<!--          <li *ngIf="f.address.errors.minlength" class="error-text"style="color: white;">  Address must be at least 5 characters</li>-->
-<!--          <li *ngIf="f.address.errors.maxlength" class="error-text"style="color: white;">  Address must be no more than 100 characters</li>-->
-<!--          <li *ngIf="f.address.errors.required" class="error-text"style="color: white;">  Address is required </li>-->
-<!--        </ul>-->
-
-
         <div class="inputBox">
           <label style="color: white">Post Code </label>
           <input type="number" name="postCode" required="required" formControlName="postCode">
-
         </div>
-<!--        <ul *ngIf="f.postCode.errors && (f.postCode.dirty || f.postCode.touched)">-->
-<!--          <li *ngIf="f.postCode.errors.minlength" class="error-text"style="color: white;">  Post Code must be at least 5 characters</li>-->
-<!--          <li *ngIf="f.postCode.errors.maxlength" class="error-text"style="color: white;">  Post Code must be no more than 100 characters</li>-->
-<!--          <li *ngIf="f.postCode.errors.required" class="error-text"style="color: white;">  Post Code is required </li>-->
-<!--        </ul>-->
-
         <div class="inputBox">
           <label style="color: white">Phone number </label>
           <input type="number" name="phoneNumber" required="required" formControlName="phoneNumber">
-
         </div>
-<!--        <ul *ngIf="f.phoneNumber.errors && (f.phoneNumber.dirty || f.phoneNumber.touched)">-->
-<!--          <li *ngIf="f.phoneNumber.errors.minlength" class="error-text"style="color: white;">  Post Code must be at least 5 characters</li>-->
-<!--          <li *ngIf="f.phoneNumber.errors.maxlength" class="error-text"style="color: white;">  Post Code must be no more than 100 characters</li>-->
-<!--          <li *ngIf="f.phoneNumber.errors.required" class="error-text"style="color: white;">  Post Code is required </li>-->
-<!--        </ul>-->
-
         <div class="inputBox">
-<!--          <div class="g-recaptcha" data-sitekey="mySiteKey"></div>-->
           <input type="submit"  class="btn btn-info text-white login-button button-color" name="" value="Save Changes">
           <input class="btn btn-info text-white exit-button button-color" (click)="back()" value="Back">
         </div>
-
-<!--        [disabled]="!(f.pwd.errors === null && f.email.errors === null && f.name.errors === null && f.lastName.errors === null)"-->
-
-
       </form>
     </div>
   </div>

@@ -43,13 +43,12 @@
         <input type="hidden" name="_next" value="https://localhost:4200/home.html">
         <input type="hidden" name="_subject" value="New Email Received!">
         <input type="hidden" name="_autoresponse" value="This is an automated response. You will receive a reply within 48 hours.Please do not respond to this email.Thankyou">
-<!--        <ngx-recaptcha2 #captchaElem-->
-<!--                        [siteKey]="siteKey"-->
-<!--                        formControlName="recaptcha">-->
-<!--        </ngx-recaptcha2>-->
-
+                <ngx-recaptcha2 #captchaElem
+                                [siteKey]="siteKey"
+                                formControlName="recaptcha">
+                </ngx-recaptcha2>
         <div class="inputBox">
-<!--          <div class="g-recaptcha" data-sitekey="mySiteKey"></div>-->
+          <div class="g-recaptcha" data-sitekey="mySiteKey"></div>
            <button type = "submit"> Send</button>
         </div>
        </form>
