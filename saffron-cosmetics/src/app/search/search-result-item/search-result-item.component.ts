@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
+import {WishlistService} from "../../wishlist/shared/wishlist.service";
 
 @Component({
   selector: 'app-search-result-item',

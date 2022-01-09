@@ -25,7 +25,7 @@ export class WishlistService {
   }
 
 
-  removeFromWishlist(productItem: Product) {
+  removeFromWishlist(productItem: any) {
     const currentFavouriteProduct = this.productsInFavourites.find(p => p.id === productItem.id);
     this.productsInFavourites.forEach((p: Product, index) => {
       if (p === currentFavouriteProduct) {
@@ -35,11 +35,11 @@ export class WishlistService {
     this.saveChanges();
   }
 
-  addToWishList(productItem: Product) {
+  addToWishList(productItem: any) {
       const currentFavouriteProduct = this.productsInFavourites.find(p => p.id === productItem.id);
       if (!currentFavouriteProduct) {
         this.productsInFavourites.push(productItem)
-        this.saveChanges()
+        this.saveChanges();
       }
   }
 
