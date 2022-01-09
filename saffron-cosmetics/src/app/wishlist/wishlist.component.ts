@@ -41,4 +41,10 @@ export class WishlistComponent implements OnInit {
   backToDetail(favourite: Product) {
     this.router.navigate(['/product/product-detail', favourite.id])
   }
+
+
+  // itemAdded(favourite: any) {
+  //   this.productsInFavourites;
+  //
+  // }
 }
