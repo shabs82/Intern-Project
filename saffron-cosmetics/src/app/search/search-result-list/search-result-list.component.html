@@ -21,10 +21,9 @@
 							<span>Price: £{{item.price}} </span>
             <div class="purchase-info">
               <button type = "button" class="btn" (click)="addToCart(item)">
-                Add To Cart <i class="fas fa-shopping-basket"></i>
+                Add To Bag <i class="fas fa-shopping-basket"></i>
               </button>
             </div>
-
             <div class="favourite">
               <button *ngIf="!addedToWishlist" type="button" class="btn" (click)="addToFavourites(item)">
                 Favourite <i class="fas fa-heart"></i>
@@ -33,11 +32,8 @@
                 Favourite <i class="fas fa-heart"></i>
               </button>
             </div>
-
 					</div>
-
 				</div>
-
 			</div>
 		</div>
 	</div>

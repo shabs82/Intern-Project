@@ -4,13 +4,14 @@
 .links-bar {
   color: white !important;
   font-family: 'Slabo 27px', serif;
-  font-size: 18px;
+  font-size: 15px;
   margin-right: 6px;
   margin-left: 6px;
   cursor: default;
-
+  //font-weight: bold !important;
   //border-bottom: 2px solid transparent;
 }
+
 
 .dropdown:hover .dropdown-menu{
   display: block;

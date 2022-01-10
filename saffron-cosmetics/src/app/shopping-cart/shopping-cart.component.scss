@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
-h1 {
+h3 {
   text-align: center;
   padding-top: 30px;
   border-bottom: 3px solid #F85B32;
@@ -22,12 +22,29 @@ table{
     display: flex;
     flex-wrap: wrap;
 }
+
+.purchase-info .btn{
+  border: 1.5px solid grey;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.45rem 0.8rem;
+  outline: 0;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+  background-color: green;
+  alignment: right;
+}
+.purchase-info .btn{
+  cursor: pointer;
+  margin-left: 1px;
+}
+
 th{
   padding: 5px;
   color: #fff;
   background: #24262b;
   font-weight: normal;
-  font-size: 17px;
+  font-size: 14px;
   text-align: center;
   align-items: center;
 }

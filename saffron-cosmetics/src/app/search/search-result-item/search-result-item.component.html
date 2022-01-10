@@ -11,10 +11,25 @@
 				<h5>{{selectedOption.name}}</h5>
 				<p>{{selectedOption.description}}</p>
 				<p>
-					<span>Price: £{{selectedOption.price}} </span>
-					<span>Quantity: {{selectedOption.quantity}} </span>
+					<span> £{{selectedOption.price}} </span>
+<!--					<span>Quantity: {{selectedOption.quantity}} </span>-->
         </p>
-			</div>
+        <div class="purchase-info">
+          <button type = "button" class="btn" (click)="addToCart(selectedOption)">
+            Add To Bag <i class="fas fa-shopping-basket"></i>
+          </button>
+        </div>
+
+        <div class="favourite">
+          <button *ngIf="!addedToWishlist" type="button" class="btn" (click)="addToFavourites(selectedOption)">
+            Favourite <i class="fas fa-heart"></i>
+          </button>
+          <button *ngIf = "addedToWishlist" type="button" class="btn" (click)="removeFromFavourites(selectedOption)">
+            Favourite <i class="fas fa-heart"></i>
+          </button>
+        </div>
+
+      </div>
 		</div>
 	</div>
 

@@ -1,11 +1,11 @@
-<h1>Shopping cart</h1>
+<h3>Shopping Bag</h3>
 <div class="container cart-page">
   <table >
     <tr>
-      <th>Product</th>
+      <th>Items</th>
       <th>Name</th>
       <th>Quantity</th>
-      <th>OrderValue</th>
+      <th>Order Value</th>
     </tr>
     <tr *ngFor="let product of usersSelectedProducts" class="productCell">
       <td>
@@ -32,6 +32,11 @@
       </tr>
     </table>
   </div>
-  <p style="text-align: center; border: 1px solid gray; display: block; cursor: pointer" (click)="goToPayment();">Checkout</p>
+<!--  <p style="text-align: center; border: 1px solid gray; display: block; cursor: pointer"-->
+<!--     (click)="goToPayment();">Checkout</p>-->
+  <div class="purchase-info">
+    <button type = "button" class="btn" (click)="goToPayment()">Go To Checkout</button>
+  </div>
+
   <p>Enjoy exclusive 10% discount. Minimum spend £10. Use code 10 off 10</p>
 </div>
