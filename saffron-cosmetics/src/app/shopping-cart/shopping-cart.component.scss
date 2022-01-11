@@ -81,6 +81,10 @@ td:last-child{
 th:last-child{
   text-align: right;
 }
+.removeIcon{
+  margin-left: 5px;
+  cursor: pointer;
+}
 @media only screen and (max-width: 600px) {
   .cart-info p{
     display: none;

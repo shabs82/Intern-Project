@@ -26,6 +26,7 @@ export class TopnavbarComponent implements OnInit {
     this.totalQuantitySub = this.cartService.quantity$ .subscribe(totalQuantity => {
       this.totalQuantity = totalQuantity;
     });
+
   }
 
   @Select(AuthState.getUser) currentUser: Observable<User>;

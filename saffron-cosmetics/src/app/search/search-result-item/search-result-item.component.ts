@@ -20,21 +20,21 @@ export class SearchResultItemComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  refreshPage() {
-    window.location.reload();
-  }
+  // refreshPage() {
+  //   window.location.reload();
+  // }
 
   addToFavourites(selectedOption: any) {
     this.wishlistService.addToWishList(selectedOption);
     this.addedToWishlist = false;
-    this.refreshPage();
+    // this.refreshPage();
 
   }
 
   removeFromFavourites(selectedOption: any) {
     this.wishlistService.removeFromWishlist(selectedOption);
     this.addedToWishlist = false;
-    this.refreshPage();
+    // this.refreshPage();
 
   }
 
