@@ -24,9 +24,11 @@ export class UserDetailComponent implements OnInit {
       console.log(this.user);
     })
   }
+  //Retrieves information from the State, sets it as currentUser
   @Select(AuthState.getUser) currentUser: Observable<User>;
+  // User variable of the User Entity
   user: User;
-  userName = this.authenticationService.getUserName();
+
 
 
   ngOnInit(): void {

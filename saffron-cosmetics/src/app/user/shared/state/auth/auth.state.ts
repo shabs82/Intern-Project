@@ -54,19 +54,21 @@ export class AuthState {
   }
   @Action(UpdateUser)
   updateUser({getState, setState}: StateContext<AuthStateModel>, {user}: UpdateUser): any {
+    debugger;
     return this.userService.updateUser(user).subscribe((result) => {
+      // const state = getState();
+      // setState({
+      //   ...state,
+      //   loggedInUser: result,
       const state = getState();
       setState({
         ...state,
-        loggedInUser: result,
+        // @ts-ignore
+        loggedInUser: user,
       })
-    })
+    // })
 
-    const state = getState();
-    setState({
-      ...state,
-      // @ts-ignore
-      loggedInUser: user,
+
     });
   }
 
