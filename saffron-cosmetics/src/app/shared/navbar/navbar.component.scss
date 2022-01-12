@@ -25,5 +25,12 @@
 li:hover{
   background: gray;
 }
+/* responsive*/
 
+@media (max-width: 1005px) {
+  .navbar-nav{
+    margin-left: 50px;
+    cursor: pointer;
+  }
+}
 

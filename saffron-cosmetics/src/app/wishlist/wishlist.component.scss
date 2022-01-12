@@ -20,3 +20,13 @@
 .w-100{
   cursor: pointer;
 }
+
+/* responsive*/
+@media(max-width: 1005px) and (orientation: landscape) {
+  .container {
+    width: 100%;
+  }
+}
+
+
+
