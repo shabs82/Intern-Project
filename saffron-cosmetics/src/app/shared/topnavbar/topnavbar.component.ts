@@ -14,7 +14,7 @@ import {ShoppingCartService} from "../../shopping-cart/shared/shopping-cart.serv
   styleUrls: ['./topnavbar.component.scss']
 })
 export class TopnavbarComponent implements OnInit {
-
+  favouriteQuantity: any;
   totalQuantity: number;
   private totalQuantitySub: Subscription;
 
@@ -26,6 +26,7 @@ export class TopnavbarComponent implements OnInit {
     this.totalQuantitySub = this.cartService.quantity$ .subscribe(totalQuantity => {
       this.totalQuantity = totalQuantity;
     });
+
   }
 
   @Select(AuthState.getUser) currentUser: Observable<User>;

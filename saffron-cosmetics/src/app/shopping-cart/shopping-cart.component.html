@@ -4,6 +4,7 @@
     <tr>
       <th>Items</th>
       <th>Name</th>
+<!--      <th>Availability</th>-->
       <th>Quantity</th>
       <th>Order Value</th>
     </tr>
@@ -11,16 +12,16 @@
       <td>
         <div class="cart-info">
           <img src="assets/products/{{product.product?.id}}.jpg" alt="product-pic">
-<!--          <div>-->
-<!--            <p>{{product.product?.name}}</p>-->
-<!--            <small>£{{product.product?.price}}</small>-->
-<!--            <small (click)="removeProductFromShoppingCart(product.product!)"  class="removeBtn"> Remove</small>-->
-<!--          </div>-->
+         <div>
+<!--            <p>{{product.product?.availability}}</p>&ndash;&gt;-->
+<!--           <small>{{product.product?.availability}}</small>&ndash;&gt;-->
+         </div>
         </div>
       </td>
       <td class="description"><span class="descriptionText">{{product.product?.name}}</span></td>
       <td class="quantity"><i class="fas fa-plus addQ" (click)="addOneQuantityOfSelectedProductToCart(product.product!)"></i><input disabled id="price" value="{{product.quantity}}">
-                                    <i class="fas fa-minus deleteQ" (click)="removeOneQuantityOfSelectedProductFromCart(product.product!)"></i></td>
+                                    <i class="fas fa-minus deleteQ" (click)="removeOneQuantityOfSelectedProductFromCart(product.product!)"></i>  <small (click)="removeProductFromShoppingCart(product.product!)"
+                                                                                                                                                        class="removeBtn"> Remove</small><i class="fas fa-times-circle removeIcon" (click)="removeProductFromShoppingCart(product.product!)"></i></td>
       <td class="price">£{{product.quantity * product.product!.price | number : "1.2-2"}}</td>
     </tr>
   </table>
@@ -32,11 +33,14 @@
       </tr>
     </table>
   </div>
-<!--  <p style="text-align: center; border: 1px solid gray; display: block; cursor: pointer"-->
-<!--     (click)="goToPayment();">Checkout</p>-->
   <div class="purchase-info">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <button type = "button" class="btn" (click)="goToPayment()">Go To Checkout</button>
-  </div>
-
-  <p>Enjoy exclusive 10% discount. Minimum spend £10. Use code 10 off 10</p>
+     </div>
+    <div class="discount">
+    <div class= "d-grid gap-2 d-md-flex justify-content-md-end">
+      <p>Enjoy exclusive 10% discount. Minimum spend £10. Use code 10 off 10</p>
+    </div>
+    </div>
+ </div>
 </div>

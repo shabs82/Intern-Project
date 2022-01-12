@@ -32,17 +32,13 @@ export class SearchResultListComponent implements OnInit {
   removeFromFavourites(item: SearchOption) {
     this.wishlistService.removeFromWishlist(item);
     this.addedToWishlist = false;
-    this.refreshPage();
-
   }
-  refreshPage() {
-    window.location.reload();
-  }
+  // refreshPage() {
+  //   window.location.reload();
+  // }
 
   addToFavourites(item: SearchOption) {
     this.wishlistService.addToWishList(item);
     this.addedToWishlist = true;
-    this.refreshPage();
-
   }
 }

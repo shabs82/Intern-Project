@@ -26,18 +26,19 @@ table{
 .purchase-info .btn{
   border: 1.5px solid grey;
   border-radius: 25px;
-  text-align: center;
+  text-align: right;
   padding: 0.45rem 0.8rem;
   outline: 0;
   margin-right: 0.2rem;
   margin-bottom: 1rem;
   background-color: green;
   alignment: right;
-}
-.purchase-info .btn{
   cursor: pointer;
-  margin-left: 1px;
 }
+.discount{
+  backgroundcolor: darkblue;
+}
+
 
 th{
   padding: 5px;
@@ -80,6 +81,10 @@ td:last-child{
 }
 th:last-child{
   text-align: right;
+}
+.removeIcon{
+  margin-left: 5px;
+  cursor: pointer;
 }
 @media only screen and (max-width: 600px) {
   .cart-info p{

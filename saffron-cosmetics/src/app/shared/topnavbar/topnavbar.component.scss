@@ -62,14 +62,27 @@ body{
 @media only screen and(max-width: 992px) {
   .navbar-brand {
    margin-right: 800px;
-
   }
 }
+@media (max-width: 1241px) {
+  .nav-item{
+    margin-right: 20px;
+    width: 50%;
+  }
+
+}
+
 @media only screen and(max-width: 733px) {
   .search-box {
     margin-left: 130px;
 
   }
+}
+@media (max-width: 1031px) {
+.search-div{
+  margin-left: 50px;
+}
+
 }
 @media only screen and(max-width: 1002px) {
   .my-acc-class {
