@@ -43,14 +43,14 @@ export class DetailComponent implements OnInit {
   addToFavourites(product: Product) {
     this.wishlistService.addToWishList(product);
     this.addedToWishlist = true;
-    this.refreshPage();
+    //this.refreshPage();
     this.alert = true;
   }
 
   removeFromFavourites(product: Product) {
     this.wishlistService.removeFromWishlist(product);
     this.addedToWishlist = false;
-    this.refreshPage();
+    //this.refreshPage();
 
   }
   refreshPage() {
