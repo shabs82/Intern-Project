@@ -18,9 +18,8 @@ export class UserDetailComponent implements OnInit {
 
   constructor(private location: Location, private authenticationService: AuthenticationService, private store: Store,) {
     this.currentUser.subscribe((data) =>{
-      console.log(data);
-
       this.user = data;
+      console.log("User details page - user got updated")
       console.log(this.user);
     })
   }

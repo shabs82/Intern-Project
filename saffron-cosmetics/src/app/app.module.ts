@@ -52,6 +52,12 @@ import {ProductModule} from "./product/product.module";
 
   ],
   imports: [
+    NgxsModule.forRoot([AuthState], {
+      developmentMode: !environment.production
+    }),
+    NgxsStoragePluginModule.forRoot({
+      key: ['auth']
+    }),
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -61,12 +67,6 @@ import {ProductModule} from "./product/product.module";
     NgxCaptchaModule,
     FormsModule,
     SearchModule,
-    NgxsModule.forRoot([AuthState], {
-      developmentMode: !environment.production
-    }),
-    NgxsStoragePluginModule.forRoot({
-      key: ['auth']
-    }),
     ProductModule,
   ],
   providers: [AuthenticationService, ShoppingCartService],

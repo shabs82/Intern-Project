@@ -44,7 +44,7 @@ export class UserUpdateComponent implements OnInit {
     this.id = parseInt(this.authenticationService.getUserID());
     //Reads the user with the ID and then manipulates the data to store them in the form fields.
     this.userService.readUserById(this.id).subscribe(userFromRest => {
-      console.log(userFromRest)
+      this.user = userFromRest;
       this.updateForm.patchValue({
         firstName : userFromRest.firstName,
         lastName : userFromRest.lastName,
@@ -54,7 +54,7 @@ export class UserUpdateComponent implements OnInit {
         phoneNumber: userFromRest.phoneNumber
       });
     });
-    
+
     // this.currentUser.subscribe((data)=> {
     //   this.user = data;
     //   this.updateForm.patchValue({

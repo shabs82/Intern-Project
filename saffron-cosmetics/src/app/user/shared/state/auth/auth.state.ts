@@ -5,6 +5,7 @@ import {LoginUser, Logout, SignUp, UpdateUser} from "./auth.action";
 import {AuthService} from "./auth.service";
 import {UserService} from "../../services/user.service";
 
+
 export class AuthStateModel {
   // @ts-ignore
   loggedInUser: User;
@@ -18,6 +19,12 @@ export class AuthStateModel {
     loggedInUser: '',
   }
 })
+
+// const reducerKeys = ['users'];
+// export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any>{
+//   return localStorageSync({keys: reducerKeys})(reducer);
+// }
+
 @Injectable()
 export class AuthState {
 
@@ -55,17 +62,23 @@ export class AuthState {
   @Action(UpdateUser)
   updateUser({getState, setState}: StateContext<AuthStateModel>, {user}: UpdateUser): any {
     debugger;
-    return this.userService.updateUser(user).subscribe((result) => {
+    //Observable to promise
+    return this.userService.updateUser(user).toPromise().then((result) => {
       // const state = getState();
       // setState({
       //   ...state,
       //   loggedInUser: result,
       const state = getState();
+      console.log("Before updating state!")
+      console.log(state);
       setState({
         ...state,
         // @ts-ignore
-        loggedInUser: user,
+        loggedInUser: result,
       })
+      console.log("After updating state!")
+      console.log(state);
+
     // })
 
 
