@@ -4,6 +4,7 @@ import {WishlistService} from "../../wishlist/shared/wishlist.service";
 import {ProductService} from "../../product/shared/services/product.service";
 import {SearchOption} from "../searchOption";
 import {ShoppingCartService} from "../../shopping-cart/shared/shopping-cart.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search-result-item',
@@ -14,7 +15,8 @@ export class SearchResultItemComponent implements OnInit {
   addedToWishlist: boolean = false;
 
   constructor(public searchService: SearchService, private prodService: ProductService,
-              private wishlistService: WishlistService,private cartService: ShoppingCartService) {
+              private wishlistService: WishlistService,private cartService: ShoppingCartService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -44,4 +46,9 @@ export class SearchResultItemComponent implements OnInit {
     }
 
   }
+
+  // backToDetail(selectedOption: any) {
+  //   this.router.navigate(['/product/product-detail', selectedOption.id]);
+  //
+  // }
 }

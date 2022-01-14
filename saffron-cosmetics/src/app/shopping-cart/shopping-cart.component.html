@@ -11,7 +11,7 @@
     <tr *ngFor="let product of usersSelectedProducts" class="productCell">
       <td>
         <div class="cart-info">
-          <img src="assets/products/{{product.product?.id}}.jpg" alt="product-pic">
+          <img src="assets/products/{{product.product?.id}}.jpg" alt="product-pic" (click)="backToDetail(product)">
          <div>
 <!--            <p>{{product.product?.availability}}</p>&ndash;&gt;-->
 <!--           <small>{{product.product?.availability}}</small>&ndash;&gt;-->

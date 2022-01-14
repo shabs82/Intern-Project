@@ -48,4 +48,13 @@ export class ShoppingCartComponent implements OnInit {
   goToPayment() {
     this.router.navigate(['shopping-cart/payment'])
   }
+
+  // backToDetail(product: any) {
+  //   this.router.navigate(['/product/product-detail',product.id]);
+  //
+  // }
+  backToDetail(product: SelectedProductOrderModel) {
+    debugger;
+    this.router.navigate(['/product/product-detail',product.product.id]);
+  }
 }

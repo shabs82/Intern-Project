@@ -22,6 +22,9 @@ table{
     display: flex;
     flex-wrap: wrap;
 }
+.cart-info{
+  cursor: pointer;
+}
 
 .purchase-info .btn{
   border: 1.5px solid grey;
