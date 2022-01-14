@@ -6,6 +6,10 @@
 <div class="row">
     <div class="productCard" *ngFor="let product of productsByCategoryId">
     <app-product-item [productItem]="product"></app-product-item>
+      <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Item added successfully!</strong>
+        <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
    </div>
  </div>
 </div>

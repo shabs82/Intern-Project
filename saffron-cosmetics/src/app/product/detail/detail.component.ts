@@ -16,6 +16,7 @@ export class DetailComponent implements OnInit {
 
   product: Product;
   addedToWishlist: boolean = false;
+  alert: boolean = false;
 
 
   constructor(private productService: ProductService,
@@ -43,6 +44,7 @@ export class DetailComponent implements OnInit {
     this.wishlistService.addToWishList(product);
     this.addedToWishlist = true;
     this.refreshPage();
+    this.alert = true;
   }
 
   removeFromFavourites(product: Product) {
@@ -53,6 +55,10 @@ export class DetailComponent implements OnInit {
   }
   refreshPage() {
     window.location.reload();
+  }
+
+  closeAlert(){
+    this.alert = false;
   }
 
 }

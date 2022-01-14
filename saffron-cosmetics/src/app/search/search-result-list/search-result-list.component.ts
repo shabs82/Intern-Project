@@ -15,7 +15,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./search-result-list.component.scss'],
 })
 export class SearchResultListComponent implements OnInit {
-    addedToWishlist: boolean = false;
+  addedToWishlist: boolean = false;
+  alert: boolean = false;
 
   constructor(public searchService: SearchService, private cartService: ShoppingCartService,
               private prodService: ProductService, private wishlistService: WishlistService,
@@ -34,18 +35,25 @@ export class SearchResultListComponent implements OnInit {
   removeFromFavourites(item: SearchOption) {
     this.wishlistService.removeFromWishlist(item);
     this.addedToWishlist = false;
+
   }
   // refreshPage() {
   //   window.location.reload();
   // }
 
+
   addToFavourites(item: SearchOption) {
     this.wishlistService.addToWishList(item);
     this.addedToWishlist = true;
+    this.alert = true;
   }
 
   backToDetail(item: any) {
     this.router.navigate(['/product/product-detail', item.id]);
 
+  }
+
+  closeAlert() {
+    this.alert = false;
   }
 }

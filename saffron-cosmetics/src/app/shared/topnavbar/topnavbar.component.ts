@@ -14,7 +14,7 @@ import {ShoppingCartService} from "../../shopping-cart/shared/shopping-cart.serv
   styleUrls: ['./topnavbar.component.scss']
 })
 export class TopnavbarComponent implements OnInit {
-  favouriteQuantity: any;
+  favouriteItems: any;
   totalQuantity: number;
   private totalQuantitySub: Subscription;
 

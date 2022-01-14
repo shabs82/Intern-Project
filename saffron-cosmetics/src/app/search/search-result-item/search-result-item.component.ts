@@ -13,6 +13,7 @@ import {Router} from "@angular/router";
 })
 export class SearchResultItemComponent implements OnInit {
   addedToWishlist: boolean = false;
+  alert: boolean = false;
 
   constructor(public searchService: SearchService, private prodService: ProductService,
               private wishlistService: WishlistService,private cartService: ShoppingCartService,
@@ -30,7 +31,7 @@ export class SearchResultItemComponent implements OnInit {
     this.wishlistService.addToWishList(selectedOption);
     this.addedToWishlist = false;
     // this.refreshPage();
-
+    this.alert = true;
   }
 
   removeFromFavourites(selectedOption: any) {
@@ -51,4 +52,8 @@ export class SearchResultItemComponent implements OnInit {
   //   this.router.navigate(['/product/product-detail', selectedOption.id]);
   //
   // }
+
+  closeAlert() {
+    this.alert = false;
+  }
 }
