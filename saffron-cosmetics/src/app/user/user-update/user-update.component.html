@@ -4,7 +4,10 @@
   </div>
   <div class="container-fluid">
     <div class="contactForm">
+<!--   User Interface of the user-update page   -->
       <form [formGroup]="updateForm" (ngSubmit) ="saveChanges()">
+        <!--   This form is for all the input fields regarding the user's information before updating  -->
+        <!--   saveChanges invokes method from corresponding .ts component  -->
         <div class="inputBox">
           <label style="color: white"> First Name</label>
           <input type="text" name="firstName" required="required" formControlName="firstName" placeholder="">

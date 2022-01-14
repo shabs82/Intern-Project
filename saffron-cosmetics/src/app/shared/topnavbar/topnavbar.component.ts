@@ -20,7 +20,7 @@ export class TopnavbarComponent implements OnInit {
 
   constructor(private store: Store, private  router: Router, private cartService: ShoppingCartService) {
     this.currentUser.subscribe((data) =>{
-      console.log(data);
+      //console.log(data);
       this.user = data;
     })
     this.totalQuantitySub = this.cartService.quantity$ .subscribe(totalQuantity => {
