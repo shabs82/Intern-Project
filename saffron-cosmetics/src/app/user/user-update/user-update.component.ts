@@ -18,6 +18,7 @@ import {User} from "../shared/model/user";
 export class UserUpdateComponent implements OnInit {
   id: number;
 
+  //Specify the form we're using and the fields.
   updateForm = new FormGroup({
     firstName : new FormControl(''),
     lastName : new FormControl(''),
@@ -31,11 +32,6 @@ export class UserUpdateComponent implements OnInit {
               private router: Router, private route: ActivatedRoute, private location: Location, private store: Store) {
     //Store is DIed to dispatch actions.
 
-    // this.currentUser.subscribe((data) =>{
-    //   console.log(data);
-    //   this.user = data;
-    //   console.log(this.user);
-    // })
   }
 
   ngOnInit(): void {
@@ -43,40 +39,33 @@ export class UserUpdateComponent implements OnInit {
     //Gets the ID
     this.id = parseInt(this.authenticationService.getUserID());
     //Reads the user with the ID and then manipulates the data to store them in the form fields.
-    this.userService.readUserById(this.id).subscribe(userFromRest => {
-      this.user = userFromRest;
-      this.updateForm.patchValue({
-        firstName : userFromRest.firstName,
-        lastName : userFromRest.lastName,
-        email : userFromRest.email,
-        address : userFromRest.address,
-        postCode : userFromRest.postCode,
-        phoneNumber: userFromRest.phoneNumber
-      });
-    });
 
-    // this.currentUser.subscribe((data)=> {
-    //   this.user = data;
-    //   this.updateForm.patchValue({
-    //     firstName: this.user.firstName,
-    //     lastName: this.user.lastName,
-    //     email: this.user.email,
-    //     address: this.user.address,
-    //     postCode: this.user.postCode,
-    //     phoneNumber: this.user.phoneNumber
-    //   });
-    // })
+      //Place the user's information from State, places them into the fields
+      this.currentUser.subscribe((data) =>{
+        this.user = data;
+        this.updateForm.patchValue({
+          firstName : this.user.firstName,
+          lastName : this.user.lastName,
+          email : this.user.email,
+          address : this.user.address,
+          postCode : this.user.postCode,
+          phoneNumber: this.user.phoneNumber
+        });
+
+      })
   }
+  //Selecting information from the state
   @Select(AuthState.getUser) currentUser: Observable<User>;
   user: User;
 
 
-
   async saveChanges() {
+    //We retrieve the values of the user's input in the updateForm
     const user = this.updateForm.value;
     user.id = this.id;
     //await this.userService.updateUser(user).subscribe(() => {this.router.navigateByUrl('/');});
     //Dispatches an action from the store, once method is done, navigated to user-details
+    //Subscribe is called to get a callback, navigating the user to another area.
     await this.store.dispatch(new UpdateUser(user)).subscribe(()=> {this.router.navigateByUrl('/user/user-details')});
   }
 
