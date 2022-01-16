@@ -20,9 +20,9 @@ export class UserUpdateComponent implements OnInit {
 
   //Specify the form we're using and the fields.
   updateForm = new FormGroup({
-    firstName : new FormControl(''),
-    lastName : new FormControl(''),
-    email : new FormControl(''),
+    firstName : new FormControl('', Validators.compose([Validators.required, ])),
+    lastName : new FormControl('',  Validators.compose([Validators.required, ])),
+    email : new FormControl('',Validators.compose([Validators.required, ])),
     address : new FormControl(''),
     postCode : new FormControl(''),
     phoneNumber: new FormControl('')
@@ -58,12 +58,12 @@ export class UserUpdateComponent implements OnInit {
   @Select(AuthState.getUser) currentUser: Observable<User>;
   user: User;
 
+  get f(): any { return this.updateForm.controls; }
 
   async saveChanges() {
     //We retrieve the values of the user's input in the updateForm
     const user = this.updateForm.value;
     user.id = this.id;
-    //await this.userService.updateUser(user).subscribe(() => {this.router.navigateByUrl('/');});
     //Dispatches an action from the store, once method is done, navigated to user-details
     //Subscribe is called to get a callback, navigating the user to another area.
     await this.store.dispatch(new UpdateUser(user)).subscribe(()=> {this.router.navigateByUrl('/user/user-details')});
