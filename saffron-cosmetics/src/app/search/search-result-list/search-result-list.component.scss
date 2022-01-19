@@ -1,5 +1,6 @@
 .selected-image {
   width: 200px;
+  cursor: pointer;
 }
 .addToCart{
   cursor: pointer;
@@ -17,3 +18,32 @@ header{
 .pic{
 
 }
+
+.purchase-info .btn{
+  border: 1.5px solid grey;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.45rem 0.8rem;
+  outline: 0;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+  background-color: #4E83DB;
+}
+
+.purchase-info .btn{
+  cursor: pointer;
+  margin-left: 1px;
+}
+
+
+.favourite .btn{
+  border: 1.5px solid grey;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.45rem 0.8rem;
+  outline: 0;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+  background-color: #FA1F12;
+}
+

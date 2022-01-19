@@ -32,7 +32,7 @@
       <div class=" purchase-info g-col-1">
 <!--        <input type = "number" min="0" value="1">-->
              <button type = "button" class="btn" (click)="addToCart()">
-               Add To Cart <i class="fas fa-shopping-basket"></i>
+               Add To Bag <i class="fas fa-shopping-basket"></i>
              </button>
       </div>
         <div class="favourite">
@@ -43,6 +43,10 @@
             Favourite <i class="fas fa-heart"></i>
           </button>
         </div>
+          <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Item added successfully!</strong>
+            <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
     </div>
   </div>
 </div>

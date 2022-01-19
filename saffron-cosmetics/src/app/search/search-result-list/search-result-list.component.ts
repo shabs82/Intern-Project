@@ -6,6 +6,8 @@ import {ShoppingCartService} from "../../shopping-cart/shared/shopping-cart.serv
 import {Product} from "../../product/shared/model/product";
 import {ProductService} from "../../product/shared/services/product.service";
 import {SearchOption} from "../searchOption";
+import {WishlistService} from "../../wishlist/shared/wishlist.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search-result-list',
@@ -13,9 +15,12 @@ import {SearchOption} from "../searchOption";
   styleUrls: ['./search-result-list.component.scss'],
 })
 export class SearchResultListComponent implements OnInit {
+  addedToWishlist: boolean = false;
+  alert: boolean = false;
 
   constructor(public searchService: SearchService, private cartService: ShoppingCartService,
-              private prodService: ProductService ) {}
+              private prodService: ProductService, private wishlistService: WishlistService,
+              private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -24,5 +29,31 @@ export class SearchResultListComponent implements OnInit {
       await this.prodService.getProductById(product.id).subscribe(p => this.cartService.addToCart(p))
     }
 
+  }
+
+
+  removeFromFavourites(item: SearchOption) {
+    this.wishlistService.removeFromWishlist(item);
+    this.addedToWishlist = false;
+
+  }
+  // refreshPage() {
+  //   window.location.reload();
+  // }
+
+
+  addToFavourites(item: SearchOption) {
+    this.wishlistService.addToWishList(item);
+    this.addedToWishlist = true;
+    this.alert = true;
+  }
+
+  backToDetail(item: any) {
+    this.router.navigate(['/product/product-detail', item.id]);
+
+  }
+
+  closeAlert() {
+    this.alert = false;
   }
 }

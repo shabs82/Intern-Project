@@ -13,15 +13,19 @@
        <span>£{{favourite.price}}</span>
      </div>
      <div class="col-md-2">
-       <button type="button" class="btn btn-secondary" (click)="removeFromFavourites(favourite)"> Remove </button>
+       <button type="button" class="btn btn-secondary btn-sm" (click)="removeFromFavourites(favourite)"> Remove </button>
      </div>
      <div class="col-md-2">
-       <button type="button" class="btn btn-primary" (click)="moveToBasket(favourite)"> Add To Basket</button>
+       <button type="button" class="btn btn-primary btn-sm" (click)="moveToBasket(favourite)"> Add To Basket</button>
      </div>
    </div>
   </div>
  </div>
 </div>
+<!--  <div class="alert alert-success alert-dismissible fade in" (click)="itemAdded(favourite)">-->
+<!--    <a href="#" class="close" data-dismiss="alert" aria-label="close"></a>-->
+<!--    <strong>Item sucessfully added to favourites</strong>-->
+<!--  </div>-->
 </div>
 
 

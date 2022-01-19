@@ -3,6 +3,7 @@ import {WishlistService} from "./shared/wishlist.service";
 import {Product} from "../product/shared/model/product";
 import {ShoppingCartService} from "../shopping-cart/shared/shopping-cart.service";
 import {Router, RouterLink} from "@angular/router";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-wishlist',
@@ -13,15 +14,15 @@ export class WishlistComponent implements OnInit {
   productsInFavourites: Product[] = [];
 
 
+
   constructor(private wishListService: WishlistService,
               private shoppingCartService : ShoppingCartService,
               private router : Router) { }
 
   ngOnInit(): void {
     this.productsInFavourites = this.wishListService.loadFavouriteProducts()
-
-
   }
+
 
   moveToBasket(favourite: Product) {
     this.wishListService.removeFromWishlist(favourite);
@@ -41,4 +42,11 @@ export class WishlistComponent implements OnInit {
   backToDetail(favourite: Product) {
     this.router.navigate(['/product/product-detail', favourite.id])
   }
+
+
+  // itemAdded(favourite: any) {
+  //   this.productsInFavourites;
+  //
+  // }
+
 }

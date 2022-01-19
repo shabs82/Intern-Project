@@ -13,20 +13,31 @@
 			<div class="row justify-content-center" *ngIf="selectedOptions.length > 0">
 				<div>
 					<div class=" col-3 p-4" style="width: 50%; margin: 0 auto;">
-						<img src="assets/products/{{item.id}}.jpg" class="rounded selected-image " alt="Selected Image">
+						<img src="assets/products/{{item.id}}.jpg" class="rounded selected-image " alt="Selected Image" (click)="backToDetail(item)">
 					</div>
 					<div class="col-9 p-4" style="width: 100%; margin: 0 auto; text-align: center">
 						<h5>{{item.name}}</h5>
 						<p>{{item.description}}</p>
 							<span>Price: £{{item.price}} </span>
-            <div class="addToCart" (click)="addToCart(item)">
-              <h6>Add To Cart</h6>
+            <div class="purchase-info">
+              <button type = "button" class="btn" (click)="addToCart(item)">
+                Add To Bag <i class="fas fa-shopping-basket"></i>
+              </button>
             </div>
-
+            <div class="favourite">
+              <button *ngIf="!addedToWishlist" type="button" class="btn" (click)="addToFavourites(item)">
+                Favourite <i class="fas fa-heart"></i>
+              </button>
+              <button *ngIf = "addedToWishlist" type="button" class="btn" (click)="removeFromFavourites(item)">
+                Favourite <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Item added successfully!</strong>
+              <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
 					</div>
-
 				</div>
-
 			</div>
 		</div>
 	</div>

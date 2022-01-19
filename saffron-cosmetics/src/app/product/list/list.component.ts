@@ -13,6 +13,7 @@ export class ListComponent implements OnInit {
 
   productsByCategoryId: Product[] | undefined;
   secCatId = 0;
+  alert: boolean = false;
 
 
   constructor( private productService : ProductService, private route: ActivatedRoute,
@@ -54,5 +55,8 @@ export class ListComponent implements OnInit {
   }
 
 
+  closeAlert() {
+    this.alert = false;
   }
+}
 
