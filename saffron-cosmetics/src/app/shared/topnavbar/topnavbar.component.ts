@@ -23,7 +23,7 @@ export class TopnavbarComponent implements OnInit {
       console.log(data);
       this.user = data;
     })
-    this.totalQuantitySub = this.cartService.quantity$ .subscribe(totalQuantity => {
+    this.totalQuantitySub = this.cartService.quantity$.subscribe(totalQuantity => {
       this.totalQuantity = totalQuantity;
     });
   }
